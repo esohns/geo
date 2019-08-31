@@ -1,0 +1,52 @@
+/*@import url("custom-theme/jquery-ui-1.8.23.custom.css");*/
+/*@import url("ui-darkness/jquery-ui-1.8.23.custom.css") all, screen;*/
+
+html, body
+{
+ margin : 0px;
+ padding: 0px;
+ height : 100%;
+}
+.canvas
+{
+ height       : 90%;
+ margin-right : 15%;
+ /* margin-bottom: 10%; */
+}
+.tools_panel
+{
+ height  : 10%;
+ /* overflow: auto; */
+}
+.directions_panel
+{
+ height  : 100%;
+ float   : right;
+/* width   : 15%;*/
+ overflow: auto;
+}
+.hidden
+{
+/* visibility: hidden;*/
+ display   : none;
+}
+
+.cursor_tooltip
+{
+ position        : absolute;
+ padding         : 5px;
+ border          : 1px solid gray;
+ font-size       : 9px;
+ font-family     : Verdana;
+ background-color: #fff;
+ white-space     : nowrap;
+}
+
+.dialog_progress
+{
+ cursor: wait !important;
+}
+.ui-widget-overlay
+{
+ cursor: wait !important;
+}

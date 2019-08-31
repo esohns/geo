@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<gpx version="1.1" creator="Humana Kleidersammlung GmbH - Geo" xmlns="http://www.topografix.com/GPX/1/1">
+ <metadata>
+  <desc>b - 2010 nk_5</desc>
+  <copyright author="">
+   <year>2013</year>
+   <license></license>
+  </copyright>
+  <time>2013-04-10T14:23:03+02:00</time>
+  <bounds minlat="13.63717" minlon="13.42334" maxlat="52.46784" maxlon="52.51389"/>
+ </metadata>
+ <rte>
+  <name>b - 2010 nk_5</name>
+  <number>20</number>
+  <rtept lat="52.51389" lon="13.63717">
+   <ele>1</ele>
+   <name>warehouse</name>
+  </rtept>
+  <rtept lat="52.46784" lon="13.42938">
+   <ele>2</ele>
+   <name>52296</name>
+  </rtept>
+  <rtept lat="52.4204993" lon="13.5161064">
+   <ele>3</ele>
+   <name>52097</name>
+  </rtept>
+  <rtept lat="52.4191666" lon="13.4793253">
+   <ele>4</ele>
+   <name>52001B0803</name>
+  </rtept>
+  <rtept lat="52.43201" lon="13.48406">
+   <ele>5</ele>
+   <name>51995</name>
+  </rtept>
+  <rtept lat="52.4075033" lon="13.4975639">
+   <ele>6</ele>
+   <name>51992</name>
+  </rtept>
+  <rtept lat="52.4287219" lon="13.4917877">
+   <ele>7</ele>
+   <name>51991</name>
+  </rtept>
+  <rtept lat="52.41413" lon="13.50644">
+   <ele>8</ele>
+   <name>51984</name>
+  </rtept>
+  <rtept lat="52.4326502" lon="13.4443534">
+   <ele>9</ele>
+   <name>51973</name>
+  </rtept>
+  <rtept lat="52.4542581" lon="13.4376131">
+   <ele>10</ele>
+   <name>51965</name>
+  </rtept>
+  <rtept lat="52.46784" lon="13.42938">
+   <ele>11</ele>
+   <name>51953</name>
+  </rtept>
+  <rtept lat="52.42173" lon="13.42334">
+   <ele>12</ele>
+   <name>52063</name>
+  </rtept>
+  <rtept lat="52.42462" lon="13.4907">
+   <ele>13</ele>
+   <name>52024</name>
+  </rtept>
+  <rtept lat="52.4285" lon="13.50187">
+   <ele>14</ele>
+   <name>52022</name>
+  </rtept>
+  <rtept lat="52.4218673" lon="13.4321667">
+   <ele>15</ele>
+   <name>52012</name>
+  </rtept>
+  <rtept lat="52.42295" lon="13.44895">
+   <ele>16</ele>
+   <name>52009</name>
+  </rtept>
+  <rtept lat="52.4299548" lon="13.4350615">
+   <ele>17</ele>
+   <name>52008</name>
+  </rtept>
+  <rtept lat="52.44182" lon="13.46141">
+   <ele>18</ele>
+   <name>52007</name>
+  </rtept>
+  <rtept lat="52.42163" lon="13.47795">
+   <ele>19</ele>
+   <name>52003</name>
+  </rtept>
+  <rtept lat="52.51389" lon="13.63717">
+   <ele>20</ele>
+   <name>warehouse</name>
+  </rtept>
+ </rte>
+</gpx>

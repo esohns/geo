@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<gpx version="1.1" creator="Humana Kleidersammlung GmbH - Geo" xmlns="http://www.topografix.com/GPX/1/1">
+ <metadata>
+  <desc>bw - 2006Q2 FRmi</desc>
+  <copyright author="">
+   <year>2013</year>
+   <license></license>
+  </copyright>
+  <time>2013-05-07T18:49:23+02:00</time>
+  <bounds minlat="9.202068" minlon="7.621834" maxlat="48.27846" maxlon="48.8694327"/>
+ </metadata>
+ <rte>
+  <name>bw - 2006Q2 FRmi</name>
+  <number>30</number>
+  <rtept lat="48.8694327" lon="9.202068">
+   <ele>1</ele>
+   <name>warehouse</name>
+  </rtept>
+  <rtept lat="48.27846" lon="8.08231">
+   <ele>2</ele>
+   <name>4117?????</name>
+  </rtept>
+  <rtept lat="48.0891012" lon="7.9396394">
+   <ele>3</ele>
+   <name>4091?????</name>
+  </rtept>
+  <rtept lat="48.0891012" lon="7.9396394">
+   <ele>4</ele>
+   <name>4090?????</name>
+  </rtept>
+  <rtept lat="48.11519" lon="7.87829">
+   <ele>5</ele>
+   <name>4092?????</name>
+  </rtept>
+  <rtept lat="48.1197306" lon="7.8663771">
+   <ele>6</ele>
+   <name>4093?????</name>
+  </rtept>
+  <rtept lat="48.10852" lon="7.86027">
+   <ele>7</ele>
+   <name>4087L2281</name>
+  </rtept>
+  <rtept lat="48.10852" lon="7.86027">
+   <ele>8</ele>
+   <name>4086L2141</name>
+  </rtept>
+  <rtept lat="48.02422" lon="7.80934">
+   <ele>9</ele>
+   <name>4057?????</name>
+  </rtept>
+  <rtept lat="48.02422" lon="7.80934">
+   <ele>10</ele>
+   <name>4056?????</name>
+  </rtept>
+  <rtept lat="48.00334" lon="7.83303">
+   <ele>11</ele>
+   <name>4027B2129</name>
+  </rtept>
+  <rtept lat="48.0025102" lon="7.8355601">
+   <ele>12</ele>
+   <name>4026?2148</name>
+  </rtept>
+  <rtept lat="47.98005" lon="7.89981">
+   <ele>13</ele>
+   <name>4068?????</name>
+  </rtept>
+  <rtept lat="47.98005" lon="7.89981">
+   <ele>14</ele>
+   <name>4067?????</name>
+  </rtept>
+  <rtept lat="47.966069" lon="7.854876">
+   <ele>15</ele>
+   <name>4116?????</name>
+  </rtept>
+  <rtept lat="47.966069" lon="7.854876">
+   <ele>16</ele>
+   <name>4115?????</name>
+  </rtept>
+  <rtept lat="47.96423" lon="7.8573">
+   <ele>17</ele>
+   <name>4082?????</name>
+  </rtept>
+  <rtept lat="47.9879338" lon="7.8162011">
+   <ele>18</ele>
+   <name>4061?????</name>
+  </rtept>
+  <rtept lat="47.9879338" lon="7.8162011">
+   <ele>19</ele>
+   <name>4060?????</name>
+  </rtept>
+  <rtept lat="47.981927" lon="7.8000849">
+   <ele>20</ele>
+   <name>4080L2146</name>
+  </rtept>
+  <rtept lat="47.9771504" lon="7.7981886">
+   <ele>21</ele>
+   <name>4079?2157</name>
+  </rtept>
+  <rtept lat="47.87542" lon="7.65662">
+   <ele>22</ele>
+   <name>4108?????</name>
+  </rtept>
+  <rtept lat="47.87542" lon="7.65662">
+   <ele>23</ele>
+   <name>4107?????</name>
+  </rtept>
+  <rtept lat="47.914915" lon="7.621834">
+   <ele>24</ele>
+   <name>4106?????</name>
+  </rtept>
+  <rtept lat="48.0429731" lon="7.6482455">
+   <ele>25</ele>
+   <name>4105?2126</name>
+  </rtept>
+  <rtept lat="48.1932556" lon="7.669131">
+   <ele>26</ele>
+   <name>4104?????</name>
+  </rtept>
+  <rtept lat="48.217827" lon="7.699914">
+   <ele>27</ele>
+   <name>4103?????</name>
+  </rtept>
+  <rtept lat="48.19698" lon="7.76567">
+   <ele>28</ele>
+   <name>4071?????</name>
+  </rtept>
+  <rtept lat="48.19698" lon="7.76567">
+   <ele>29</ele>
+   <name>4070?????</name>
+  </rtept>
+  <rtept lat="48.8694327" lon="9.202068">
+   <ele>30</ele>
+   <name>warehouse</name>
+  </rtept>
+ </rte>
+</gpx>

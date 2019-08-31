@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<gpx version="1.1" creator="Humana Kleidersammlung GmbH - Geo" xmlns="http://www.topografix.com/GPX/1/1">
+ <metadata>
+  <desc>b - 2008 Jan cfpv_5</desc>
+  <copyright author="">
+   <year>2013</year>
+   <license></license>
+  </copyright>
+  <time>2013-04-10T14:23:19+02:00</time>
+  <bounds minlat="13.63717" minlon="13.2937997" maxlat="52.63565" maxlon="52.51389"/>
+ </metadata>
+ <rte>
+  <name>b - 2008 Jan cfpv_5</name>
+  <number>9</number>
+  <rtept lat="52.51389" lon="13.63717">
+   <ele>1</ele>
+   <name>warehouse</name>
+  </rtept>
+  <rtept lat="52.6088455" lon="13.2937997">
+   <ele>2</ele>
+   <name>51587</name>
+  </rtept>
+  <rtept lat="52.62975" lon="13.30596">
+   <ele>3</ele>
+   <name>51423</name>
+  </rtept>
+  <rtept lat="52.63565" lon="13.2986">
+   <ele>4</ele>
+   <name>51409</name>
+  </rtept>
+  <rtept lat="52.59383" lon="13.34882">
+   <ele>5</ele>
+   <name>51313</name>
+  </rtept>
+  <rtept lat="52.5904338" lon="13.3457649">
+   <ele>6</ele>
+   <name>51310</name>
+  </rtept>
+  <rtept lat="52.5705475" lon="13.3567164">
+   <ele>7</ele>
+   <name>51128</name>
+  </rtept>
+  <rtept lat="52.6002137" lon="13.3409843">
+   <ele>8</ele>
+   <name>50273</name>
+  </rtept>
+  <rtept lat="52.51389" lon="13.63717">
+   <ele>9</ele>
+   <name>warehouse</name>
+  </rtept>
+ </rte>
+</gpx>

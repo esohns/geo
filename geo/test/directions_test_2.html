@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta charset="UTF-8">
+  <title>Testpage</title>
+  <link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/themes/base/jquery-ui.css"/>
+  <link rel="stylesheet" type="text/css" href="directions_test_2.css" media="all,screen">
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+<!-- <script type="text/javascript" src="src/3rd_party/jquery-ui-1.9.2.custom.min.js"></script> -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="//www.google.com/jsapi"></script>
+  <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?libraries=geometry,drawing&sensor=false"></script>
+  <!-- <script type="text/javascript" src="//api.maps.ovi.com/jsl.js"></script> -->
+		<script type="text/javascript" src="//serverapi.arcgisonline.com/jsapi/arcgis/3.4/"></script>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/dojo/1.9.0/dojo/dojo.js"></script>
+  <!-- <script type="text/javascript" src="//raw.github.com/openlayers/openlayers/master/lib/OpenLayers.js"></script> -->
+  <script type="text/javascript" src="../../common/src/3rd_party/openlayers/OpenLayers.debug.js"></script>
+  <!-- <script type="text/javascript" src="../src/3rd_party/mxn/source/mxn.js?(openlayers)"></script> -->
+  <!-- <script type="text/javascript" src="../src/3rd_party/mxn/source/mxn.js?(googlev3)"></script> -->
+  <!-- <script type="text/javascript" src="../src/3rd_party/mxn/source/mxn.js"></script> -->
+  <script type="text/javascript" src="../../common/src/3rd_party/mxn/source/mxn.js"></script>
+  <script type="text/javascript" src="../../common/src/3rd_party/mxn/source/mxn.core.js"></script>
+  <!-- <script type="text/javascript" src="../../common/src/3rd_party/mxn/source/mxn.googlev3.core.js"></script> -->
+  <script type="text/javascript" src="../../common/src/3rd_party/mxn/source/mxn.openlayers.core.js"></script>
+  <!-- <script type="text/javascript" src="../../common/src/3rd_party/mxn/source/mxn.ovi.core.js"></script> -->
+  <!-- <script type="text/javascript" src="//google-maps-tsp-solver.googlecode.com/svn/trunk/tsp.js"></script> -->
+  <!-- <script type="text/javascript" src="../src/3rd_party/BpTspSolver.js"></script> -->
+  <script type="text/javascript" src="../../common/js/geo_common.js"></script>
+  <script type="text/javascript" src="directions_test_2.js"></script>
+  <script type="text/javascript">
+//   function init_nokia_maps_provider_js_1(nokia_params)
+ //  {
+  //  ovi.mapsapi.Features.load(nokia_params,
+//	                          function(){initialise();},
+//							  function(){
+//	                           if (!!window.console) console.log('failed to load given ovi features, returning');
+//	                           alert('failed to load given ovi features, returning');
+//						      },
+//							  null,
+//							  false
+//							 );
+    //ovi.mapsapi.Features.load(nokia_params);
+//	ovi.mapsapi.packages.loadAll(nokia_params,
+	//                             function(){initialise();}
+		//						);
+	//if (!ovi.mapsapi.Features.isLoaded('map', 'js-p2d-dom'))
+	 //alert('failed to load given ovi features, returning');
+ //  }
+   function init_page()
+   {
+// 	var nokia_params = {
+     //map        : 'auto',
+	// map        : 'js-p2d-dom',
+//	 search     : 'auto',
+//	 routing    : 'auto',
+//	 positioning: 'auto',
+//	 ui         : 'auto'
+//	};
+ //   load_script(//'//api.maps.ovi.com/jsl.js' + '?' + jQuery.param(nokia_params),
+//	            '//api.maps.ovi.com/jsl.js?blank=true',
+//	            init_nokia_maps_provider_js_1,
+//				nokia_params);
+    initialise();
+   }
+<!--     google.load('maps',-->
+<!--           	     '3.8',-->
+<!--				 {callback    : init_page,-->
+<!--               	  other_params: 'sensor=false'});-->
+  <!-- google.maps.event.addDomListener(window, 'load', init_page); -->
+   window.onload=init_page;
+  </script>
+ </head>
+ <body>
+  <div id="map_canvas" class="canvas"></div>
+  <div id="directions_panel" class="directions_panel"></div>
+  <div id="tools_panel" class="tools_panel">
+   <button id="work_button" class="button">work</button>
+   <!-- <button id="continue_button" class="button">continue</button> -->
+  </div>
+  <div id="dialog_progress" class="dialog_progress" style="display:none">
+   <div id="progress_bar" class="progress_bar"></div>
+  </div>
+  <!-- <div id="cursor_tooltip" class="cursor_tooltip" style="display:none"> -->
+   <!-- <label id="cursor_tooltip_label">0,0</label> -->
+  </div>
+ </body>
+</html>

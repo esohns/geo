@@ -1,0 +1,88 @@
+/*@import url("custom-theme/jquery-ui-1.8.23.custom.css");*/
+/*@import url("ui-darkness/jquery-ui-1.8.23.custom.css") all, screen;*/
+
+html, body
+{
+ margin : 0px;
+ padding: 0px;
+ height : 100%;
+}
+.hidden
+{
+/* visibility: hidden;*/
+ display   : none;
+}
+.ui-dialog-titlebar-close
+ {
+ visibility: hidden;
+}
+.ui-dialog
+ {
+/* height    : auto !important;*/
+/* width     : auto !important;*/
+/* margin    : 0px 0px !important;*/
+/* padding   : 0px 0px 0px 0px !important;*/
+ /* overflow-y: auto !important;*/
+}
+/*.ui-dialog-content*/
+/* {*/
+/* height    : auto !important;*/
+/* width     : auto !important;*/
+/* overflow-y: auto !important;*/
+/*}*/
+.ui-widget
+ {
+ font-size: 9pt;
+}
+.ui-button-icon-only
+ {
+ height        : 1em;
+	width         : 1em;
+ /* margin        : 0px 0px !important; */
+	margin-bottom : 3px;
+ /* padding       : 0px 0px 0px 0px !important; */
+/* line-height: 0.8 !important;*/
+ vertical-align: middle;
+}
+.ui-button-text-only, .ui-button-text
+ {
+ /* margin     : 1px 1px !important; */
+ /* padding    : 1px 1px 0px 0px !important; */
+/* line-height: 0.8 !important;*/
+/* vertical-align: middle;*/
+ display: none !important;
+}
+.progress_bar
+{
+ height: 22px;
+}
+.ui-progressbar .ui-progressbar-value 
+{
+ /* background-image: url(../../common/css/custom-theme/images/pbar-ani.gif); */
+	/* background-image: url(../../common/css/custom-theme/images/animated-overlay.gif); */
+ /* background-position: 0 0; */
+	/* background-repeat: repeat; */
+	/* background-attachment: scroll */
+ background: url(../../common/css/custom-theme/images/animated-overlay.gif) repeat scroll 0 0 transparent;
+	width     : 100% !important;
+	display   : block !important;
+ opacity   : 0.7;
+}
+.sortable_listbox_list
+ {
+ list-style-type: decimal;
+ margin         : 10px;
+ padding        : 5px 5px 2.5em;
+ /*float          : left;*/
+/* margin-right   : 10px;*/
+}
+.fieldset
+{
+ -moz-border-radius   : 4px;
+ border-radius        : 4px;
+ -webkit-border-radius: 4px;
+ /* margin               : 3px; */
+ padding              : 3px;
+	/* padding-top          : 0px !important; */
+	/* padding-bottom       : 0px !important; */
+}

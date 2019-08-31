@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<gpx version="1.1" creator="Humana Kleidersammlung GmbH - Geo" xmlns="http://www.topografix.com/GPX/1/1">
+ <metadata>
+  <desc>b - TourAlt L1_0</desc>
+  <copyright author="">
+   <year>2013</year>
+   <license></license>
+  </copyright>
+  <time>2013-04-10T11:14:46+02:00</time>
+  <bounds minlat="13.63717" minlon="13.4219765" maxlat="52.51676" maxlon="52.51389"/>
+ </metadata>
+ <rte>
+  <name>b - TourAlt L1_0</name>
+  <number>4</number>
+  <rtept lat="52.51389" lon="13.63717">
+   <ele>1</ele>
+   <name>warehouse</name>
+  </rtept>
+  <rtept lat="52.51676" lon="13.45455">
+   <ele>2</ele>
+   <name>50464</name>
+  </rtept>
+  <rtept lat="52.4772906" lon="13.4219765">
+   <ele>3</ele>
+   <name>504700</name>
+  </rtept>
+  <rtept lat="52.51389" lon="13.63717">
+   <ele>4</ele>
+   <name>warehouse</name>
+  </rtept>
+ </rte>
+</gpx>

@@ -1,0 +1,546 @@
+--------------------- processing sites --------------------- 
+--------------------- processing site coordinates --------------------- 
+sites database: "\\Rechner1\Coffee\Coffee BW\Sites.dbf"
+processed 1720record(s)...
+--------------------- processing site coordinates DONE--------------------- 
+--------------------- processing sites (JSON) --------------------- 
+opened relations db...
+# relations record(s): 1706
+opened sites db...
+# site record(s): 1720
+##################
+closed relations db...
+closed sites db...
+#active sites 460
+processing yields...
+opened weeks db...
+closed weeks db...
+computing site rankings...
+top yielding site: 2701 @10632
+computing site rankings...DONE
+processing yields...DONE
+--------------------- processing sites (JSON) DONE --------------------- 
+--------------------- processing known finders (JSON) --------------------- 
+--------------------- processing known finders (JSON) DONE --------------------- 
+--------------------- processing duplicate sites (JSON) --------------------- 
+--------------------- processing duplicate sites (JSON) DONE --------------------- 
+--------------------- splitting sites (JSON) --------------------- 
+--------------------- splitting sites (JSON) DONE --------------------- 
+--------------------- processing sites (KML) --------------------- 
+processing sites (active) file: "C:\Apache24\htdocs\geo\geo\data\bw\sites_active.json"
+processing sites (ex) file: "C:\Apache24\htdocs\geo\geo\data\bw\sites_ex.json"
+processing sites (other) file: "C:\Apache24\htdocs\geo\geo\data\bw\sites_other.json"
+processing style file: "C:\Apache24\htdocs\geo\geo\data\style.kml"
+--------------------- processing sites (KML) DONE --------------------- 
+--------------------- processing sites DONE --------------------- 
+--------------------- processing toursets --------------------- 
+--------------------- processing tourset IDs (JSON) --------------------- 
+--------------------- processing tourset IDs (JSON) DONE --------------------- 
+--------------------- processing toursets (JSON) --------------------- 
+processing tourset db file : "\\Rechner1\Coffee\Coffee BW\Toursets.dbf"
+processing tourset ids file: "C:\Apache24\htdocs\geo\geo\data\bw\tourset_ids.json"
+# working days / week: 6
+opened db...
+processing tourset: "2006Q2"
+inserting tour descriptor "w" (found in column: 0), SID: 929: "w03  ")
+inserting tour descriptor "h" (found in column: 0), SID: 711: "h28  ")
+inserting tour descriptor "f" (found in column: 0), SID: 4022: "f10  ")
+inserting tour descriptor "s" (found in column: 1), SID: 1142: "s27  ")
+inserting tour descriptor "r" (found in column: 1), SID: 1079: "r01  ")
+inserting tour descriptor "f" (found in column: 1), SID: 4032: "f08a ")
+inserting tour descriptor "g" (found in column: 2), SID: 1182: "g13  ")
+inserting tour descriptor "f" (found in column: 2), SID: 4026: "f11  ")
+inserting tour descriptor "g" (found in column: 3), SID: 1171: "g41  ")
+inserting tour descriptor "s" (found in column: 3), SID: 1105: "s04  ")
+inserting tour descriptor "f" (found in column: 3), SID: 4022: "f21  ")
+inserting tour descriptor "n" (found in column: 4), SID: 1090: "n40  ")
+inserting tour descriptor "r" (found in column: 4), SID: 4001: "r03  ")
+inserting tour descriptor "f" (found in column: 4), SID: 4023: "f08  ")
+inserting tour descriptor "d" (found in column: 5), SID: 1183: "d09  ")
+inserting tour descriptor "e" (found in column: 5), SID: 1133: "e25  ")
+inserting tour descriptor "t" (found in column: 5), SID: 4026: "t03  ")
+extracting tour: "d_5"
+extracting tour "d_5"...DONE
+extracting tour: "e_5"
+extracting tour "e_5"...DONE
+extracting tour: "f_0"
+extracting tour "f_0"...DONE
+extracting tour: "f_1"
+extracting tour "f_1"...DONE
+extracting tour: "f_2"
+extracting tour "f_2"...DONE
+extracting tour: "f_3"
+extracting tour "f_3"...DONE
+extracting tour: "f_4"
+extracting tour "f_4"...DONE
+extracting tour: "g_2"
+extracting tour "g_2"...DONE
+extracting tour: "g_3"
+extracting tour "g_3"...DONE
+extracting tour: "h_0"
+extracting tour "h_0"...DONE
+extracting tour: "n_4"
+extracting tour "n_4"...DONE
+extracting tour: "r_1"
+extracting tour "r_1"...DONE
+extracting tour: "r_4"
+extracting tour "r_4"...DONE
+extracting tour: "s_1"
+extracting tour "s_1"...DONE
+extracting tour: "s_3"
+extracting tour "s_3"...DONE
+extracting tour: "t_5"
+extracting tour "t_5"...DONE
+extracting tour: "w_0"
+extracting tour "w_0"...DONE
+processing tourset: "NEW"
+inserting tour descriptor "w" (found in column: 0), SID: 929: "w03  ")
+inserting tour descriptor "t" (found in column: 0), SID: 4093: "t68  ")
+inserting tour descriptor "n" (found in column: 4), SID: 1087: "n    ")
+inserting tour descriptor "z" (found in column: 4), SID: 2699: "z08  ")
+inserting tour descriptor "t" (found in column: 5), SID: 4082: "t11b ")
+extracting tour: "n_4"
+extracting tour "n_4"...DONE
+extracting tour: "t_0"
+extracting tour "t_0"...DONE
+extracting tour: "t_5"
+extracting tour "t_5"...DONE
+extracting tour: "w_0"
+extracting tour "w_0"...DONE
+extracting tour: "z_4"
+extracting tour "z_4"...DONE
+closed db...
+--------------------- processing toursets (JSON) DONE --------------------- 
+--------------------- processing toursets (KML) --------------------- 
+processing location (JSON) file: "C:\Apache24\htdocs\geo\geo\data\warehouse_locations.json"
+processing sites db file: "\\Rechner1\Coffee\Coffee BW\Sites.dbf"
+processing style (KML) file: "C:\Apache24\htdocs\geo\geo\data\style.kml"
+processing toursets (JSON) file: "C:\Apache24\htdocs\geo\geo\data\bw\toursets.json"
+retrieving warehouse coordinates...
+retrieving warehouse coordinates...DONE
+retrieving directions ["2006Q2","FRdi":#31]...
+retrieving directions ["2006Q2","FRdi":#31]...DONE
+retrieving directions ["2006Q2","FRdo":#34]...
+retrieving directions ["2006Q2","FRdo":#34]...DONE
+retrieving directions ["2006Q2","FRfr":#34]...
+retrieving directions ["2006Q2","FRfr":#34]...DONE
+retrieving directions ["2006Q2","FRmi":#28]...
+retrieving directions ["2006Q2","FRmi":#28]...DONE
+retrieving directions ["2006Q2","FRmo":#34]...
+retrieving directions ["2006Q2","FRmo":#34]...DONE
+retrieving directions ["2006Q2","GM":#32]...
+retrieving directions ["2006Q2","GM":#32]...DONE
+retrieving directions ["2006Q2","GP":#25]...
+retrieving directions ["2006Q2","GP":#25]...DONE
+retrieving directions ["2006Q2","HER":#21]...
+retrieving directions ["2006Q2","HER":#21]...DONE
+retrieving directions ["2006Q2","NÜR":#27]...
+retrieving directions ["2006Q2","NÜR":#27]...DONE
+retrieving directions ["2006Q2","RT":#23]...
+retrieving directions ["2006Q2","RT":#23]...DONE
+retrieving directions ["2006Q2","RV":#22]...
+retrieving directions ["2006Q2","RV":#22]...DONE
+retrieving directions ["2006Q2","SNfr":#25]...
+retrieving directions ["2006Q2","SNfr":#25]...DONE
+retrieving directions ["2006Q2","SNmo":#22]...
+retrieving directions ["2006Q2","SNmo":#22]...DONE
+retrieving directions ["2006Q2","SSfr":#25]...
+retrieving directions ["2006Q2","SSfr":#25]...DONE
+retrieving directions ["2006Q2","SSmo":#25]...
+retrieving directions ["2006Q2","SSmo":#25]...DONE
+retrieving directions ["2006Q2","WN":#25]...
+retrieving directions ["2006Q2","WN":#25]...DONE
+retrieving directions ["2006Q2","t_5":#28]...
+retrieving directions ["2006Q2","t_5":#28]...DONE
+retrieving directions ["NEW","NÜR":#11]...
+retrieving directions ["NEW","NÜR":#11]...DONE
+retrieving directions ["NEW","WN":#31]...
+retrieving directions ["NEW","WN":#31]...DONE
+retrieving directions ["NEW","t_0":#104]...
+retrieving directions ["NEW","t_0":#104]...DONE
+retrieving directions ["NEW","t_5":#34]...
+retrieving directions ["NEW","t_5":#34]...DONE
+retrieving directions ["NEW","z_4":#12]...
+retrieving directions ["NEW","z_4":#12]...DONE
+writing KML...
+writing KML ["2006Q2","FRdi"]...
+writing KML ["2006Q2","FRdi"]...DONE
+writing KML ["2006Q2","FRdo"]...
+writing KML ["2006Q2","FRdo"]...DONE
+writing KML ["2006Q2","FRfr"]...
+writing KML ["2006Q2","FRfr"]...DONE
+writing KML ["2006Q2","FRmi"]...
+writing KML ["2006Q2","FRmi"]...DONE
+writing KML ["2006Q2","FRmo"]...
+writing KML ["2006Q2","FRmo"]...DONE
+writing KML ["2006Q2","GM"]...
+writing KML ["2006Q2","GM"]...DONE
+writing KML ["2006Q2","GP"]...
+writing KML ["2006Q2","GP"]...DONE
+writing KML ["2006Q2","HER"]...
+writing KML ["2006Q2","HER"]...DONE
+writing KML ["2006Q2","NÜR"]...
+writing KML ["2006Q2","NÜR"]...DONE
+writing KML ["2006Q2","RT"]...
+writing KML ["2006Q2","RT"]...DONE
+writing KML ["2006Q2","RV"]...
+writing KML ["2006Q2","RV"]...DONE
+writing KML ["2006Q2","SNfr"]...
+writing KML ["2006Q2","SNfr"]...DONE
+writing KML ["2006Q2","SNmo"]...
+writing KML ["2006Q2","SNmo"]...DONE
+writing KML ["2006Q2","SSfr"]...
+writing KML ["2006Q2","SSfr"]...DONE
+writing KML ["2006Q2","SSmo"]...
+writing KML ["2006Q2","SSmo"]...DONE
+writing KML ["2006Q2","WN"]...
+writing KML ["2006Q2","WN"]...DONE
+writing KML ["2006Q2","t_5"]...
+writing KML ["2006Q2","t_5"]...DONE
+writing KML ["NEW","NÜR"]...
+writing KML ["NEW","NÜR"]...DONE
+writing KML ["NEW","WN"]...
+writing KML ["NEW","WN"]...DONE
+writing KML ["NEW","t_0"]...
+writing KML ["NEW","t_0"]...DONE
+writing KML ["NEW","t_5"]...
+writing KML ["NEW","t_5"]...DONE
+writing KML ["NEW","z_4"]...
+writing KML ["NEW","z_4"]...DONE
+writing KML...DONE
+--------------------- processing toursets (KML) DONE --------------------- 
+--------------------- processing tourset "2006Q2" (TXT) --------------------- 
+skipping tourset "NEW"
+--------------------- processing tourset "2006Q2" (TXT) DONE --------------------- 
+--------------------- processing tourset "NEW" (TXT) --------------------- 
+skipping tourset "2006Q2"
+--------------------- processing tourset "NEW" (TXT) DONE --------------------- 
+--------------------- processing toursets DONE --------------------- 
+--------------------- processing images --------------------- 
+--------------------- processing images (JSON) --------------------- 
+--------------------- processing images (JSON) DONE --------------------- 
+--------------------- splitting images (JSON) --------------------- 
+--------------------- splitting images (JSON) DONE --------------------- 
+--------------------- processing images (KML) --------------------- 
+--------------------- processing images (KML) DONE --------------------- 
+--------------------- processing images DONE --------------------- 
+--------------------- merging "bw" KML --------------------- 
+--------------------- merging "bw" KML DONE --------------------- 
+--------------------- generating toursheets --------------------- 
+toursheet template: C:\Apache24\htdocs\geo\geo\data\toursheet_template_de.ots
+sites database: \\Rechner1\Coffee\Coffee BW\Sites.dbf
+weeks database: \\Rechner1\Coffee\Coffee BW\weeks.dbf
+toursets file (JSON): C:\Apache24\htdocs\geo\geo\data\bw\toursets.json
+processing tourset: "2006Q2"...
+processing tour: "FRdi"...
+processing tour: "FRdi"...DONE
+processing tour: "FRdo"...
+processing tour: "FRdo"...DONE
+processing tour: "FRfr"...
+processing tour: "FRfr"...DONE
+processing tour: "FRmi"...
+processing tour: "FRmi"...DONE
+processing tour: "FRmo"...
+processing tour: "FRmo"...DONE
+processing tour: "GM"...
+processing tour: "GM"...DONE
+processing tour: "GP"...
+processing tour: "GP"...DONE
+processing tour: "HER"...
+processing tour: "HER"...DONE
+processing tour: "NÜR"...
+processing tour: "NÜR"...DONE
+processing tour: "RT"...
+processing tour: "RT"...DONE
+processing tour: "RV"...
+processing tour: "RV"...DONE
+processing tour: "SNfr"...
+processing tour: "SNfr"...DONE
+processing tour: "SNmo"...
+processing tour: "SNmo"...DONE
+processing tour: "SSfr"...
+processing tour: "SSfr"...DONE
+processing tour: "SSmo"...
+processing tour: "SSmo"...DONE
+processing tour: "WN"...
+processing tour: "WN"...DONE
+processing tour: "t_5"...
+processing tour: "t_5"...DONE
+processing tourset: "2006Q2"...DONE
+toursheet template: C:\Apache24\htdocs\geo\geo\data\toursheet_template_de.ots
+sites database: \\Rechner1\Coffee\Coffee BW\Sites.dbf
+weeks database: \\Rechner1\Coffee\Coffee BW\weeks.dbf
+toursets file (JSON): C:\Apache24\htdocs\geo\geo\data\bw\toursets.json
+processing tourset: "NEW"...
+processing tour: "NÜR"...
+processing tour: "NÜR"...DONE
+processing tour: "WN"...
+processing tour: "WN"...DONE
+processing tour: "t_0"...
+processing tour: "t_0"...DONE
+processing tour: "t_5"...
+processing tour: "t_5"...DONE
+processing tour: "z_4"...
+processing tour: "z_4"...DONE
+processing tourset: "NEW"...DONE
+--------------------- generating toursheets DONE --------------------- 
+--------------------- generating devicefiles --------------------- 
+#sites: 1720
+#toursets: 2
+retrieving warehouse coordinates...
+retrieving warehouse coordinates...DONE
+processing tour ID: "FRdi"...
+processing tour ID: "FRdi"...DONE
+processing tour ID: "FRdo"...
+processing tour ID: "FRdo"...DONE
+processing tour ID: "FRfr"...
+processing tour ID: "FRfr"...DONE
+processing tour ID: "FRmi"...
+processing tour ID: "FRmi"...DONE
+processing tour ID: "FRmo"...
+processing tour ID: "FRmo"...DONE
+processing tour ID: "GM"...
+processing tour ID: "GM"...DONE
+processing tour ID: "GP"...
+processing tour ID: "GP"...DONE
+processing tour ID: "HER"...
+processing tour ID: "HER"...DONE
+processing tour ID: "NÜR"...
+processing tour ID: "NÜR"...DONE
+processing tour ID: "RT"...
+processing tour ID: "RT"...DONE
+processing tour ID: "RV"...
+processing tour ID: "RV"...DONE
+processing tour ID: "SNfr"...
+processing tour ID: "SNfr"...DONE
+processing tour ID: "SNmo"...
+processing tour ID: "SNmo"...DONE
+processing tour ID: "SSfr"...
+processing tour ID: "SSfr"...DONE
+processing tour ID: "SSmo"...
+processing tour ID: "SSmo"...DONE
+processing tour ID: "WN"...
+processing tour ID: "WN"...DONE
+processing tour ID: "t_5"...
+processing tour ID: "t_5"...DONE
+#sites: 1720
+#toursets: 2
+retrieving warehouse coordinates...
+retrieving warehouse coordinates...DONE
+processing tour ID: "FRdi"...
+processing tour ID: "FRdi"...DONE
+processing tour ID: "FRdo"...
+processing tour ID: "FRdo"...DONE
+processing tour ID: "FRfr"...
+processing tour ID: "FRfr"...DONE
+processing tour ID: "FRmi"...
+processing tour ID: "FRmi"...DONE
+processing tour ID: "FRmo"...
+processing tour ID: "FRmo"...DONE
+processing tour ID: "GM"...
+processing tour ID: "GM"...DONE
+processing tour ID: "GP"...
+processing tour ID: "GP"...DONE
+processing tour ID: "HER"...
+processing tour ID: "HER"...DONE
+processing tour ID: "NÜR"...
+processing tour ID: "NÜR"...DONE
+processing tour ID: "RT"...
+processing tour ID: "RT"...DONE
+processing tour ID: "RV"...
+processing tour ID: "RV"...DONE
+processing tour ID: "SNfr"...
+processing tour ID: "SNfr"...DONE
+processing tour ID: "SNmo"...
+processing tour ID: "SNmo"...DONE
+processing tour ID: "SSfr"...
+processing tour ID: "SSfr"...DONE
+processing tour ID: "SSmo"...
+processing tour ID: "SSmo"...DONE
+processing tour ID: "WN"...
+processing tour ID: "WN"...DONE
+processing tour ID: "t_5"...
+processing tour ID: "t_5"...DONE
+#sites: 1720
+#toursets: 2
+retrieving warehouse coordinates...
+retrieving warehouse coordinates...DONE
+processing tour ID: "NÜR"...
+processing tour ID: "NÜR"...DONE
+processing tour ID: "WN"...
+processing tour ID: "WN"...DONE
+processing tour ID: "t_0"...
+processing tour ID: "t_0"...DONE
+processing tour ID: "t_5"...
+processing tour ID: "t_5"...DONE
+processing tour ID: "z_4"...
+processing tour ID: "z_4"...DONE
+#sites: 1720
+#toursets: 2
+retrieving warehouse coordinates...
+retrieving warehouse coordinates...DONE
+processing tour ID: "NÜR"...
+processing tour ID: "NÜR"...DONE
+processing tour ID: "WN"...
+processing tour ID: "WN"...DONE
+processing tour ID: "t_0"...
+processing tour ID: "t_0"...DONE
+processing tour ID: "t_5"...
+processing tour ID: "t_5"...DONE
+processing tour ID: "z_4"...
+processing tour ID: "z_4"...DONE
+--------------------- generating devicefiles DONE --------------------- 
+--------------------- processing tourset IDs (JSON) --------------------- 
+--------------------- processing tourset IDs (JSON) DONE --------------------- 
+--------------------- processing toursets (JSON) --------------------- 
+processing tourset db file : "\\Rechner1\Coffee\Coffee BW\Toursets.dbf"
+processing tourset ids file: "C:\Apache24\htdocs\geo\geo\data\bw\tourset_ids.json"
+# working days / week: 6
+opened db...
+processing tourset: "2006Q2"
+inserting tour descriptor "w" (found in column: 0), SID: 929: "w03  ")
+inserting tour descriptor "h" (found in column: 0), SID: 711: "h28  ")
+inserting tour descriptor "f" (found in column: 0), SID: 4022: "f10  ")
+inserting tour descriptor "s" (found in column: 1), SID: 1142: "s27  ")
+inserting tour descriptor "r" (found in column: 1), SID: 1079: "r01  ")
+inserting tour descriptor "f" (found in column: 1), SID: 4032: "f08a ")
+inserting tour descriptor "g" (found in column: 2), SID: 1182: "g13  ")
+inserting tour descriptor "f" (found in column: 2), SID: 4026: "f11  ")
+inserting tour descriptor "g" (found in column: 3), SID: 1171: "g41  ")
+inserting tour descriptor "s" (found in column: 3), SID: 1105: "s04  ")
+inserting tour descriptor "f" (found in column: 3), SID: 4022: "f21  ")
+inserting tour descriptor "n" (found in column: 4), SID: 1090: "n40  ")
+inserting tour descriptor "r" (found in column: 4), SID: 4001: "r03  ")
+inserting tour descriptor "f" (found in column: 4), SID: 4023: "f08  ")
+inserting tour descriptor "d" (found in column: 5), SID: 1183: "d09  ")
+inserting tour descriptor "e" (found in column: 5), SID: 1133: "e25  ")
+inserting tour descriptor "t" (found in column: 5), SID: 4026: "t03  ")
+extracting tour: "d_5"
+extracting tour "d_5"...DONE
+extracting tour: "e_5"
+extracting tour "e_5"...DONE
+extracting tour: "f_0"
+extracting tour "f_0"...DONE
+extracting tour: "f_1"
+extracting tour "f_1"...DONE
+extracting tour: "f_2"
+extracting tour "f_2"...DONE
+extracting tour: "f_3"
+extracting tour "f_3"...DONE
+extracting tour: "f_4"
+extracting tour "f_4"...DONE
+extracting tour: "g_2"
+extracting tour "g_2"...DONE
+extracting tour: "g_3"
+extracting tour "g_3"...DONE
+extracting tour: "h_0"
+extracting tour "h_0"...DONE
+extracting tour: "n_4"
+extracting tour "n_4"...DONE
+extracting tour: "r_1"
+extracting tour "r_1"...DONE
+extracting tour: "r_4"
+extracting tour "r_4"...DONE
+extracting tour: "s_1"
+extracting tour "s_1"...DONE
+extracting tour: "s_3"
+extracting tour "s_3"...DONE
+extracting tour: "t_5"
+extracting tour "t_5"...DONE
+extracting tour: "w_0"
+extracting tour "w_0"...DONE
+processing tourset: "NEW"
+inserting tour descriptor "w" (found in column: 0), SID: 929: "w03  ")
+inserting tour descriptor "t" (found in column: 0), SID: 4093: "t68  ")
+inserting tour descriptor "n" (found in column: 4), SID: 1087: "n    ")
+inserting tour descriptor "z" (found in column: 4), SID: 2699: "z08  ")
+inserting tour descriptor "t" (found in column: 5), SID: 4082: "t11b ")
+extracting tour: "n_4"
+extracting tour "n_4"...DONE
+extracting tour: "t_0"
+extracting tour "t_0"...DONE
+extracting tour: "t_5"
+extracting tour "t_5"...DONE
+extracting tour: "w_0"
+extracting tour "w_0"...DONE
+extracting tour: "z_4"
+extracting tour "z_4"...DONE
+closed db...
+--------------------- processing toursets (JSON) DONE --------------------- 
+--------------------- processing tourset IDs (JSON) --------------------- 
+--------------------- processing tourset IDs (JSON) DONE --------------------- 
+--------------------- processing toursets (JSON) --------------------- 
+processing tourset db file : "\\Rechner1\Coffee\Coffee BW\Toursets.dbf"
+processing tourset ids file: "C:\Apache24\htdocs\geo\geo\data\bw\tourset_ids.json"
+# working days / week: 6
+opened db...
+processing tourset: "2006Q2"
+inserting tour descriptor "w" (found in column: 0), SID: 929: "w03  ")
+inserting tour descriptor "h" (found in column: 0), SID: 711: "h28  ")
+inserting tour descriptor "f" (found in column: 0), SID: 4022: "f10  ")
+inserting tour descriptor "s" (found in column: 1), SID: 1142: "s27  ")
+inserting tour descriptor "r" (found in column: 1), SID: 1079: "r01  ")
+inserting tour descriptor "f" (found in column: 1), SID: 4032: "f08a ")
+inserting tour descriptor "g" (found in column: 2), SID: 1182: "g13  ")
+inserting tour descriptor "f" (found in column: 2), SID: 4026: "f11  ")
+inserting tour descriptor "g" (found in column: 3), SID: 1171: "g41  ")
+inserting tour descriptor "s" (found in column: 3), SID: 1105: "s04  ")
+inserting tour descriptor "f" (found in column: 3), SID: 4022: "f21  ")
+inserting tour descriptor "n" (found in column: 4), SID: 1090: "n40  ")
+inserting tour descriptor "r" (found in column: 4), SID: 4001: "r03  ")
+inserting tour descriptor "f" (found in column: 4), SID: 4023: "f08  ")
+inserting tour descriptor "d" (found in column: 5), SID: 1183: "d09  ")
+inserting tour descriptor "e" (found in column: 5), SID: 1133: "e25  ")
+inserting tour descriptor "t" (found in column: 5), SID: 4026: "t03  ")
+extracting tour: "d_5"
+extracting tour "d_5"...DONE
+extracting tour: "e_5"
+extracting tour "e_5"...DONE
+extracting tour: "f_0"
+extracting tour "f_0"...DONE
+extracting tour: "f_1"
+extracting tour "f_1"...DONE
+extracting tour: "f_2"
+extracting tour "f_2"...DONE
+extracting tour: "f_3"
+extracting tour "f_3"...DONE
+extracting tour: "f_4"
+extracting tour "f_4"...DONE
+extracting tour: "g_2"
+extracting tour "g_2"...DONE
+extracting tour: "g_3"
+extracting tour "g_3"...DONE
+extracting tour: "h_0"
+extracting tour "h_0"...DONE
+extracting tour: "n_4"
+extracting tour "n_4"...DONE
+extracting tour: "r_1"
+extracting tour "r_1"...DONE
+extracting tour: "r_4"
+extracting tour "r_4"...DONE
+extracting tour: "s_1"
+extracting tour "s_1"...DONE
+extracting tour: "s_3"
+extracting tour "s_3"...DONE
+extracting tour: "t_5"
+extracting tour "t_5"...DONE
+extracting tour: "w_0"
+extracting tour "w_0"...DONE
+processing tourset: "NEW"
+inserting tour descriptor "w" (found in column: 0), SID: 929: "w03  ")
+inserting tour descriptor "t" (found in column: 0), SID: 4093: "t68  ")
+inserting tour descriptor "n" (found in column: 4), SID: 1087: "n    ")
+inserting tour descriptor "z" (found in column: 4), SID: 2699: "z08  ")
+inserting tour descriptor "t" (found in column: 5), SID: 4082: "t11b ")
+extracting tour: "n_4"
+extracting tour "n_4"...DONE
+extracting tour: "t_0"
+extracting tour "t_0"...DONE
+extracting tour: "t_5"
+extracting tour "t_5"...DONE
+extracting tour: "w_0"
+extracting tour "w_0"...DONE
+extracting tour: "z_4"
+extracting tour "z_4"...DONE
+closed db...
+--------------------- processing toursets (JSON) DONE --------------------- 

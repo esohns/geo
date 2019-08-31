@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<gpx version="1.1" creator="Humana Kleidersammlung GmbH - Geo" xmlns="http://www.topografix.com/GPX/1/1">
+ <metadata>
+  <desc>hh - Standard Ju_5</desc>
+  <copyright author="">
+   <year>2013</year>
+   <license></license>
+  </copyright>
+  <time>2013-04-10T11:14:54+02:00</time>
+  <bounds minlat="9.7665" minlon="9.98958" maxlat="53.6701998" maxlon="53.65995"/>
+ </metadata>
+ <rte>
+  <name>hh - Standard Ju_5</name>
+  <number>7</number>
+  <rtept lat="53.65995" lon="9.7665">
+   <ele>1</ele>
+   <name>warehouse</name>
+  </rtept>
+  <rtept lat="53.6220137" lon="10.1119449">
+   <ele>2</ele>
+   <name>70072</name>
+  </rtept>
+  <rtept lat="53.6701998" lon="10.1083718">
+   <ele>3</ele>
+   <name>70075S0010</name>
+  </rtept>
+  <rtept lat="53.5673806" lon="10.0475077">
+   <ele>4</ele>
+   <name>70077</name>
+  </rtept>
+  <rtept lat="53.58723" lon="9.98958">
+   <ele>5</ele>
+   <name>70085</name>
+  </rtept>
+  <rtept lat="53.61565" lon="10.02451">
+   <ele>6</ele>
+   <name>70084</name>
+  </rtept>
+  <rtept lat="53.65995" lon="9.7665">
+   <ele>7</ele>
+   <name>warehouse</name>
+  </rtept>
+ </rte>
+</gpx>

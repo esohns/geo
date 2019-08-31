@@ -1,0 +1,322 @@
+[Kombi,._0]
+[1, 50467]: "Joachimstalerstr-      "ZOO", 10623 Berlin" [52.5042319,13.3316695]
+
+[Kombi,AP_5]
+
+[Kombi,B1_0]
+
+[Kombi,B2_1]
+
+[Kombi,B_5]
+
+[Kombi,CF_5]
+
+[Kombi,CR_5]
+
+[Kombi,CT_5]
+
+[Kombi,Ko_0]
+
+[Kombi,L2_1]
+
+[Kombi,L3_2]
+
+[Kombi,L4_3]
+
+[Kombi,L6_4]
+
+[Kombi,L_0]
+
+[Kombi,L_1]
+
+[Kombi,L_4]
+
+[Kombi,N1_0]
+
+[Kombi,N2_1]
+
+[Kombi,N3_2]
+
+[Kombi,N4_3]
+
+[Kombi,N5_4]
+
+[Kombi,N6_0]
+
+[Kombi,N7_1]
+
+[Kombi,N8_2]
+
+[Kombi,N9_1]
+
+[Kombi,N_1]
+
+[Kombi,O1_0]
+
+[Kombi,O1_1]
+
+[Kombi,O3_2]
+
+[Kombi,O4_3]
+
+[Kombi,O5_4]
+
+[Kombi,O6_0]
+
+[Kombi,O7_1]
+
+[Kombi,O8_1]
+
+[Kombi,O9_1]
+
+[Kombi,R2_1]
+
+[Kombi,R3_1]
+
+[Kombi,R4_3]
+
+[Kombi,R5_1]
+
+[Kombi,R6_2]
+
+[Kombi,S1_0]
+
+[Kombi,S2_3]
+
+[Kombi,S3_1]
+
+[Kombi,S4_1]
+
+[Kombi,S5_1]
+
+[Kombi,S6_3]
+
+[Kombi,S8_0]
+
+[Kombi,SW_2]
+
+[Kombi,SW_4]
+
+[Kombi,S_0]
+
+[Kombi,U15_1]
+
+[Kombi,U1_2]
+
+[Kombi,U2_0]
+
+[Kombi,U3_1]
+
+[Kombi,U4_2]
+
+[Kombi,U5_4]
+
+[Kombi,U6_0]
+
+[Kombi,U6_3]
+
+[Kombi,U7_0]
+
+[Kombi,U_0]
+
+[Kombi,U_1]
+
+[Kombi,U_2]
+
+[Kombi,U_4]
+
+[Kombi,an_4]
+[1, 52617]: "Ludwigshöheweg / Müggelheimer Damm, 12559 Berlin" [52.42064,13.63409]
+
+[Kombi,an_5]
+[1, 51950]: "Kielufer / Teupitzer Str., 12059 Berlin" [52.482225,13.4561209]
+
+[Kombi,ay_5]
+[1, 50863]: "Großkorgaer Str, 06928 Linda/Elster" [51.8555714,13.1013639]
+
+[Kombi,ca_5]
+[1, 51875]: "Große-Leege-Str./Schöneicher Str., 13055 Berlin" [52.54454,13.49554]
+
+[Kombi,cas_4]
+[1, 53319]: "An der Wuhlheide / Steffelbauerstr, 12459 Berlin" [52.45832,13.53605]
+[2, 53419]: "Egersfelder Allee Ecke Kaulsdorfer Str., 12555 Berlin" [52.4682,13.5738]
+
+[Kombi,cd_5]
+[1, 51078]: "Emser Str. / Hohenzollerndamm, 10707 Berlin" [52.4903753,13.314418]
+[2, 51077]: "Emser Str. / Hohenzollerndamm, 10707 Berlin" [52.4903753,13.314418]
+
+[Kombi,cf_5]
+[1, 51084]: "Wiesbadener Str. (Reichelt)/Sodener, 14197 Berlin" [52.4751239,13.310821]
+[2, 51083]: "Wiesbadener Str. (Reichelt)/Sodener, 14197 Berlin" [52.4751239,13.310821]
+[3, 52480]: "Tile-Brügge-Weg / Basdorfer Zeile, 13509 Berlin" [52.592086,13.300796]
+[4, 52501]: "Stolpmünder Weg / Ruppiner Chaussee, 13503 Berlin" [52.61576,13.24508]
+[5, 52502]: "Ziegenorter Pfad / Ruppiner Chaussee, 13503 Berlin" [52.61576,13.24508]
+[6, 52518]: "Am Dachsbau 91, 13503 Berlin" [52.6170009,13.2334786]
+[7, 51304]: "Reginhardstr. / Mittelbruchzeile, 13409 Berlin" [52.56747,13.37104]
+[8, 52391]: "Lindauer Allee / Klamannstr., 13407 Berlin" [52.57346,13.34034]
+[9, 52415]: "Am Eichenhain / Neubrücker Str., 13465 Berlin" [52.6403515,13.2911767]
+[10, 52519]: "Schulzendorfer Str. / Am Dachsbau, 13503 Berlin" [52.6141958,13.2326982]
+[11, 51288]: "Lindauer Allee / Waldowstr., 13403 Berlin" [52.5730092,13.3347473]
+[12, 51270]: "Zobeltitzstr. (Spielpl.)/ Promenade, 13403 Berlin" [52.5718693,13.3195912]
+[13, 51112]: "Gartenstr. / Feldstr., 13355 Berlin" [52.5373442,13.3841896]
+[14, 51215]: "Heckerdamm / Halemweg, 13627 Berlin" [52.5376937,13.2869536]
+[15, 51209]: "Drakestr. 6c / Weddigenweg, 12205 Berlin" [52.4343159,13.297542]
+[16, 51208]: "Drakestr. 6c / Weddigenweg, 12205 Berlin" [52.4343159,13.297542]
+[17, 51454]: "Brunnenstr. / Bernauer Str., 10115 Berlin" [52.53635,13.39284]
+[18, 51457]: "Am Eichgarten/An der Hannemannbrücke, 12167 Berlin" [52.4453959,13.337078]
+[19, 50273]: "Eichhorster Weg, 13435 Berlin" [52.6002137,13.3409843]
+[20, 51310]: "Am Nordgraben / Schorfheidestr., 13437 Berlin" [52.5904338,13.3457649]
+[21, 51313]: "Germendorfer Str. / Tornower Weg, 13439 Berlin" [52.59383,13.34882]
+[22, 51128]: "Aroser Allee / Thurgauer Str., 13407 Berlin" [52.5705475,13.3567164]
+[23, 51409]: "Markfrafenstr. / Edelhofdamm, 13465 Berlin" [52.63565,13.2986]
+[24, 51423]: "Fürstendamm/ Langohrzeile, 13465 Berlin" [52.62975,13.30596]
+[25, 51587]: "Kurfürstenstr./ Hermsdorfer Damm 80, 13467 Berlin" [52.6088455,13.2937997]
+
+[Kombi,cfpv_5]
+[1, 50273]: "Eichhorster Weg, 13435 Berlin" [52.6002137,13.3409843]
+[2, 51310]: "Am Nordgraben / Schorfheidestr., 13437 Berlin" [52.5904338,13.3457649]
+[3, 51313]: "Germendorfer Str. / Tornower Weg, 13439 Berlin" [52.59383,13.34882]
+[4, 51128]: "Aroser Allee / Thurgauer Str., 13407 Berlin" [52.5705475,13.3567164]
+[5, 51409]: "Markfrafenstr. / Edelhofdamm, 13465 Berlin" [52.63565,13.2986]
+[6, 51423]: "Fürstendamm/ Langohrzeile, 13465 Berlin" [52.62975,13.30596]
+[7, 51587]: "Kurfürstenstr./ Hermsdorfer Damm 80, 13467 Berlin" [52.6088455,13.2937997]
+
+[Kombi,cr_5]
+[1, 51606]: "Ontarioseestr., 10319 Berlin" [52.4946705,13.5217259]
+[2, 51852]: "Möckernstr. / Tempelhofer Ufer, 10963 Berlin" [52.4986042,13.3835214]
+[3, 52306]: "Gartenstr. / Mühlenstr. (Navarraplatz), 13127 Berlin" [52.6110714,13.4280681]
+[4, 52350]: "Tangermünder Str. ggü. Nr 128, 12627 Berlin" [52.5379498,13.613039]
+[5, 52159]: "Detlevstr 9 - 10, 13053 Berlin" [52.553189,13.5236951]
+[6, 52167]: "Dillinger Weg / Brebacher Weg, 12683 Berlin" [52.5120889,13.5677479]
+[7, 52170]: "Märkische Allee / S-Bahnhof Marzahn, 12681 Berlin" [52.543608,13.541341]
+[8, 52195]: "Eisenacher Str. 20, 12629 Berlin" [52.53972,13.58993]
+[9, 52252]: "Hosemannstr. / Hamannweg, 12621 Berlin" [52.5170934,13.597539]
+[10, 52251]: "Schmidtstr. / Hellersdorfer Str., 12621 Berlin" [52.51575,13.58986]
+[11, 52199]: "Gutenbergstr. / Gülzower Str., 12621 Berlin" [52.5028694,13.5876963]
+[12, 52273]: "Str. 3 / Str. 5, 13059 Berlin" [52.5786096,13.5206891]
+
+[Kombi,f_5]
+[1, 52032]: "Varziner Str. / Stubenrauchstr., 12159 Berlin" [52.4730612,13.3243413]
+[2, 53419]: "Egersfelder Allee Ecke Kaulsdorfer Str., 12555 Berlin" [52.4682,13.5738]
+[3, 53319]: "An der Wuhlheide / Steffelbauerstr, 12459 Berlin" [52.45832,13.53605]
+[4, 51566]: "Krebsgang, 12057 Berlin" [52.4699712,13.4684843]
+[5, 51959]: "Sonnenallee / M.-Bohnen-Ring, 12057 Berlin" [52.4645685,13.4764584]
+[6, 51956]: "Sonnenallee / Mareschstr., 12059 Berlin" [52.4753029,13.453048]
+[7, 52013]: "Severingstr. / Tischlerzeile, 12351 Berlin" [52.4289,13.4443]
+[8, 52060]: "Johannisth. Ch. / Kölner Damm, 12353 Berlin" [52.42382,13.45478]
+[9, 52627]: "Berntweg / Hasenhegerweg, 12353 Berlin" [52.4225222,13.4440554]
+[10, 53276]: "Kölner Damm ggü. Hugo-Heimann-Str., 12353 Berlin" [52.4243582,13.4595915]
+[11, 53562]: "Kölner Damm/Lipschitzallee, 12353 Berlin" [52.4255091,13.464681]
+[12, 50302]: "Alfred-Randt Str. 42, 12559 Berlin" [52.43935,13.60295]
+[13, 50265]: "Mohriner Allee / Neumarkplan, 12347 Berlin" [52.43938,13.43162]
+[14, 52002]: "Zwickauer D. / Lößnitzer Weg, 12355 Berlin" [52.4122515,13.476312]
+[15, 52001]: "Zwickauer D. / Fleischerstr., 12353 Berlin" [52.4191666,13.4793253]
+[16, 51987]: "Fr.-Erler-Allee / K.-Dorsch-Ring, 12353 Berlin" [52.42482,13.47822]
+[17, 51974]: "Gerlinger Str. / Buckower Damm, 12349 Berlin" [52.429422,13.4353492]
+[18, 52099]: "Gerlinger Str. 58, 12349 Berlin" [52.41353,13.42252]
+[19, 52144]: "Efeuweg/Maßliebweg, 12357 Berlin" [52.4273345,13.4760836]
+[20, 52625]: "Flurweg / Petunienweg, 12357 Berlin" [52.43465,13.48389]
+[21, 53235]: "Kirchhofstr. / Siegfriedstr., 12051 Berlin" [52.46784,13.42938]
+[22, 53237]: "Mariendorfer Weg 27, 12051 Berlin" [52.4638471,13.4252718]
+[23, 53304]: "Gutschmidtstr. Nähe Martin-Wagner-Ring, 12359 Berlin" [52.44099,13.43907]
+[24, 53440]: "Orchideenweg/Schwertlilienweg, 12357 Berlin" [52.4407105,13.4785822]
+[25, 53561]: "Ostburger Weg ggü. Nr. 53, 12355 Berlin" [52.4075033,13.4975639]
+[26, 53610]: "Str. 52 Nähe Alt-Karow, 13125 Berlin" [52.61229,13.48379]
+[27, 53610]: "Str. 52 Nähe Alt-Karow, 13125 Berlin" [52.61229,13.48379]
+
+[Kombi,ge_0]
+[1, 50151]: "Ostpreußendamm 174, 12207 Berlin" [52.4379424,13.3242714]
+[2, 51851]: "Goltzstr. nb Nr. 40a, 10781 Berlin" [52.4934075,13.3526132]
+
+[Kombi,ge_5]
+[1, 51227]: "Goldbeckweg / Telegrafenweg, 13599 Berlin" [52.54287,13.2282]
+[2, 51226]: "Goldbeckweg / Telegrafenweg, 13599 Berlin" [52.54287,13.2282]
+[3, 52639]: "Goldbeckweg / Telegrafenweg, 13599 Berlin" [52.54287,13.2282]
+[4, 52690]: "Heerstr. / Buschower Weg, 13591 Berlin" [52.5235257,13.1327907]
+
+[Kombi,ht_5]
+[1, 51302]: "Breitkopfstr. / Friedrich-Wilhelm-Str., 13409 Berlin" [52.56929,13.3636]
+
+[Kombi,mik_5]
+[1, 51133]: "Friedrichstr. / Puttkamerstr., 10960 Berlin" [52.5045055,13.3893948]
+[2, 51132]: "Friedrichstr, 10960 Berlin" [52.51324,13.38853]
+
+[Kombi,new_0]
+[1, 50825]: "Waldemarstr./Fritz-Reuter-Str., 13156 Berlin" [52.5887098,13.4076294]
+[2, 50789]: "Binger Str. Ecke Wiesbadener Str., 14197 Berlin" [52.47251,13.31039]
+[3, 50774]: "Wassermannstr./ Radickestr., 12489 Berlin" [52.4359943,13.5495432]
+[4, 50771]: "Stillerzeile/ Ecke Löbauer Weg, 12587 Berlin" [52.45568,13.61387]
+
+[Kombi,nk_0]
+[1, 50265]: "Mohriner Allee / Neumarkplan, 12347 Berlin" [52.43938,13.43162]
+[2, 51566]: "Krebsgang, 12057 Berlin" [52.4699712,13.4684843]
+[3, 51985]: "Druckerkehre / Bäckerstr., 12355 Berlin" [52.41466,13.49296]
+[4, 51974]: "Gerlinger Str. / Buckower Damm, 12349 Berlin" [52.429422,13.4353492]
+[5, 51971]: "Koppelweg / Walnußweg, 12347 Berlin" [52.4424,13.41349]
+[6, 52013]: "Severingstr. / Tischlerzeile, 12351 Berlin" [52.4289,13.4443]
+[7, 52060]: "Johannisth. Ch. / Kölner Damm, 12353 Berlin" [52.42382,13.45478]
+[8, 52099]: "Gerlinger Str. 58, 12349 Berlin" [52.41353,13.42252]
+[9, 52144]: "Efeuweg/Maßliebweg, 12357 Berlin" [52.4273345,13.4760836]
+[10, 52145]: "Dieselstr           nahe Nernstweg, 12057 Berlin" [52.4685817,13.4621424]
+[11, 52631]: "Wildenbruchplatz 1, 12045 Berlin" [52.4846213,13.4443274]
+[12, 52627]: "Berntweg / Hasenhegerweg, 12353 Berlin" [52.4225222,13.4440554]
+[13, 51959]: "Sonnenallee / M.-Bohnen-Ring, 12057 Berlin" [52.4645685,13.4764584]
+[14, 52625]: "Flurweg / Petunienweg, 12357 Berlin" [52.43465,13.48389]
+[15, 52642]: "Kiehlufer / Onckenstr., 12059 Berlin" [52.4880146,13.4418308]
+[16, 53276]: "Kölner Damm ggü. Hugo-Heimann-Str., 12353 Berlin" [52.4243582,13.4595915]
+[17, 53235]: "Kirchhofstr. / Siegfriedstr., 12051 Berlin" [52.46784,13.42938]
+[18, 53237]: "Mariendorfer Weg 27, 12051 Berlin" [52.4638471,13.4252718]
+[19, 53304]: "Gutschmidtstr. Nähe Martin-Wagner-Ring, 12359 Berlin" [52.44099,13.43907]
+[20, 53440]: "Orchideenweg/Schwertlilienweg, 12357 Berlin" [52.4407105,13.4785822]
+[21, 53439]: "Koppelweg 45, 12347 Berlin" [52.4445748,13.4263242]
+[22, 53476]: "Zittauer Str./Bitterfelder Str., 12355 Berlin" [52.4147277,13.4804466]
+[23, 53561]: "Ostburger Weg ggü. Nr. 53, 12355 Berlin" [52.4075033,13.4975639]
+[24, 51950]: "Kielufer / Teupitzer Str., 12059 Berlin" [52.482225,13.4561209]
+[25, 53562]: "Kölner Damm/Lipschitzallee, 12353 Berlin" [52.4255091,13.464681]
+[26, 51952]: "Maybachufer / Pannierstr., 12047 Berlin" [52.48885,13.43271]
+[27, 51951]: "Maybachufer  ggü. Nr. 23, 12047 Berlin" [52.4901314,13.4283219]
+[28, 51956]: "Sonnenallee / Mareschstr., 12059 Berlin" [52.4753029,13.453048]
+[29, 52002]: "Zwickauer D. / Lößnitzer Weg, 12355 Berlin" [52.4122515,13.476312]
+[30, 52001]: "Zwickauer D. / Fleischerstr., 12353 Berlin" [52.4191666,13.4793253]
+[31, 51987]: "Fr.-Erler-Allee / K.-Dorsch-Ring, 12353 Berlin" [52.42482,13.47822]
+
+[Kombi,nk_5]
+[1, 51965]: "Blaschkoallee / Britzer Damm, 12347 Berlin" [52.4542581,13.4376131]
+
+[Kombi,q_0]
+[1, 51026]: "Eitelstr. / Münsterlandstr., 10317 Berlin" [52.50428,13.49314]
+[2, 50756]: "Torweg/ Hackbuschstr., 13591 Berlin" [52.54079,13.15068]
+[3, 52042]: "Schrockstr. /Berlepschstr. 11-15, 14165 Berlin" [52.4289308,13.2546405]
+[4, 52041]: "Schrockstr. /Berlepschstr. 11-15, 14165 Berlin" [52.4289308,13.2546405]
+[5, 52081]: "Späthstr. / Buschkrugallee, 12359 Berlin" [52.454,13.4512995]
+[6, 52084]: "Curtiusstr. / Jägerndorfer Zeile, 12205 Berlin" [52.437,13.28567]
+
+[Kombi,rl_5]
+[1, 52026]: "Olbersstr. / Herschelstr., 10589 Berlin" [52.52775,13.29941]
+[2, 52114]: "Lunder Str ggü.9 / Eschengraben, 13189 Berlin" [52.55641,13.42087]
+
+[Kombi,stick_4]
+[1, 50604]: "Heilmannring 30a,b, 13627 Berlin" [52.5409999,13.3044598]
+[2, 51326]: "Kaiser-Wilhelm-Str. / Bruchwitzstr., 12247 Berlin" [52.437906,13.3486431]
+[3, 52306]: "Gartenstr. / Mühlenstr. (Navarraplatz), 13127 Berlin" [52.6110714,13.4280681]
+[4, 52350]: "Tangermünder Str. ggü. Nr 128, 12627 Berlin" [52.5379498,13.613039]
+[5, 52372]: "Quitzowstr. 22-23, 10559 Berlin" [52.5355148,13.3530265]
+[6, 52395]: "Tangastr. / Senegalstr., 13351 Berlin" [52.5477344,13.3382259]
+[7, 52425]: "Ludwig-Quidde-Str. / Ferinand-Buissen-St, 13127 Berlin" [52.6110714,13.4280681]
+[8, 52447]: "Landoltweg/Habelschwerdter Allee, 14195 Berlin" [52.4489761,13.2904221]
+[9, 52461]: "An der Kappe / Schulzenstr., 13583 Berlin" [52.54004,13.17879]
+[10, 52488]: "Ortelsburger Allee / Lyckallee, 14055 Berlin" [52.5063431,13.249484]
+[11, 52526]: "Cicerostr. / Paulsborner Str., 10709 Berlin" [52.49581,13.30188]
+[12, 52688]: "Nennhauser Damm / Am Zeppelinpark, 13591 Berlin" [52.53145,13.12649]
+[13, 51062]: "Boyenallee / S-Bahnhof Heerstr., 14055 Berlin" [52.5075159,13.2385927]
+[14, 51063]: "Harbigstr. / Maikäferpfad, 14055 Berlin" [52.4961888,13.2635828]
+[15, 51427]: "Hanielweg/ An den Klostergärten, 12277 Berlin" [52.4166491,13.3637705]
+[16, 51469]: "Calvinstr/Helgoländer Ufer, 10557 Berlin" [52.52123,13.35005]
+[17, 51606]: "Ontarioseestr., 10319 Berlin" [52.4946705,13.5217259]
+[18, 51627]: "Urselweg/Kanustr., 14163 Berlin" [52.4479646,13.2397306]
+[19, 51852]: "Möckernstr. / Tempelhofer Ufer, 10963 Berlin" [52.4986042,13.3835214]
+[20, 52358]: "Chausseestr. ggü. Nr. 94, 10115 Berlin" [52.532614,13.3777035]
+
+[Kombi,x_5]
+[1, 50248]: "Achtermann/Versalius, 13187 Berlin" [52.5720661,13.4126604]
+

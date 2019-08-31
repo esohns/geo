@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<gpx version="1.1" creator="Humana Kleidersammlung GmbH - Geo" xmlns="http://www.topografix.com/GPX/1/1">
+ <metadata>
+  <desc>hh - 2009 H2_1</desc>
+  <copyright author="">
+   <year>2013</year>
+   <license></license>
+  </copyright>
+  <time>2013-04-10T11:14:55+02:00</time>
+  <bounds minlat="9.7665" minlon="9.776356" maxlat="53.68049" maxlon="53.65995"/>
+ </metadata>
+ <rte>
+  <name>hh - 2009 H2_1</name>
+  <number>24</number>
+  <rtept lat="53.65995" lon="9.7665">
+   <ele>1</ele>
+   <name>warehouse</name>
+  </rtept>
+  <rtept lat="53.6575926" lon="9.776356">
+   <ele>2</ele>
+   <name>70041H2003</name>
+  </rtept>
+  <rtept lat="53.6575926" lon="9.776356">
+   <ele>3</ele>
+   <name>70001H2039</name>
+  </rtept>
+  <rtept lat="53.65358" lon="9.78653">
+   <ele>4</ele>
+   <name>70106B0212</name>
+  </rtept>
+  <rtept lat="53.6531653" lon="9.7837284">
+   <ele>5</ele>
+   <name>70180</name>
+  </rtept>
+  <rtept lat="53.64632" lon="9.79156">
+   <ele>6</ele>
+   <name>70146B0788</name>
+  </rtept>
+  <rtept lat="53.6545225" lon="9.7938212">
+   <ele>7</ele>
+   <name>70181B0413</name>
+  </rtept>
+  <rtept lat="53.64376" lon="9.80847">
+   <ele>8</ele>
+   <name>70043H2032</name>
+  </rtept>
+  <rtept lat="53.64376" lon="9.80847">
+   <ele>9</ele>
+   <name>70009H2021</name>
+  </rtept>
+  <rtept lat="53.64706" lon="9.7917314">
+   <ele>10</ele>
+   <name>70189B0913</name>
+  </rtept>
+  <rtept lat="53.64706" lon="9.7917314">
+   <ele>11</ele>
+   <name>70074H2001</name>
+  </rtept>
+  <rtept lat="53.64706" lon="9.7917314">
+   <ele>12</ele>
+   <name>70042H2041</name>
+  </rtept>
+  <rtept lat="53.64706" lon="9.7917314">
+   <ele>13</ele>
+   <name>70010H2010</name>
+  </rtept>
+  <rtept lat="53.657876" lon="9.7783586">
+   <ele>14</ele>
+   <name>70113H2028</name>
+  </rtept>
+  <rtept lat="53.657876" lon="9.7783586">
+   <ele>15</ele>
+   <name>70008H2022</name>
+  </rtept>
+  <rtept lat="53.662389" lon="9.7872655">
+   <ele>16</ele>
+   <name>70006B1096</name>
+  </rtept>
+  <rtept lat="53.65782" lon="9.80195">
+   <ele>17</ele>
+   <name>70007H2020</name>
+  </rtept>
+  <rtept lat="53.66562" lon="9.78699">
+   <ele>18</ele>
+   <name>70005B1073</name>
+  </rtept>
+  <rtept lat="53.6717683" lon="9.78606">
+   <ele>19</ele>
+   <name>70004B1101</name>
+  </rtept>
+  <rtept lat="53.66904" lon="9.78735">
+   <ele>20</ele>
+   <name>70003H2008</name>
+  </rtept>
+  <rtept lat="53.6575926" lon="9.776356">
+   <ele>21</ele>
+   <name>70044H2043</name>
+  </rtept>
+  <rtept lat="53.68049" lon="9.78313">
+   <ele>22</ele>
+   <name>70183B0578</name>
+  </rtept>
+  <rtept lat="53.68049" lon="9.78313">
+   <ele>23</ele>
+   <name>70002H2009</name>
+  </rtept>
+  <rtept lat="53.65995" lon="9.7665">
+   <ele>24</ele>
+   <name>warehouse</name>
+  </rtept>
+ </rte>
+</gpx>

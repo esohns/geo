@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta charset="UTF-8">
+  <title>Testpage</title>
+  <script type="text/javascript" src="../js/geo_common.js"></script>
+  <script type="text/javascript" src="javascript_test.js"></script>
+  <script type="text/javascript">
+   function test_function()
+		 {
+			 <!-- var sites = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; -->
+				<!-- sites = sites.concat([10, 9, 8, 7, 6, 5, 4, 3, 2, 1]).unique(); -->
+    <!-- var a = {'aa' : 'bb'}, b = a, c = a, d = a, e = a, f = a; -->
+			 <!-- var sites = [a, b, c, d, e, f]; -->
+				<!-- sites = sites.concat([f, e, d, c, b, a]).unique(); -->
+				<!-- alert('sites: ' + sites.toString()); -->
+    var sites = [1,2,3,4,5], sites_2 = [1,2,3,4,5];
+				if (sites.equal(sites_2)) alert('equal');
+				else alert('different');
+			}
+
+   window.onload = test_function;
+		</script>
+ </head>
+ <!-- <body onload="initialize();"> -->
+ <body>
+	
+ </body>
+</html>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<gpx version="1.1" creator="Humana Kleidersammlung GmbH - Geo" xmlns="http://www.topografix.com/GPX/1/1">
+ <metadata>
+  <desc>bw - 2006Q2 SSfr</desc>
+  <copyright author="">
+   <year>2013</year>
+   <license></license>
+  </copyright>
+  <time>2013-05-07T18:49:24+02:00</time>
+  <bounds minlat="9.202068" minlon="8.93884" maxlat="48.7718" maxlon="48.8694327"/>
+ </metadata>
+ <rte>
+  <name>bw - 2006Q2 SSfr</name>
+  <number>27</number>
+  <rtept lat="48.8694327" lon="9.202068">
+   <ele>1</ele>
+   <name>warehouse</name>
+  </rtept>
+  <rtept lat="48.7718" lon="8.93884">
+   <ele>2</ele>
+   <name>1105L0093</name>
+  </rtept>
+  <rtept lat="48.7718" lon="8.93884">
+   <ele>3</ele>
+   <name>2341</name>
+  </rtept>
+  <rtept lat="48.6693716" lon="9.0096598">
+   <ele>4</ele>
+   <name>948K0201</name>
+  </rtept>
+  <rtept lat="48.6693716" lon="9.0096598">
+   <ele>5</ele>
+   <name>745K0610</name>
+  </rtept>
+  <rtept lat="48.6394255" lon="9.0181128">
+   <ele>6</ele>
+   <name>2652K2016</name>
+  </rtept>
+  <rtept lat="48.65789" lon="9.06413">
+   <ele>7</ele>
+   <name>2595K0448</name>
+  </rtept>
+  <rtept lat="48.6536664" lon="9.0677811">
+   <ele>8</ele>
+   <name>2274K0757</name>
+  </rtept>
+  <rtept lat="48.63951" lon="9.06432">
+   <ele>9</ele>
+   <name>2222H0433</name>
+  </rtept>
+  <rtept lat="48.61369" lon="9.06698">
+   <ele>10</ele>
+   <name>2220K2062</name>
+  </rtept>
+  <rtept lat="48.62219" lon="9.06995">
+   <ele>11</ele>
+   <name>2221K2007</name>
+  </rtept>
+  <rtept lat="48.6358749" lon="9.1216586">
+   <ele>12</ele>
+   <name>2191K2057</name>
+  </rtept>
+  <rtept lat="48.6445406" lon="9.1396817">
+   <ele>13</ele>
+   <name>2190K3076</name>
+  </rtept>
+  <rtept lat="48.63904" lon="9.14319">
+   <ele>14</ele>
+   <name>2226K1738</name>
+  </rtept>
+  <rtept lat="48.63257" lon="9.1534">
+   <ele>15</ele>
+   <name>753H0883</name>
+  </rtept>
+  <rtept lat="48.65671" lon="9.21827">
+   <ele>16</ele>
+   <name>2335K1733</name>
+  </rtept>
+  <rtept lat="48.65671" lon="9.21827">
+   <ele>17</ele>
+   <name>1236L0004</name>
+  </rtept>
+  <rtept lat="48.65671" lon="9.21827">
+   <ele>18</ele>
+   <name>1053L0022</name>
+  </rtept>
+  <rtept lat="48.708675" lon="9.1719953">
+   <ele>19</ele>
+   <name>2008K2097</name>
+  </rtept>
+  <rtept lat="48.6925" lon="9.14616">
+   <ele>20</ele>
+   <name>2113L0055</name>
+  </rtept>
+  <rtept lat="48.6935937" lon="9.1275724">
+   <ele>21</ele>
+   <name>1218L0115</name>
+  </rtept>
+  <rtept lat="48.6923033" lon="9.121401">
+   <ele>22</ele>
+   <name>2653K0593</name>
+  </rtept>
+  <rtept lat="48.72743" lon="9.12061">
+   <ele>23</ele>
+   <name>836L0126</name>
+  </rtept>
+  <rtept lat="48.72743" lon="9.12061">
+   <ele>24</ele>
+   <name>946K3094</name>
+  </rtept>
+  <rtept lat="48.7452837" lon="9.1104929">
+   <ele>25</ele>
+   <name>2017K2108</name>
+  </rtept>
+  <rtept lat="48.7337397" lon="9.1091631">
+   <ele>26</ele>
+   <name>2007H3038</name>
+  </rtept>
+  <rtept lat="48.8694327" lon="9.202068">
+   <ele>27</ele>
+   <name>warehouse</name>
+  </rtept>
+ </rte>
+</gpx>

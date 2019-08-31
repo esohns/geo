@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Humana clothes collection GmbH - Geo</title>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<!--    content="width=device-width, initial-scale=1.0, user-scalable=no">-->
+  <meta charset="UTF-8">
+<!-- <meta charset="iso-8859-1"> -->
+<!-- <link rel="stylesheet" type="text/css" href="../common/css/custom-theme/jquery-ui-1.9.2.custom.min.css"> -->
+  <link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery-ui.css"/>
+  <link rel="stylesheet" type="text/css" href="../common/css/geo_common.css">
+		<link rel="stylesheet" type="text/css" href="../common/css/geo_index.css">
+<!--[if IE]>
+  <link rel="shortcut icon" type="image/x-icon" href="../common/images/favicon.ico">
+<![endif]-->
+<!--[if !IE]<!-->
+  <link rel="icon" type="image/x-icon" href="../common/images/favicon.ico">
+<!--<![endif]-->
+<!-- <script type="text/javascript" src="../js/3rd_party/jquery-1.8.3.min.js"></script> -->
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="../js/3rd_party/jquery-ui-1.9.2.custom.min.js"></script> -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+<!-- <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script> -->
+<!-- <script type="text/javascript" src="../js/3rd_party/jquery.tr.min.js"></script> -->
+<!-- <script type="text/javascript" src="https://raw.github.com/Bloutiouf/jquery.tr/master/jquery.tr.min.js"></script> -->
+  <!-- *NOTE*: the default implementation seems to broken in IE -->
+  <script type="text/javascript" src="../common/src/3rd_party/jquery.tr.js"></script>
+  <script type="text/javascript" src="../common/src/ECMA_compliance.min.js"></script>
+  <script type="text/javascript" src="../common/src/geo_common.min.js"></script>
+  <script type="text/javascript" src="../common/src/geo_dictionary.min.js"></script>
+  <script type="text/html" src="../common/3rd_party/counter.php?page=search_index"></script>
+  <script type="text/javascript">
+   function on_changed_position_cb()
+			{
+			 //var checkbox = document.getElementById('position_checkbox'),
+				//    listbox  = document.getElementById('branch_listbox');
+				//listbox.disabled = checkbox.checked;
+			 ////if (use_jquery_ui_style) jQuery('#submit_button').button('option', 'disabled', false);
+			 //if (use_jquery_ui_style) jQuery('#submit_button_alt').button('option', 'disabled', (checkbox.checked ? false : (listbox.selectedIndex <= 0)));
+			 //else document.getElementById('submit_button').disabled = (checkbox.checked ? false : (listbox.selectedIndex <= 0));
+			}
+			function init_page()
+   {
+    jQuery.noConflict();
+
+				// init localisation
+				var dictionary = {};
+    jQuery.extend(true, dictionary, dictionary_en);
+    jQuery.tr.dictionary(dictionary);
+    jQuery.tr.language('en');
+
+				// init widgets
+				var tab_index = 0;
+    // init widgets (IE autocomplete workaround)
+				var listbox = document.getElementById('language_listbox');
+				listbox.tabIndex = tab_index++;
+				listbox.selectedIndex = 0;
+				listbox = document.getElementById('branch_listbox');
+				listbox.selectedIndex = 0;
+
+				var checkbox = document.getElementById('geolocation_checkbox');
+				//checkbox.checked  = false;
+				checkbox.disabled = !navigator.geolocation;
+				//checkbox.onchange = on_changed_position_cb;
+    if (use_jquery_ui_style) jQuery('#geolocation_checkbox').button({disabled: checkbox.disabled,
+																																																																					icons   : {primary: 'ui-icon-signal-diag'},
+																																																																					//label   : jQuery.tr.translator()('current location'),
+																																																																					text    : false
+																																																																				});
+
+    if (use_jquery_ui_style)
+				{
+				 jQuery('#options').buttonset();
+
+ 				// *WORKAROUND* apply icon to submit button
+					jQuery('#submit_button').each(function(){
+					 var submit_button = this;
+					 jQuery(this).hide();
+					 //jQuery(this).after('<button id="submit_button_alt" title="go" onsubmit="on_submit_clicked()" disabled="disabled" icon="ui-icon-bullet" style="display:inline" class="large_button"></button>');
+						jQuery(this).after('<button id="submit_button_alt" title="go" onsubmit="on_submit_clicked()" icon="ui-icon-bullet" style="display:inline" class="large_button"></button>');
+					 jQuery('#submit_button_alt').button({
+						 disabled: jQuery(submit_button).attr('disabled'),
+       icons   : {primary: jQuery(submit_button).attr('icon')},
+       label   : jQuery(submit_button).val(),
+   	   text    : false//,
+      });
+					 var button_widget = jQuery('#submit_button_alt').button('widget');
+					 jQuery(button_widget).click(function(event){
+       event.preventDefault();
+       //jQuery(this).prev().click();
+       on_submit_clicked();
+      });
+     });
+//     var input_button = document.getElementById('submit_button');
+//     jQuery('#submit_button').button({disabled: false,
+//									  text    : false,
+//									  icons   : {primary: 'ui-icon-bullet'}//,
+//								      //label   : 'go'});
+//                                    });
+				}
+				else
+				{
+					var label = document.getElementById('position_checkbox_label');
+					label.style.display = 'none';
+				}
+
+//				var button = document.getElementById('logout_button');
+//				button.title     = jQuery.tr.translator()('logout');
+//				button.innerHTML = jQuery.tr.translator()('logout');
+//				button.onclick   = on_logout;
+//				button.tabindex  = tab_index++;
+//				if (use_jquery_ui_style)
+//					jQuery('#logout_button').button({
+//						disabled: false,
+//						icons   : {
+//							primary: 'ui-icon-power'
+//						},
+//						// label : 'logout',
+//						text    : false
+//					});
+//				// .click(on_logout);
+   }
+   function on_map_changed()
+			{
+    var listbox = document.getElementById('map_listbox');
+				switch (listbox.options[listbox.selectedIndex].value)
+				{
+					case 'googlev3':
+					case 'openlayers':
+					case 'ovi':
+					default:
+						break;
+				}
+			}
+			function on_language_changed()
+   {
+			 // sanity check
+    var list_box = document.getElementById('language_listbox');
+				if (list_box.selectedIndex === -1) return;
+
+				var dictionary = {};
+				switch (list_box.options[list_box.selectedIndex].value)
+				{
+					case 'en':
+						jQuery.extend(true, dictionary, dictionary_en);
+						break;
+					case 'de':
+						jQuery.extend(true, dictionary, dictionary_de);
+						break;
+					default:
+						if (!!window.console) console.log('invalid language (was: ' +
+																																								list_box.options[list_box.selectedIndex].value +
+																																								'), returning');
+						alert('invalid language (was: ' +
+												list_box.options[list_box.selectedIndex].value +
+												'), returning');
+						return;
+    }
+    jQuery.tr.dictionary(dictionary);
+    jQuery.tr.language(list_box.options[list_box.selectedIndex].value);
+
+    // localise page/widgets/...
+    document.title = jQuery.tr.translator()('Humana clothes collection GmbH') +
+																					' - ' +
+																					application_name;
+
+    var list_box = document.getElementById('language_listbox');
+				var selected_language = list_box.options[list_box.selectedIndex].value;
+    while (list_box.hasChildNodes()) list_box.removeChild(list_box.firstChild);
+    var new_option = document.createElement('option');
+    new_option.value = 'en';
+				new_option.selected = (new_option.value === selected_language);
+    new_option.appendChild(document.createTextNode(jQuery.tr.translator()('english')));
+    list_box.appendChild(new_option);
+    new_option = document.createElement('option');
+    new_option.value = 'de';
+				new_option.selected = (new_option.value === selected_language);
+    new_option.appendChild(document.createTextNode(jQuery.tr.translator()('german')));
+    list_box.appendChild(new_option);
+
+    var h1 = document.getElementById('greeting');
+				h1.innerHTML = '<b>' +
+              	    jQuery.tr.translator()('Welcome to the') +
+																		 ' ' +
+																		 jQuery.tr.translator()('Humana clothes collection GmbH') +
+																		 '</b>';
+
+				var legend = document.getElementById('branch_legend');
+				legend.innerHTML = jQuery.tr.translator()('branch');
+				list_box = document.getElementById('branch_listbox');
+    while (list_box.hasChildNodes()) list_box.removeChild(list_box.firstChild);
+    var new_option = document.createElement('option');
+    new_option.appendChild(document.createTextNode(jQuery.tr.translator()('select...')));
+    list_box.appendChild(new_option);
+    new_option = document.createElement('option');
+    new_option.value = 'mh';
+    new_option.appendChild(document.createTextNode(jQuery.tr.translator()('Baden-Wuerttemberg/Mannheim')));
+    list_box.appendChild(new_option);
+    new_option = document.createElement('option');
+    new_option.value = 'bw';
+    new_option.appendChild(document.createTextNode(jQuery.tr.translator()('Baden-Wuerttemberg/Stuttgart')));
+    list_box.appendChild(new_option);
+    new_option = document.createElement('option');
+    new_option.value = 'b';
+    new_option.appendChild(document.createTextNode(jQuery.tr.translator()('Brandenburg/Berlin')));
+    list_box.appendChild(new_option);
+    new_option = document.createElement('option');
+    new_option.value = 'd';
+    new_option.appendChild(document.createTextNode(jQuery.tr.translator()('Saxonia/Dresden')));
+    list_box.appendChild(new_option);
+    new_option = document.createElement('option');
+    new_option.value = 'hh';
+    new_option.appendChild(document.createTextNode(jQuery.tr.translator()('Hamburg')));
+    list_box.appendChild(new_option);
+    new_option = document.createElement('option');
+    new_option.value = 'ks';
+    new_option.appendChild(document.createTextNode(jQuery.tr.translator()('Lower Saxonia/Kassel')));
+    list_box.appendChild(new_option);
+    new_option = document.createElement('option');
+    new_option.value = 'nrw';
+    new_option.appendChild(document.createTextNode(jQuery.tr.translator()('North Rhine-Westphalia/Cologne')));
+    list_box.appendChild(new_option);
+    new_option = document.createElement('option');
+    new_option.value = 'th';
+    new_option.appendChild(document.createTextNode(jQuery.tr.translator()('Thuringia')));
+    list_box.appendChild(new_option);
+    new_option = document.createElement('option');
+    new_option.value = 'wf';
+    new_option.appendChild(document.createTextNode(jQuery.tr.translator()('Westphalia')));
+    list_box.appendChild(new_option);
+
+    var legend = document.getElementById('map_legend');
+				legend.innerHTML = jQuery.tr.translator()('map');
+
+				legend = document.getElementById('options_legend');
+ 			legend.innerHTML = jQuery.tr.translator()('options');
+				var checkbox = document.getElementById('geolocation_checkbox');
+				checkbox.title = jQuery.tr.translator()('current location');
+				label = document.getElementById('geolocation_checkbox_label');
+				label.title = jQuery.tr.translator()('current location');
+				
+				var input_button = document.getElementById('submit_button');
+				input_button.title = jQuery.tr.translator()('go');
+				input_button.value = jQuery.tr.translator()('go');
+				if (use_jquery_ui_style)
+				{
+					input_button = document.getElementById('submit_button_alt');
+					input_button.title = jQuery.tr.translator()('go');
+					input_button.value = jQuery.tr.translator()('go');
+
+					// *WORKAROUND*: re-apply icon to submit button (IE workaround)
+					jQuery('#submit_button_alt').button({
+						disabled: input_button.disabled,
+						icons   : {primary: jQuery('#submit_button').attr('icon')},
+						label   : jQuery('#submit_button').val(),
+						text    : false//,
+					});
+					var button_widget = jQuery('#submit_button_alt').button('widget');
+					jQuery(button_widget).click(function(event){
+						event.preventDefault();
+						//jQuery(this).prev().click();
+						on_submit_clicked();
+					});
+			//     var input_button = document.getElementById('submit_button');
+			//     jQuery('#submit_button').button({disabled: input_button.disabled,
+			//									  text    : false,
+			//									  icons   : {primary: 'ui-icon-bullet'}//,
+			//								      //label   : 'go'});
+			//                                    });
+				}
+
+//				var button = document.getElementById('logout_button');
+//				button.title = jQuery.tr.translator()('logout');
+//				button.innerHTML = jQuery.tr.translator()('logout');
+//				if (use_jquery_ui_style)
+//					jQuery('#logout_button').button({
+//						disabled: false,
+//						icons   : {primary: 'ui-icon-power'},
+//						// label   : 'logout',
+//						text    : false
+//					});
+//				// .click(on_logout);
+   }
+   function check_form()
+   {
+			 // sanity check(s)
+    var listbox = document.getElementById('language_listbox');
+				if (listbox.selectedIndex === -1) return false;
+
+   	var input_box = document.getElementById('hidden_language');
+	   input_box.value = listbox.options[listbox.selectedIndex].value;
+
+				//var checkbox = document.getElementById('position_checkbox'),
+			 listbox   = document.getElementById('branch_listbox');
+				input_box = document.getElementById('hidden_branch');
+				if ((listbox.selectedIndex === -1) || (listbox.selectedIndex === 0)) input_box.value = '';
+
+				//if (!checkbox.checked)
+				//{
+				// if ((listbox.selectedIndex === -1) || (listbox.selectedIndex === 0))
+				// {
+ 			//		jQuery('#branch_listbox').addClass('ui-state-error');
+				//	 return false;
+				// }
+				//}
+    //jQuery('#branch_listbox').removeClass('ui-state-error');
+
+	   return true;
+   }
+   function on_branch_changed()
+   {
+				var checkbox = document.getElementById('position_checkbox'),
+				    listbox  = document.getElementById('branch_listbox');
+				// sanity check(s)
+				if (listbox.selectedIndex === -1) return;
+
+			 ////if (use_jquery_ui_style) jQuery('#submit_button').button('option', 'disabled', false);
+			 //if (use_jquery_ui_style) jQuery('#submit_button_alt').button('option', 'disabled', (checkbox.checked ? false : (listbox.selectedIndex <= 0)));
+			 //else document.getElementById('submit_button').disabled = (checkbox.checked ? false : (listbox.selectedIndex <= 0));
+   }
+   function on_submit_clicked()
+   {
+				var form = document.getElementById('form');
+				if (check_form()) form.submit();
+   }
+   window.onload = init_page;
+  </script>
+ </head>
+ <body>
+  <div id="language" align="right" class="outer">
+   <!-- *WORKAROUND*: the "autocomplete" attribute is a FF-workaround... -->
+   <select id="language_listbox" name="language" size="1" onchange="on_language_changed()" autocomplete="off">
+    <option value="en">english</option>
+    <option selected="selected" value="de">german</option>
+   </select>
+  </div>
+  <fieldset>
+   <table align="center">
+    <tr>
+					<td><img src="../common/images/HKS Logo NEU 2.jpg" alt="" height="125" width="100"></img></td>
+					<td>
+      <div id="frame" align="center" class="outer">
+       <h1 id="greeting" align="center"><b>Welcome to the Humana clothes collection GmbH</b></h1>
+       <div id="subframe_1" align="center" class="frame">
+								<fieldset style="display:inline">
+									<legend id="branch_legend">branch</legend>
+									<select id="branch_listbox" name="location" size="1" onchange="on_branch_changed()">
+										<option selected="selected">select...</option>
+										<option value="mh">Baden-Wuerttemberg/Mannheim</option>
+										<option value="bw">Baden-Wuerttemberg/Stuttgart</option>
+										<option value="b">Brandenburg/Berlin</option>
+										<option value="d">Saxonia/Dresden</option>
+										<option value="hh">Hamburg</option>
+										<option value="ks">Lower Saxonia/Kassel</option>
+										<option value="nrw">North Rhine-Westphalia/Cologne</option>
+										<option value="th">Thuringia</option>
+										<option value="wf">Westphalia</option>
+									</select>
+								</fieldset>
+							<!-- *WORKAROUND*: the "autocomplete" attribute is a FF-workaround... -->
+        <form id="form" method='GET' action='search.html' onsubmit="return check_form()" autocomplete="off">
+							  <input id="hidden_language" type="hidden" name="language" value="de"></input>
+									<span>
+									 <input id="hidden_branch" type="hidden" name="branch" value=""></input>
+	         <!-- <input id="hidden_map" type="hidden" name="map" value="googlev3"></input> -->
+          <fieldset style="display:inline">
+   	       <legend id="map_legend">map</legend>
+           <select id="map_listbox" name="map" size="1" onchange="on_map_changed()">
+  	        <!-- *NOTE*: use mapstraction identifiers here -->
+            <option selected="selected" value="googlev3">Google Maps (v3)</option>
+            <option value="ovi">Nokia Ovi</option>
+            <option value="openlayers">OpenLayers</option>
+           </select>
+	         </fieldset>
+          <fieldset style="display:inline">
+   	       <legend id="options_legend">options</legend>
+											<div id="options">
+            <input id="geolocation_checkbox" type="checkbox" name="geolocation" title="current location"></input>
+											</div>
+           <label id="geolocation_checkbox_label" for="geolocation_checkbox" class="button">current location</label>
+										</fieldset>
+          <!-- *WORKAROUND*: the "icon" attribute is a jQueryUI patch... -->
+										<!-- <input id="submit_button" type="submit" title="go" value="go" onsubmit="on_submit_clicked()" disabled="disabled" icon="ui-icon-bullet" class="large_button"> -->
+          <input id="submit_button" type="submit" title="go" value="go" onsubmit="on_submit_clicked()" icon="ui-icon-bullet" class="large_button">
+         </span>
+        </form>
+       </div>
+      </div>
+     </td>
+     <td><img src="../common/images/Humana Globe NEU 2.jpg" alt="" height="150" width="150"></img></td>
+    </tr>
+   </table>
+  </fieldset>
+<!--   <div id="logout" align="right" class="outer">
+   <button id="logout_button" class="large_button">logout</button>
+  </div>
+ --> </body>
+</html>

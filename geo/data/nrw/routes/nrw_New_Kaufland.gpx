@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<gpx version="1.1" creator="Humana Kleidersammlung GmbH - Geo" xmlns="http://www.topografix.com/GPX/1/1">
+ <metadata>
+  <desc>nrw - New Kaufland</desc>
+  <copyright author="">
+   <year>2013</year>
+   <license></license>
+  </copyright>
+  <time>2013-05-06T16:55:07+02:00</time>
+  <bounds minlat="6.8321537" minlon="6.1332486600002" maxlat="51.791372545333" maxlon="50.9156527"/>
+ </metadata>
+ <rte>
+  <name>nrw - New Kaufland</name>
+  <number>30</number>
+  <rtept lat="50.9156527" lon="6.8321537">
+   <ele>1</ele>
+   <name>warehouse</name>
+  </rtept>
+  <rtept lat="51.43283798" lon="6.2603285155002">
+   <ele>2</ele>
+   <name>4477K3370</name>
+  </rtept>
+  <rtept lat="51.43283798" lon="6.2603285155002">
+   <ele>3</ele>
+   <name>4478K3369</name>
+  </rtept>
+  <rtept lat="51.43283798" lon="6.2603285155002">
+   <ele>4</ele>
+   <name>4479K3368</name>
+  </rtept>
+  <rtept lat="51.5082499905" lon="6.3451010410002">
+   <ele>5</ele>
+   <name>4473K3404</name>
+  </rtept>
+  <rtept lat="51.5082499905" lon="6.3451010410002">
+   <ele>6</ele>
+   <name>4474K3403</name>
+  </rtept>
+  <rtept lat="51.5082499905" lon="6.3451010410002">
+   <ele>7</ele>
+   <name>4475K3402</name>
+  </rtept>
+  <rtept lat="51.5082499905" lon="6.3451010410002">
+   <ele>8</ele>
+   <name>4476K3401</name>
+  </rtept>
+  <rtept lat="51.791372545333" lon="6.1332486600002">
+   <ele>9</ele>
+   <name>4529K3366</name>
+  </rtept>
+  <rtept lat="51.791372545333" lon="6.1332486600002">
+   <ele>10</ele>
+   <name>4530K3365</name>
+  </rtept>
+  <rtept lat="51.791372545333" lon="6.1332486600002">
+   <ele>11</ele>
+   <name>4531K3364</name>
+  </rtept>
+  <rtept lat="51.454589943" lon="6.6946645185002">
+   <ele>12</ele>
+   <name>4469K3364</name>
+  </rtept>
+  <rtept lat="51.454589943" lon="6.6946645185002">
+   <ele>13</ele>
+   <name>4471K3363</name>
+  </rtept>
+  <rtept lat="51.454589943" lon="6.6946645185002">
+   <ele>14</ele>
+   <name>4472K3362</name>
+  </rtept>
+  <rtept lat="51.454589943" lon="6.6946645185002">
+   <ele>15</ele>
+   <name>4470K3356</name>
+  </rtept>
+  <rtept lat="51.4398534705" lon="6.7510875130002">
+   <ele>16</ele>
+   <name>4466K3396</name>
+  </rtept>
+  <rtept lat="51.4398534705" lon="6.7510875130002">
+   <ele>17</ele>
+   <name>4467K3395</name>
+  </rtept>
+  <rtept lat="51.4398534705" lon="6.7510875130002">
+   <ele>18</ele>
+   <name>4468K3394</name>
+  </rtept>
+  <rtept lat="51.33572499" lon="7.0505891453335">
+   <ele>19</ele>
+   <name>4462K3389</name>
+  </rtept>
+  <rtept lat="51.33572499" lon="7.0505891453335">
+   <ele>20</ele>
+   <name>4463K3388</name>
+  </rtept>
+  <rtept lat="51.33572499" lon="7.0505891453335">
+   <ele>21</ele>
+   <name>4464K3387</name>
+  </rtept>
+  <rtept lat="51.33572499" lon="7.0505891453335">
+   <ele>22</ele>
+   <name>4465K3386</name>
+  </rtept>
+  <rtept lat="51.184698840667" lon="7.0437131946668">
+   <ele>23</ele>
+   <name>4489K3385</name>
+  </rtept>
+  <rtept lat="51.184698840667" lon="7.0437131946668">
+   <ele>24</ele>
+   <name>4490K3384</name>
+  </rtept>
+  <rtept lat="51.184698840667" lon="7.0437131946668">
+   <ele>25</ele>
+   <name>4491K3383</name>
+  </rtept>
+  <rtept lat="51.151283858" lon="7.0193085783335">
+   <ele>26</ele>
+   <name>4525K3400</name>
+  </rtept>
+  <rtept lat="51.151283858" lon="7.0193085783335">
+   <ele>27</ele>
+   <name>4526K3399</name>
+  </rtept>
+  <rtept lat="51.151283858" lon="7.0193085783335">
+   <ele>28</ele>
+   <name>4527K3398</name>
+  </rtept>
+  <rtept lat="51.151283858" lon="7.0193085783335">
+   <ele>29</ele>
+   <name>4528K3397</name>
+  </rtept>
+  <rtept lat="50.9156527" lon="6.8321537">
+   <ele>30</ele>
+   <name>warehouse</name>
+  </rtept>
+ </rte>
+</gpx>

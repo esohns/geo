@@ -1,0 +1,153 @@
+--------------------- processing sites --------------------- 
+--------------------- processing site coordinates --------------------- 
+sites database: "\\Rechner1\Coffee\Coffee DD\SITES.dbf"
+processed 255 record(s)...
+--------------------- processing site coordinates DONE--------------------- 
+--------------------- processing sites (JSON) --------------------- 
+opened relations db...
+# relations record(s): 1
+opened sites db...
+# site record(s): 255
+###
+closed relations db...
+closed sites db...
+#active sites 192
+processing yields...
+opened weeks db...
+closed weeks db...
+computing site rankings...
+computing site rankings...DONE
+processing yields...DONE
+--------------------- processing sites (JSON) DONE --------------------- 
+--------------------- processing known finders (JSON) --------------------- 
+--------------------- processing known finders (JSON) DONE --------------------- 
+--------------------- processing duplicate sites (JSON) --------------------- 
+--------------------- processing duplicate sites (JSON) DONE --------------------- 
+--------------------- splitting sites (JSON) --------------------- 
+--------------------- splitting sites (JSON) DONE --------------------- 
+--------------------- processing sites (KML) --------------------- 
+processing sites (active) file: "C:\Apache24\htdocs\geo\data\d\sites_active.json"
+processing sites (ex) file: "C:\Apache24\htdocs\geo\data\d\sites_ex.json"
+processing sites (other) file: "C:\Apache24\htdocs\geo\data\d\sites_other.json"
+processing style file: "C:\Apache24\htdocs\geo\data\style.kml"
+--------------------- processing sites (KML) DONE --------------------- 
+--------------------- processing sites DONE --------------------- 
+--------------------- processing toursets --------------------- 
+--------------------- processing tourset IDs (JSON) --------------------- 
+--------------------- processing tourset IDs (JSON) DONE --------------------- 
+--------------------- processing toursets (JSON) --------------------- 
+processing tourset db file : "\\Rechner1\Coffee\Coffee DD\toursets.dbf"
+processing tourset ids file: "C:\Apache24\htdocs\geo\data\d\tourset_ids.json"
+# working days / week: 6
+opened db...
+processing tourset: "Standard"
+inserting tour descriptor "g" (found in column: 0), SID: 525: "g0   ")
+inserting tour descriptor "m" (found in column: 0), SID: 33: "m120 ")
+inserting tour descriptor "p" (found in column: 0), SID: 521: "p5   ")
+inserting tour descriptor "w" (found in column: 0), SID: 388: "w80  ")
+inserting tour descriptor "z" (found in column: 0), SID: 229: "z    ")
+inserting tour descriptor "s" (found in column: 1), SID: 33: "s0   ")
+inserting tour descriptor "f" (found in column: 1), SID: 532: "f50  ")
+inserting tour descriptor "n" (found in column: 1), SID: 121: "n55  ")
+extracting tour: "f_1"
+extracting tour "f_1"...DONE
+extracting tour: "g_0"
+extracting tour "g_0"...DONE
+extracting tour: "m_0"
+extracting tour "m_0"...DONE
+extracting tour: "n_1"
+extracting tour "n_1"...DONE
+extracting tour: "p_0"
+extracting tour "p_0"...DONE
+extracting tour: "s_1"
+extracting tour "s_1"...DONE
+extracting tour: "w_0"
+extracting tour "w_0"...DONE
+extracting tour: "z_0"
+extracting tour "z_0"...DONE
+closed db...
+--------------------- processing toursets (JSON) DONE --------------------- 
+--------------------- processing toursets (KML) --------------------- 
+processing location (JSON) file: "C:\Apache24\htdocs\geo\data\warehouse_locations.json"
+processing sites db file: "\\Rechner1\Coffee\Coffee DD\SITES.dbf"
+processing style (KML) file: "C:\Apache24\htdocs\geo\data\style.kml"
+processing toursets (JSON) file: "C:\Apache24\htdocs\geo\data\d\toursets.json"
+retrieving warehouse coordinates...
+retrieving warehouse coordinates...DONE
+retrieving directions ["Standard","f_1":#22]...
+retrieving directions ["Standard","f_1":#22]...DONE
+retrieving directions ["Standard","g_0":#3]...
+retrieving directions ["Standard","m_0":#32]...
+retrieving directions ["Standard","m_0":#32]...DONE
+retrieving directions ["Standard","n_1":#24]...
+retrieving directions ["Standard","n_1":#24]...DONE
+retrieving directions ["Standard","p_0":#10]...
+retrieving directions ["Standard","p_0":#10]...DONE
+retrieving directions ["Standard","s_1":#38]...
+retrieving directions ["Standard","s_1":#38]...DONE
+retrieving directions ["Standard","w_0":#27]...
+retrieving directions ["Standard","w_0":#27]...DONE
+retrieving directions ["Standard","z_0":#33]...
+retrieving directions ["Standard","z_0":#33]...DONE
+writing KML...
+writing KML ["Standard","f_1"]...
+writing KML ["Standard","f_1"]...DONE
+writing KML ["Standard","g_0"]...
+writing KML ["Standard","g_0"]...DONE
+writing KML ["Standard","m_0"]...
+writing KML ["Standard","m_0"]...DONE
+writing KML ["Standard","n_1"]...
+writing KML ["Standard","n_1"]...DONE
+writing KML ["Standard","p_0"]...
+writing KML ["Standard","p_0"]...DONE
+writing KML ["Standard","s_1"]...
+writing KML ["Standard","s_1"]...DONE
+writing KML ["Standard","w_0"]...
+writing KML ["Standard","w_0"]...DONE
+writing KML ["Standard","z_0"]...
+writing KML ["Standard","z_0"]...DONE
+writing KML...DONE
+--------------------- processing toursets (KML) DONE --------------------- 
+--------------------- processing tourset "Standard" (TXT) --------------------- 
+--------------------- processing tourset "Standard" (TXT) DONE --------------------- 
+--------------------- processing toursets DONE --------------------- 
+--------------------- processing images --------------------- 
+--------------------- processing images (JSON) --------------------- 
+--------------------- processing images (JSON) DONE --------------------- 
+--------------------- splitting images (JSON) --------------------- 
+--------------------- splitting images (JSON) DONE --------------------- 
+--------------------- processing images (KML) --------------------- 
+--------------------- processing images (KML) DONE --------------------- 
+--------------------- processing images DONE --------------------- 
+--------------------- merging "d" KML --------------------- 
+--------------------- merging "d" KML DONE --------------------- 
+--------------------- generating toursheets --------------------- 
+toursheet template: C:\Apache24\htdocs\geo\data\toursheet_template_de.ots
+sites database: \\Rechner1\Coffee\Coffee DD\SITES.dbf
+weeks database: \\Rechner1\Coffee\Coffee DD\weeks.dbf
+toursets file (JSON): C:\Apache24\htdocs\geo\data\d\toursets.json
+processing tourset: "Standard"...
+processing tour: "f_1"...
+processing tour: "f_1"...DONE
+processing tour: "g_0"...
+processing tour: "g_0"...DONE
+processing tour: "m_0"...
+processing tour: "m_0"...DONE
+processing tour: "n_1"...
+processing tour: "n_1"...DONE
+processing tour: "p_0"...
+processing tour: "p_0"...DONE
+processing tour: "s_1"...
+processing tour: "s_1"...DONE
+processing tour: "w_0"...
+processing tour: "w_0"...DONE
+processing tour: "z_0"...
+processing tour: "z_0"...DONE
+processing tourset: "Standard"...DONE
+--------------------- generating toursheets DONE --------------------- 
+--------------------- generating devicefiles --------------------- 
+#sites: 255
+#toursets: 1
+#sites: 255
+#toursets: 1
+--------------------- generating devicefiles DONE --------------------- 

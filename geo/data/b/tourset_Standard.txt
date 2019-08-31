@@ -1,0 +1,290 @@
+[Standard,._0]
+[1, 50087]: "K-Liebknecht Str--    "ALEX"., 10178 Berlin" [52.5221879,13.4093313]
+[2, 50467]: "Joachimstalerstr-      "ZOO", 10623 Berlin" [52.5042319,13.3316695]
+
+[Standard,._5]
+[1, 50170]: "Wilsdruffer Str. 7, 01067 Dresden" [51.0494,13.74275]
+
+[Standard,L12_4]
+
+[Standard,L1_0]
+
+[Standard,L2_1]
+
+[Standard,L3_2]
+
+[Standard,L4_4]
+
+[Standard,L6_4]
+
+[Standard,L8_4]
+
+[Standard,L_0]
+
+[Standard,L_4]
+
+[Standard,N4_3]
+
+[Standard,N6_0]
+
+[Standard,N8_2]
+
+[Standard,N_1]
+
+[Standard,N_2]
+
+[Standard,O2_1]
+
+[Standard,O3_3]
+
+[Standard,O4_2]
+
+[Standard,O4_4]
+
+[Standard,O5_4]
+
+[Standard,O6_1]
+
+[Standard,O8_1]
+
+[Standard,R1_0]
+
+[Standard,R3_1]
+
+[Standard,S3_2]
+
+[Standard,SW_1]
+
+[Standard,SW_2]
+
+[Standard,SW_4]
+
+[Standard,U06_0]
+
+[Standard,U15_1]
+
+[Standard,U1_2]
+
+[Standard,U2_0]
+
+[Standard,U3_0]
+
+[Standard,U4_2]
+
+[Standard,U5_1]
+
+[Standard,U6_0]
+
+[Standard,U7_4]
+
+[Standard,U8_0]
+
+[Standard,U8_3]
+
+[Standard,U9_2]
+
+[Standard,U_0]
+
+[Standard,U_1]
+
+[Standard,U_2]
+
+[Standard,U_4]
+
+[Standard,W_0]
+
+[Standard,W_1]
+
+[Standard,W_3]
+
+[Standard,W_4]
+
+[Standard,bo_5]
+[1, 50866]: "Vogelsdorfer Str. 21, 15366 Neuenhagen b. Berlin" [52.51242,13.71553]
+[2, 51346]: "Berliner Str. 13, 16727 Velten" [52.6724193,13.1966525]
+[3, 51353]: "Frankenfelder Chaussee, 14943 Luckenwalde" [52.09933,13.13349]
+[4, 51372]: "Pilatusweg 30, 12107 Berlin" [52.43021,13.39359]
+[5, 51378]: "Hans-Beimler-Str. 10, 15859 Storkow" [52.23876,13.94773]
+[6, 51379]: "Kurt-Fischer-Str. 29, 15859 Storkow" [52.23803,13.95031]
+[7, 51380]: "Theodor - Storm -Str. 25, 15859 Storkow" [52.24775,13.94677]
+[8, 51381]: "Theodor-Fontane-Str. 26, 15859 Storkow" [52.25046,13.94425]
+[9, 51383]: "Lindenstr. 22, 15370 Petershagen/ Eggersdorf" [52.52375,13.7712]
+[10, 51347]: "Dorfstraße, vor Nr. 28, 15754 Heidesee" [52.2830556,13.8]
+[11, 51348]: "Uferstraße, 14542 Werder/Havel" [52.3797964,12.9395395]
+[12, 51349]: "Brandenburger Str. 110/112, 14542 Werder/Havel" [52.3697222,12.9333333]
+[13, 51350]: "Hagebuttenstraße, 14542 Werder/Havel" [52.36188,12.93266]
+[14, 51351]: "Dorfplatz, 14542 Werder/Havel" [52.43173,12.90759]
+[15, 51352]: "Dorfplatz, 14542 Werder/Havel" [52.43173,12.90759]
+[16, 50935]: "Am Lückefeld/ Ecke Goethestraße, 15831 Blankenfelde-Mahlow" [52.36174,13.43165]
+[17, 51344]: "Chausseestraße, 15754 Königs-Wusterhausen" [52.28677,13.66966]
+
+[Standard,c_4]
+[1, 50796]: "Sportlerweg 8, 16248 Britz-Chorin-Oderberg" [52.86729,14.0453403]
+
+[Standard,l_4]
+[1, 50816]: "Neuwerk 7, 99084 Erfurt" [50.973754,11.030237]
+[2, 50849]: "Breiter Weg 115, 39104 Magdeburg" [52.13586,11.6383]
+[3, 50811]: "Große Ullrichstr. 38, 06108 Halle" [51.4872577,11.9600411]
+[4, 50861]: "Universitätsstr. 20, 4109 Leipzig - 2 -" [51.3374498,12.3777861]
+[5, 50465]: "Albrechtstr. 3, 12165 Berlin" [52.4565148,13.3222935]
+[6, 50469]: "Hauptstr. 147, 10827 Berlin" [52.487484,13.3578894]
+[7, 50319]: "Müllerstr. 156, 13353 Berlin" [52.5454228,13.3605034]
+[8, 50958]: "Friedrich-Ebert-Str.113, Pl. d. Einheit, 14461 Potsdam" [52.3941887,13.072691]
+[9, 50464]: "Frankfurter Tor 3, 10243 Berlin" [52.51676,13.45455]
+[10, 50396]: "Wintergartenstr. 2, 4103 Leipzig - 1 -" [51.34263,12.3839]
+[11, 50170]: "Wilsdruffer Str. 7, 01067 Dresden" [51.0494,13.74275]
+[12, 50778]: "Str. der Nationen 46, 09111 Chemnitz" [50.836626,12.9255788]
+
+[Standard,new_0]
+[1, 50771]: "Stillerzeile/ Ecke Löbauer Weg, 12587 Berlin" [52.45568,13.61387]
+[2, 50774]: "Wassermannstr./ Radickestr., 12489 Berlin" [52.4359943,13.5495432]
+[3, 50789]: "Binger Str. Ecke Wiesbadener Str., 14197 Berlin" [52.47251,13.31039]
+[4, 50825]: "Waldemarstr./Fritz-Reuter-Str., 13156 Berlin" [52.5887098,13.4076294]
+
+[Standard,o1_1]
+[1, 50225]: "Am Försterweg 8, 15344 Strausberg" [52.53394,13.82878]
+[2, 50226]: "Garzauer  Str., 15344 Strausberg" [52.54655,13.85991]
+[3, 50224]: "Am Marienberg, ggü Nr. 50, 15344 Strausberg" [52.580276,13.915833]
+[4, 50223]: "Am Marienberg, 15344 Strausberg" [52.55411,13.86771]
+[5, 50227]: "Josef-Zettler-Ring, 15344 Strausberg" [52.5770582,13.8865907]
+[6, 50222]: "Wesendahler Str., 15344 Strausberg" [52.59365,13.88255]
+[7, 50915]: "Dorfstraße, 15345 Altlandsberg" [52.60154,13.81614]
+[8, 50845]: "Krummenseer Chaussee 12, 16356 Werneuchen" [52.6135027,13.6793647]
+[9, 50765]: "Kirschenallee/ Apfelsteig, 16356 Ahrensfelde" [52.58026,13.57951]
+[10, 50104]: "Str. d. Einheit/Eichener Grenzweg, 16356 Ahrensfelde" [52.64649,13.60295]
+[11, 50460]: "Dorfst. 49, 16356 Ahrensfelde" [52.57655,13.58011]
+[12, 50103]: "Märkische Allee 388, 13057 Berlin" [52.5711561,13.5670207]
+[13, 50851]: "Spinatweg 6, 12689 Berlin" [52.5706709,13.5605517]
+[14, 50106]: "Pablo -Picasso-Str./Randow, 13057 Berlin" [52.5730535,13.5451147]
+[15, 50561]: "Vincent van Gogh/Seeh., 13057 Berlin" [52.5730535,13.5451147]
+[16, 50096]: "Dorfstr. 25, 13059 Berlin" [52.574911,13.5180652]
+[17, 50360]: "Birkholzer A./        Th.-Münzer Str., 16321 Ahrensfelde" [52.5817191,13.5747926]
+[18, 50270]: "Dorfstr. 31, 13051 Berlin" [52.58073,13.48235]
+[19, 50766]: "Egon-Erwin-Kisch-Str.6, 13051 Berlin" [52.57499,13.5032]
+[20, 50881]: "Hansastr. 149, 13088 Berlin" [52.55025,13.47485]
+[21, 50473]: "Hansastr./Feuerwehrzuf., 13088 Berlin" [52.5593051,13.4761485]
+[22, 50584]: "Landsberger A. / Zechliner, 13055 Berlin" [52.5404894,13.4978338]
+
+[Standard,o2_1]
+[1, 50850]: "Alberichstr. 138, 12683 Berlin" [52.4795432,13.5588297]
+[2, 50092]: "Lindenstr. 20, 12683 Berlin" [52.4852,13.572]
+[3, 50093]: "Chemnitzer Str.92, 12621 Berlin" [52.49892,13.57804]
+[4, 50191]: "Brodauer Str.32 / Münsterber Weg, 12621 Berlin" [52.5028694,13.5876963]
+[5, 50264]: "Böhlener/Hönow, 12627 Berlin" [52.5379498,13.613039]
+[6, 50267]: "Hamburger Str./Dahlwitzer Str., 12623 Berlin" [52.525087,13.6447641]
+[7, 50268]: "Dahlwitz/Daffinger, 12623 Berlin" [52.5032943,13.6073142]
+[8, 50159]: "Ernst Thaelemann16, 15366 Neuenhagen b. Berlin" [52.519171,13.4060912]
+[9, 50163]: "Rosa Luxemburgd. 38, 15366 Neuenhagen b. Berlin" [52.51636,13.71134]
+[10, 50635]: "Ernst-Thälmann- Str. 31A, 15370 Fredersdorf-Vogelsdorf" [52.51741,13.75083]
+[11, 50162]: "Eggersdorfer 1, 15370 Petershagen/ Eggersdorf" [52.52408,13.77263]
+[12, 50165]: "Arndstr.38, 15370 Fredersdorf-Vogelsdorf" [52.5,13.7166667]
+[13, 50333]: "Suhler Str. geg. Nr 49, 12629 Berlin" [52.5405225,13.5910154]
+[14, 50107]: "Marzahner Promenade 45, 12679 Berlin" [52.54592,13.55454]
+[15, 50110]: "Poelchaustr. 32/Murtz.R., 12681 Berlin" [52.5546409,13.539811]
+[16, 50359]: "Märkische Allee 76, 12681 Berlin" [52.52381,13.54097]
+[17, 50338]: "Merler Weg 26, 12681 Berlin" [52.5228988,13.5302606]
+[18, 50175]: "Franz-Mett-Str 2, 10319 Berlin" [52.50153,13.52032]
+[19, 50054]: "Dolgenseestr., 10319 Berlin" [52.49442,13.50746]
+[20, 50599]: "Steffelbauerstr. 7, 12459 Berlin" [52.45899,13.53669]
+[21, 50282]: "Fontane/Griech.Allee, 12459 Berlin" [52.4609452,13.528007]
+[22, 50237]: "Fritz-Kirsch-Zeile/Wattstr., 12459 Berlin" [52.4667,13.50919]
+
+[Standard,o6_1]
+[1, 50277]: "Ehrenfelsstr. 29, 10318 Berlin" [52.4785352,13.5346975]
+[2, 50274]: "Honnefer/Rheinstein, 10318 Berlin" [52.4810357,13.5186468]
+[3, 50874]: "Krachtstr./ Alt Stralau, 10245 Berlin" [52.49434,13.47081]
+[4, 50892]: "Hausburg/Thaerstr. 30/40, 10249 Berlin" [52.52291,13.45627]
+[5, 50879]: "Singerstr. 28, 10243 Berlin" [52.5152706,13.4306589]
+[6, 50303]: "Krautstr. 24, 10243 Berlin" [52.5143937,13.4280972]
+[7, 50304]: "Lichtenberger Str. 30, 10243 Berlin" [52.5153062,13.4257596]
+[8, 50899]: "Krausenstraße, 10117 Berlin" [52.5097,13.39379]
+[9, 50895]: "Oranienburger Straße, 10117 Berlin" [52.5254833,13.3915271]
+[10, 50900]: "Schlegelstraße/ Eichendorffstr., 10115 Berlin" [52.5300942,13.3874471]
+[11, 50901]: "Strelitzer Straße, 10115 Berlin" [52.535437,13.3949079]
+[12, 50897]: "Swinemünder Str.114, 10435 Berlin" [52.53832,13.40079]
+[13, 50898]: "Zionskirchplatz, 10119 Berlin" [52.53424,13.40514]
+[14, 50113]: "Belforter/Diedenhofer, 10405 Berlin" [52.5341936,13.4230065]
+[15, 50875]: "Höchste Str. / Weinstr., 10249 Berlin" [52.5256663,13.4259873]
+[16, 50257]: "Pasteurstr. 31, 10407 Berlin" [52.5328645,13.4353222]
+[17, 50877]: "Auerstr. / Weidenweg, 10249 Berlin" [52.51795,13.44938]
+[18, 50893]: "Marchlewskiestr.30/40, 10243 Berlin" [52.5147455,13.43856]
+[19, 50876]: "Comeniusplatz, 10243 Berlin" [52.5118431,13.4475296]
+[20, 50894]: "Weserstr./Holteistr., 10247 Berlin" [52.5096511,13.4670291]
+[21, 50281]: "Akeleiweg;gegenüb.Nr.1, 12487 Berlin" [52.4382805,13.5128582]
+
+[Standard,u3_0]
+[1, 50715]: "Schwalbenweg 14, 12529 Berlin" [52.39655,13.53558]
+[2, 50322]: "Paradiesstr./ Buntzelstr.117, 12526 Berlin" [52.401165,13.5617236]
+[3, 50231]: "Seebadallee, 15834 Rangsdorf" [52.29194,13.42306]
+[4, 50019]: "Yorckstr., 15749 Mittenwalde" [52.2642736,13.536425]
+[5, 50515]: "Yorkstr., 15749 Mittenwalde" [52.2653762,13.536654]
+[6, 50239]: "Luckenwalder Str., 15711 Königs-Wusterhausen" [52.28973,13.61856]
+[7, 51440]: "Eichhornstr./ Ecke Rathenaustr., 15741 Bestensee" [52.2345466,13.63116]
+[8, 50952]: "Chausseestr. 153, 15754 Königs-Wusterhausen" [52.28694,13.67125]
+[9, 50680]: "Dorfaue, 15745 Wildau" [52.32125,13.61347]
+[10, 50415]: "Jahnstr/ Grüne Schanze, 15745 Wildau" [52.31926,13.62546]
+[11, 50229]: "Wildbahn/Blumencorso, 15745 Wildau" [52.3260146,13.6265615]
+[12, 50514]: "Dorfstr. 20, 15738 Zeuthen" [52.33992,13.61041]
+[13, 50454]: "Dorfstr. 20, 15738 Zeuthen" [52.33992,13.61041]
+[14, 50455]: "Dorfstr. 20, 15758 Zeuthen" [52.33992,13.61041]
+[15, 50734]: "Straße am Höllen- grund / Am Feld, 15738 Zeuthen" [52.3398879,13.6155886]
+[16, 50733]: "Große Zeuthener All. / Str. der Freiheit, 15738 Zeuthen" [52.3494714,13.6231843]
+[17, 50450]: "Heinrich-Heine-Str. Nähe Nr. 47, 15738 Zeuthen" [52.3494714,13.6231843]
+[18, 50518]: "Heinr.-Heine Str., 15738 Zeuthen" [52.3588389,13.63009]
+[19, 51482]: "Würzburger Str./ Regensburger Str., 15735 Zeuthen" [52.36657,13.6294]
+[20, 50888]: "August-Bebel-Allee  Ecke Friedenstr., 15732 Eichwalde" [52.3687867,13.630707]
+[21, 50890]: "Bruno-H.-Bürgel-Allee/ Bahnhofstr, 15732 Eichwalde" [52.3751772,13.6230628]
+[22, 50889]: "Stubenrauchstr/ August-Bebel-Allee, 15732 Eichwalde" [52.37092,13.6164996]
+[23, 50886]: "Beethovenstr./ Ecke Wagner, 15732 Eichwalde" [52.3724995,13.6246217]
+[24, 50887]: "Steinstr. 2, 15732 Eichwalde" [52.37203,13.63183]
+[25, 50885]: "Lindenstr./ Ecke Zeuthener, 15732 Eichwalde" [52.3724995,13.6246217]
+[26, 50777]: "Lübbenauer Str./ Vetschauer Allee, 12527 Berlin" [52.39149,13.63399]
+
+[Standard,w5_1]
+[1, 50141]: "Köpenicker 86, 12355 Berlin" [52.4228861,13.5084796]
+[2, 50139]: "Krokusstr. 57, 12357 Berlin" [52.42371,13.495634]
+[3, 50254]: "Alt Rudow 31, 12357 Berlin" [52.41988,13.49389]
+[4, 50142]: "Alt Rudow 2/Bildhauerw., 12357 Berlin" [52.4275753,13.488207]
+[5, 50132]: "Brunnenstr. 83, 13355 Berlin" [52.54372,13.3922]
+[6, 50538]: "Malmöerstr. 23, 10439 Berlin" [52.552132,13.4032824]
+[7, 50573]: "Kleverstr. 3/ Grüntaler Str. 23, 13357 Berlin" [52.5499561,13.3804407]
+[8, 50131]: "Hussittenstr. 73, 13355 Berlin" [52.53671,13.38967]
+[9, 50664]: "Bergstr., geg. Nr. 17/Schröderstr., 10115 Berlin" [52.53043,13.39367]
+[10, 50678]: "Fischerinsel 8,  geg.Kindergarten, 10179 Berlin" [52.5121401,13.414046]
+[11, 50908]: "Alte Jakobstr. 167, 10969 Berlin" [52.4999725,13.3969238]
+[12, 50343]: "Am Karlsbad zw.1 u.2, 10785 Berlin" [52.5069115,13.3650508]
+[13, 50285]: "Dieffenbachstr./Grimmstr., 10967 Berlin" [52.4933774,13.4146088]
+[14, 50286]: "Waldemarstr., 10997 Berlin" [52.5026308,13.422221]
+[16, 50290]: "Bouchestr., 12059 Berlin" [52.4875966,13.4448047]
+[17, 50294]: "Heidelb.S,geg. Einmündg. Sülzhayner S., 12045 Berlin" [52.4867189,13.4343715]
+[18, 50293]: "Wildenbruchplatz, 12045 Berlin" [52.4836052,13.4443844]
+[19, 50292]: "Teupitzer Str., 12059 Berlin" [52.482225,13.4561209]
+[20, 50291]: "Treptower Str. 32a, 12059 Berlin" [52.4836089,13.4557681]
+[21, 50003]: "Rinkartstr. /Bodelschwinghstr., 12437 Berlin" [52.46562,13.48307]
+[22, 50340]: "Baumschulenstr.28, 12057 Berlin" [52.4645191,13.4860258]
+[23, 50252]: "Zwickauer Damm, 12353 Berlin" [52.4207168,13.481425]
+[24, 50727]: "Zwickauer D/Lößnitzerweg, 12355 Berlin" [52.4075033,13.4975639]
+[25, 50728]: "Rhodeländerweg/Geflügelsteig, 12355 Berlin" [52.4070408,13.4852908]
+
+[Standard,we_5]
+[1, 51525]: "Körtestr. 35, 10967 Berlin" [52.48918,13.40838]
+[2, 51524]: "Körtestr. 35, 10967 Berlin" [52.48918,13.40838]
+
+[Standard,x_5]
+[2, 50248]: "Achtermann/Versalius, 13187 Berlin" [52.5720661,13.4126604]
+
+[Standard,z_0]
+[1, 50630]: ", 00000 " [6.254495,-75.615522]
+
+[Standard,z_1]
+[1, 50630]: ", 00000 " [6.254495,-75.615522]
+
+[Standard,z_2]
+[1, 50630]: ", 00000 " [6.254495,-75.615522]
+
+[Standard,z_3]
+[1, 50630]: ", 00000 " [6.254495,-75.615522]
+
+[Standard,z_4]
+[1, 50630]: ", 00000 " [6.254495,-75.615522]
+

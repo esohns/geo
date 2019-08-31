@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<gpx version="1.1" creator="Humana Kleidersammlung GmbH - Geo" xmlns="http://www.topografix.com/GPX/1/1">
+ <metadata>
+  <desc>b - Kombi U7_0</desc>
+  <copyright author="">
+   <year>2013</year>
+   <license></license>
+  </copyright>
+  <time>2013-04-10T11:14:25+02:00</time>
+  <bounds minlat="13.63717" minlon="13.6466" maxlat="51.8181943" maxlon="52.51389"/>
+ </metadata>
+ <rte>
+  <name>b - Kombi U7_0</name>
+  <number>10</number>
+  <rtept lat="52.51389" lon="13.63717">
+   <ele>1</ele>
+   <name>warehouse</name>
+  </rtept>
+  <rtept lat="51.73482" lon="14.33515">
+   <ele>2</ele>
+   <name>53633B1002</name>
+  </rtept>
+  <rtept lat="51.7340819" lon="14.33257">
+   <ele>3</ele>
+   <name>53634S0167</name>
+  </rtept>
+  <rtept lat="51.73411" lon="14.3293">
+   <ele>4</ele>
+   <name>53635B0411</name>
+  </rtept>
+  <rtept lat="51.7317118" lon="14.3251124">
+   <ele>5</ele>
+   <name>53636H2037</name>
+  </rtept>
+  <rtept lat="51.5907452" lon="14.0085563">
+   <ele>6</ele>
+   <name>53625S0100</name>
+  </rtept>
+  <rtept lat="51.5907452" lon="14.0085563">
+   <ele>7</ele>
+   <name>53623B7039</name>
+  </rtept>
+  <rtept lat="51.68067" lon="13.6466">
+   <ele>8</ele>
+   <name>53621S0006</name>
+  </rtept>
+  <rtept lat="51.8181943" lon="13.6985543">
+   <ele>9</ele>
+   <name>53620B0472</name>
+  </rtept>
+  <rtept lat="52.51389" lon="13.63717">
+   <ele>10</ele>
+   <name>warehouse</name>
+  </rtept>
+ </rte>
+</gpx>

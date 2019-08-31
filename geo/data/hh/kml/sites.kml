@@ -1,0 +1,2575 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+ <Document>
+  <name>sites (4581)</name>
+	<Style id="site_style_ex">
+		<IconStyle>
+			<scale>0.7</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/red-circle.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<color>ff0000ff</color>
+			<scale>0.7</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="site_style_ex_hl">
+		<IconStyle>
+			<scale>1.0</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/red-circle.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<color>ff0000ff</color>
+		    <scale>1.0</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="site_style_used">
+		<IconStyle>
+			<scale>0.7</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/grn-circle.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<color>ff00ff55</color>
+			<scale>0.7</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="site_style_used_hl">
+		<IconStyle>
+			<scale>1.0</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/grn-circle.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<color>ff00ff55</color>
+			<scale>1.0</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="tour_style">
+		<LineStyle>
+<!--			<color>ffff0000</color>-->
+			<color>ffffffff</color>
+			<colorMode>random</colorMode>
+			<width>3</width>
+		</LineStyle>
+<!--		<PolyStyle>-->
+<!--			<colorMode>random</colorMode>-->
+<!--		</PolyStyle>-->
+	</Style>
+	<Style id="tour_style_hl">
+		<LineStyle>
+			<color>ffffffff</color>
+			<colorMode>normal</colorMode>
+			<width>3.5</width>
+		</LineStyle>
+<!--		<PolyStyle>-->
+<!--			<colorMode>random</colorMode>-->
+<!--		</PolyStyle>-->
+	</Style>
+	<Style id="image_style">
+		<IconStyle>
+			<scale>0.5</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/camera.png</href>
+			</Icon>
+			<hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.7</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="image_style_hl">
+		<IconStyle>
+			<scale>0.7</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/camera.png</href>
+			</Icon>
+			<hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.7</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="region_style">
+		<LineStyle>
+			<color>e5ff0000</color>
+			<width>1.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>33ff0000</color>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="site_style_used_map">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#site_style_used</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#site_style_used_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="site_style_ex_map">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#site_style_ex</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#site_style_ex_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="tour_style_map">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#tour_style</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#tour_style_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="image_style_map">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#image_style</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#image_style_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="region_style_map">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#region_style</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#region_style</styleUrl>
+		</Pair>
+	</StyleMap>
+  <Folder>
+   <name>aktuell</name>
+   <open>0</open>
+   <Style>
+    <ListStyle>
+     <listItemType>check</listItemType>
+     <bgColor>00ffffff</bgColor>
+     <maxSnippetLines>2</maxSnippetLines>
+    </ListStyle>
+   </Style>
+   <Placemark>
+    <name>70001     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.776356,53.6575926,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70002     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.78313,53.68049,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70003     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.78735,53.66904,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70004     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.78606,53.6717683,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70005     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.78699,53.66562,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70006     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.7872655,53.662389,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70007     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.80195,53.65782,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70008     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.7783586,53.657876,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70009     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.80847,53.64376,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70010     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.7917314,53.64706,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70013     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.86659,53.62704,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70016     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.0953013,53.5477809,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70018     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.71007,53.59242,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70019     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.71007,53.59242,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70020     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.72388,53.58252,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70021     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.72017,53.57355,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70022     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.7630016,53.5829184,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70023     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.7630016,53.5829184,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70025     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.8545484,53.5862877,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70029     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.8762898,53.5976007,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70030     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.0515035,53.6030968,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70031     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.0672829,53.6073859,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70034     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.1292806,53.6551199,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70035     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.118565,53.6160317,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70041     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.776356,53.6575926,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70042     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.7917314,53.64706,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70043     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.80847,53.64376,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70044     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.776356,53.6575926,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70046     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.08599,53.55359,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70047     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.1007893,53.5491849,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70049     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.0884672,53.5457428,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70052     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.0612843,53.5732096,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70053     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.0399412,53.5845505,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70061     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.12635,53.66862,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70062     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.1071811,53.6581667,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70066     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.12579,53.67341,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70067     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.1302477,53.6706565,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70068     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.07447,53.61383,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70070     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.12628,53.62783,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70074     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.7917314,53.64706,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70075     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.1083718,53.6701998,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70078     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.11476,53.58242,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70087     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.8969449,53.6029637,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70111     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.05429,53.5877,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70110     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.0898747,53.646626,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70090     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.0376756,53.556165,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70094     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.14099,53.57022,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70103     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.03267,53.6216,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70104     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.8845895,53.6012059,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70106     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.78653,53.65358,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70113     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.7783586,53.657876,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70122     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.0968,53.54471,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70123     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.10305,53.57215,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70125     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.0638399,53.5955243,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70130     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.75412,53.58123,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70132     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.8466,53.57697,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70137     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.0114895,53.5868006,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70138     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.0165164,53.5887317,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70144     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.0570566,53.5758259,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70146     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.79156,53.64632,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70147     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.76131,53.58178,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70148     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.76979,53.57952,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70151     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.16944,53.58792,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70152     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.12603,53.56054,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70157     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.8845689,53.617667,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70153     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.11235,53.53707,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70160     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.8950348,53.5731058,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70167     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.0834975,53.5778954,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70170     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.09136,53.545,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70181     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.7938212,53.6545225,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70183     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.78313,53.68049,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70184     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.1236518,53.5787117,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70187     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.11902,53.60432,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70189     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.7917314,53.64706,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70197     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.79156,53.64632,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70198     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.78735,53.66904,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70199     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.78699,53.66562,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70200     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.7872655,53.662389,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70194     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.0844,53.5511,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70205     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.12221,53.53873,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70207     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.0661,53.55279,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70209     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.13293,53.5284,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70210     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.96097,53.57057,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70211     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.14193,53.53095,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70212     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.14144,53.52727,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70213     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.1570395,53.5190847,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70214     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.12117,53.53811,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70218     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.72017,53.57355,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70219     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.76131,53.58178,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70220     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.0399412,53.5845505,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70221     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.7938212,53.6545225,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70225     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.1354137,53.5403906,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70224     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.92304,53.58784,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70222     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.1414118,53.5367351,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70227     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.0314036,53.5960911,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70232     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.0487195,53.5696593,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70235     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.96596,53.60438,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70241     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.1203507,53.5315975,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70242     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.9582671,53.6105859,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70246     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.9936818,53.5510846,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70251     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.0133134,53.6447874,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70250     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.009312,53.6441214,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70256     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.00583,53.61671,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70255     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.9931416,53.645185,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70257     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.1007893,53.5491849,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70254     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.95949,53.64225,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70260     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.94135,53.63855,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70259     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.930842,53.5990653,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70274     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.95531,53.62485,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70271     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.0929985,53.5816414,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70270     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.9323852,53.5878967,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70264     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.0028088,53.6461214,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70282     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.9433808,53.5585277,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70285     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.8762898,53.5976007,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70286     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.8466,53.57697,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70287     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.99635,53.64362,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70289     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.15144,53.52473,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70290     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.82499,53.57584,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70298     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.07447,53.61383,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70296     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.01974,53.57132,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70295     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.00819,53.5872,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70310     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.9420444,53.5658211,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70309     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.9084779,53.5665288,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70308     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.89743,53.56868,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70304     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.92041,53.55466,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70303     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.90449,53.55642,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70300     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.9426073,53.5488885,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70311     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.71007,53.59242,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70312     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.1685637,53.5140854,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70313     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.1644558,53.5156267,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70314     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.95927,53.61205,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70315     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.93596,53.57966,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70316     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.9332866,53.584789,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70318     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.9471012,53.5662722,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70319     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.9404391,53.5615861,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70320     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.9397784,53.5687167,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70321     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.9456324,53.5919001,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70322     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.16944,53.58792,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70329     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.92689,53.59257,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70327     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.9384108,53.5788635,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70330     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.17802,53.51213,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70331     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.18447,53.5088,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70332     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.1933683,53.5129878,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70335     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.2142,53.50313,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70336     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.20818,53.50452,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70337     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.1028195,53.5428714,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70338     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.0750892,53.5477207,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70339     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>9.9098993,53.5602067,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70341     </name>
+    <styleUrl>#site_style_used_map</styleUrl>
+    <Point>
+     <coordinates>10.0472678,53.6090099,0</coordinates>
+    </Point>
+   </Placemark>
+  </Folder>
+  <Folder>
+   <name>gelöscht</name>
+   <open>0</open>
+   <Style>
+    <ListStyle>
+     <listItemType>check</listItemType>
+     <bgColor>00ffffff</bgColor>
+     <maxSnippetLines>2</maxSnippetLines>
+    </ListStyle>
+   </Style>
+   <Placemark>
+    <name>70000     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.7783586,53.657876,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70011     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0280311,53.554686,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70012     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.87758,53.64869,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70014     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.06359,53.5550095,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70015     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0819139,53.5573442,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70017     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.71877,53.69206,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70024     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.81784,53.56251,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70026     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.9113356,53.6027868,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70027     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.90275,53.60394,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70028     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.89735,53.60471,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70033     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0938376,53.6380851,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70036     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.118565,53.6160317,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70037     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1457902,53.5943,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70038     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1375008,53.5926894,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70039     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.8473062,53.612754,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70040     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1165871,53.5709761,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70045     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.03989,53.5591,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70048     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0973583,53.5448235,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70050     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0802062,53.5612625,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70051     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.04578,53.56525,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70054     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0505548,53.5685749,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70058     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.03144,53.61342,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70059     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.90481,53.60178,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70056     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1693369,53.5898122,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70055     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1527755,53.5965153,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70060     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1117361,53.6577743,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70064     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0888885,53.6314687,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70065     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0821758,53.5923549,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70069     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1324352,53.6728316,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70071     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1206293,53.6723897,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70072     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1119449,53.6220137,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70073     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1763957,53.6033007,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70063     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1364577,53.5725931,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70076     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1017791,53.6466644,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70077     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0475077,53.5673806,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70079     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.00125,53.60715,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70080     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.05983,53.6078,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70081     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0416302,53.5887005,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70082     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.05149,53.5843,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70083     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0588736,53.5841799,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70084     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.02451,53.61565,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70085     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.98958,53.58723,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70086     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.8954232,53.6156915,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70088     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.9076764,53.6478112,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70089     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0569,53.5677047,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70109     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0850539,53.6452288,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70108     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.055442,53.5852951,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70116     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0954229,53.6339182,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70091     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1192985,53.5699995,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70092     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.12569,53.56839,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70093     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.13449,53.5707,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70095     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1260105,53.5853131,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70096     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.13279,53.58527,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70097     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0852568,53.607925,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70098     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0852568,53.607925,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70099     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0869718,53.5942688,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70100     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.08072,53.6048,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70101     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1260105,53.5853131,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70102     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0793421,53.601152,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70105     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.88509,53.59251,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70112     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0553744,53.5885838,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70114     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.08596,53.61109,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70115     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1007586,53.5683271,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70107     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.09006,53.63374,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70117     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0884679,53.6327598,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70118     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0882178,53.5721591,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70119     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0455,53.5649,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70120     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0705439,53.5610724,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70121     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0987597,53.5424283,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70124     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1020751,53.5732418,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70126     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0929993,53.6034251,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70127     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0982,53.6031,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70128     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1185019,53.6189005,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70129     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.76507,53.58129,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70131     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.74181,53.5845,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70133     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.8761138,53.56943,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70134     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.8806119,53.5641817,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70135     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0686665,53.6359346,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70223     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.00959,53.5909,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70139     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1079828,53.599092,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70140     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.118565,53.6160317,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70141     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1153697,53.5954327,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70142     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1301308,53.5867336,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70143     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0990151,53.6003928,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70145     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.9143764,53.6264712,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70149     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.037509,53.5599692,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70150     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.128512,53.5833862,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70154     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1387851,53.5486838,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70155     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.8954232,53.6156915,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70156     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1098818,53.59195,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70161     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1307,53.5716,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70159     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.88664,53.62387,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70158     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1087584,53.5867296,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70162     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1103446,53.5905184,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70163     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.9217286,53.646315,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70164     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0964159,53.5952012,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70165     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.086157,53.5713114,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70166     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1005017,53.628512,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70168     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1690947,53.588997,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70169     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.9022116,53.6157827,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70171     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1084314,53.6062243,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70172     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1194989,53.4279795,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70173     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0825251,53.5800428,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70174     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1140704,53.6152148,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70175     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1082433,53.610786,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70176     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0610176,53.5886992,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70177     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1248186,53.5985041,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70178     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.066756,53.5890355,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70179     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1115098,53.6067812,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70180     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.7837284,53.6531653,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70182     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.8948364,53.6161634,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70185     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1144987,53.5759702,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70186     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.118565,53.6160317,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70188     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0871126,53.6271886,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70190     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.09459,53.61457,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70191     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.14548,53.57166,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70192     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.11455,53.62274,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70196     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1302477,53.6706565,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70195     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.08279,53.54829,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70193     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0918754,53.5551285,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70201     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.958729,53.5739523,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70203     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.97225,53.57457,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70202     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.96968,53.57116,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70204     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0333696,53.5628108,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70206     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1274529,53.5436937,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70208     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0501008,53.5933075,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70215     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.9129823,53.6126124,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70216     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.91119,53.61133,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70217     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0679,53.60872,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70136     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.01214,53.59003,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70226     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.04749,53.57059,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70228     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.040203,53.5870808,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70229     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0188161,53.5849265,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70239     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.9239461,53.5982658,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70230     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.95537,53.61454,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70231     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.98389,53.60659,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70233     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.97305,53.61453,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70234     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.9740138,53.6174248,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70236     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.9246654,53.6046508,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70237     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.9704634,53.6114023,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70238     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.13112,53.53535,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70240     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.94904,53.63677,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70244     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.9168181,53.6356104,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70243     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.9558557,53.6343199,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70245     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.08617,53.58739,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70248     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.9125985,53.6216914,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70249     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.12036,53.64415,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70252     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.9692046,53.6296528,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70258     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.05983,53.6078,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70253     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.9585814,53.6327275,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70262     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.96687,53.60861,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70261     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0351049,53.5877364,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70280     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.9560645,53.6227834,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70279     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.97303,53.64323,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70278     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.9754271,53.6454897,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70277     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0772272,53.5493134,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70276     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.9544229,53.6047286,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70275     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1672958,53.5154099,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70273     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.96406,53.62875,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70272     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.953895,53.6235848,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70269     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0044709,53.6472964,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70263     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.10432,53.64944,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70265     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.01403,53.60631,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70268     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0836053,53.6025859,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70267     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0790196,53.6002129,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70284     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.95751,53.56549,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70283     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.9505815,53.5591881,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70281     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.9465339,53.5554196,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70288     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.95339,53.6095,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70291     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.82731,53.56633,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70292     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0338528,53.5537272,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70293     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.98958,53.58723,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70299     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.08596,53.61109,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70294     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.9966164,53.5675782,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70297     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.0160284,53.571256,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70307     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.9194,53.56222,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70306     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.9118726,53.5678526,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70305     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.9172103,53.5594429,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70302     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.95301,53.58848,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70301     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.90994,53.55583,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70317     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.9437255,53.5673763,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70323     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.1375008,53.5926894,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70328     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.9659855,53.6125259,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70326     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.92921,53.59374,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70325     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.92333,53.59367,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70324     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.06814,53.60831,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70333     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.21109,53.51348,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70334     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>10.19639,53.50957,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70340     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.9573074,53.6119539,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70342     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.97225,53.57457,0</coordinates>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>70343     </name>
+    <styleUrl>#site_style_ex_map</styleUrl>
+    <Point>
+     <coordinates>9.9505815,53.5591881,0</coordinates>
+    </Point>
+   </Placemark>
+  </Folder>
+  <Folder>
+   <name>other</name>
+   <open>0</open>
+   <Style>
+    <ListStyle>
+     <listItemType>check</listItemType>
+     <bgColor>00ffffff</bgColor>
+     <maxSnippetLines>2</maxSnippetLines>
+    </ListStyle>
+   </Style>
+  </Folder>
+ </Document>
+</kml>

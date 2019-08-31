@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Humana clothes collection GmbH - Geo</title>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<!--    content="width=device-width, initial-scale=1.0, user-scalable=no">-->
+  <meta charset="UTF-8">
+  <!-- <meta charset="iso-8859-1"> -->
+  <link rel="stylesheet" type="text/css" href="css/no-theme/jquery-ui-1.9.2.custom.css">
+  <!-- <link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery-ui.css"/> -->
+  <link rel="stylesheet" type="text/css" href="../common/css/geo_common.css">
+  <link rel="stylesheet" type="text/css" href="../common/css/geo_index.css">
+<!--[if IE]>
+  <link rel="shortcut icon" type="image/x-icon" href="../common/images/favicon.ico">
+<![endif]-->
+<!--[if !IE]<!-->
+  <link rel="icon" type="image/x-icon" href="../common/images/favicon.ico">
+<!--<![endif]-->
+  <script type="text/javascript" src="js/3rd_party/jquery-1.8.3.js"></script>
+  <!-- <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+  <script type="text/javascript" src="js/3rd_party/jquery-ui-1.9.2.custom.js"></script>
+  <!-- <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script> -->
+  <!-- <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script> -->
+<!-- <script type="text/javascript" src="src/3rd_party/jquery.tr.min.js"></script> -->
+<!-- <script type="text/javascript" src="src/3rd_party/jquery.tr.js"></script> -->
+<!-- *NOTE*: the default implementation seems to broken in IE -->
+<!-- <script type="text/javascript" src="https://raw.github.com/Bloutiouf/jquery.tr/master/jquery.tr.min.js"></script> -->
+  <script type="text/javascript" src="../common/js/3rd_party/jquery.tr.js"></script>
+  <script type="text/javascript" src="../common/js/ECMA_compliance.js"></script>
+  <script type="text/javascript" src="../common/js/geo_common.js"></script>
+  <script type="text/javascript" src="../common/js/geo_dictionary.js"></script>
+  <script type="text/html" src="../common/3rd_party/counter.php?page=geo_index"></script>
+  <script type="text/javascript">
+  function on_reduce_bandwidth_option_changed()
+  {
+    if (document.getElementById('reduce_bandwidth_checkbox').checked)
+    {
+      document.getElementById('community_support_checkbox').checked = false;
+      if (use_jquery_ui_style) jQuery('#community_support_checkbox').button('refresh');
+    }
+    //if (use_jquery_ui_style) jQuery('#reduce_bandwidth_checkbox').button('refresh');
+  }
+  function on_load_communities_option_changed()
+  {
+    var input_checkbox = document.getElementById('community_support_checkbox');
+    if (input_checkbox.checked)
+    {
+      document.getElementById('reduce_bandwidth_checkbox').checked = false;
+      if (use_jquery_ui_style) jQuery('#reduce_bandwidth_checkbox').button('refresh');
+    }
+  }
+  function on_map_changed()
+  {
+    var listbox = document.getElementById('map_listbox');
+    var input_checkbox = document.getElementById('cluster_markers_checkbox');
+    switch (listbox.options[listbox.selectedIndex].value)
+    {
+      case 'googlev3':
+        input_checkbox.readonly = false;
+        input_checkbox.disabled = false;
+        break;
+      default:
+        input_checkbox.checked = false;
+        input_checkbox.readonly = true;
+        input_checkbox.disabled = true;
+        break;
+    }
+  }
+  function initialize_page()
+  {
+    jQuery.noConflict();
+
+    // initialize widgets (IE autocomplete workaround)
+    var listbox = document.getElementById('language_listbox');
+    listbox.selectedIndex = 0;
+    listbox = document.getElementById('branch_listbox');
+    listbox.selectedIndex = 0;
+// 	listbox = document.getElementById('map_listbox');
+//	var i;
+//	for (i = 0; i < listbox.options.length; i++)
+//	 if (listbox.options[i].value == map_provider_default) break;
+//	if (i == listbox.options.length)
+//	{
+// 	 alert('invalid map provider (was: "' + map_provider_default + '"), aborting');
+//	 return;
+//	}
+//	listbox.selectedIndex = i;
+
+    // initialize localisation
+    var dictionary = {};
+    jQuery.extend(true, dictionary, dictionary_en);
+    jQuery.tr.dictionary(dictionary);
+    jQuery.tr.language('en');
+
+    // initialize widgets
+    //var tab_index = 0;
+    var check_box = document.getElementById('community_support_checkbox');
+    check_box.onchange = on_load_communities_option_changed;
+    if (use_jquery_ui_style) jQuery('#community_support_checkbox').button({disabled: false,
+                                                                           icons   : {primary: 'ui-icon-bookmark'},
+                                                                           //label   : "load community support",
+                                                                           text    : false
+                                                                          });
+    check_box = document.getElementById('cluster_markers_checkbox');
+    //check_box.onchange = on_cluster_markers_option_changed;
+    if (use_jquery_ui_style) jQuery('#cluster_markers_checkbox').button({disabled: false,
+                                                                         icons   : {primary: 'ui-icon-arrow-4-diag'},
+                                                                         //label   : "cluster markers",
+                                                                         text    : false
+                                                                        });
+    check_box = document.getElementById('reduce_bandwidth_checkbox');
+    check_box.onchange = on_reduce_bandwidth_option_changed;
+    if (use_jquery_ui_style) jQuery('#reduce_bandwidth_checkbox').button({disabled: false,
+                                                                          icons   : {primary: 'ui-icon-signal'},
+                                                                          //label   : "reduce bandwidth usage",
+                                                                          text    : false
+                                                                         });
+    if (use_jquery_ui_style)
+    {
+      jQuery('#options').buttonset();
+
+      // *WORKAROUND* apply icon to submit button
+      jQuery('#submit_button').each(function(){
+        var submit_button = this;
+        jQuery(this).hide();
+        jQuery(this).after('<button id="submit_button_alt" title="go" onsubmit="on_submit_clicked()" disabled="disabled" icon="ui-icon-bullet" style="display:inline" class="large_button"></button>');
+        jQuery('#submit_button_alt').button({disabled: jQuery(submit_button).attr('disabled'),
+                                             icons   : {primary: jQuery(submit_button).attr('icon')},
+                                             label   : jQuery(submit_button).val(),
+                                             text    : false//,
+                                            });
+        var button_widget = jQuery('#submit_button_alt').button('widget');
+        jQuery(button_widget).click(function(event){
+          event.preventDefault();
+          //jQuery(this).prev().click();
+          on_submit_clicked();
+        });
+      });
+//     var input_button = document.getElementById('submit_button');
+//     jQuery('#submit_button').button({disabled: false,
+//									  text    : false,
+//									  icons   : {primary: 'ui-icon-bullet'}//,
+//								      //label   : 'go'});
+//                                    });
+
+      jQuery('#refresh_only_checkbox').button({disabled: false,
+                                               icons   : {primary: 'ui-icon-refresh'},
+                                               //label   : "reduce bandwidth usage",
+                                               text    : false
+                                              });
+    }
+    else
+    {
+      var label = document.getElementById('community_support_checkbox_label');
+      label.style.display = 'none';
+      label = document.getElementById('cluster_markers_checkbox_label');
+      label.style.display = 'none';
+      label = document.getElementById('reduce_bandwidth_checkbox_label');
+      label.style.display = 'none';
+      label = document.getElementById('refresh_only_checkbox_label');
+      label.style.display = 'none';
+    }
+
+    var button = document.getElementById('logout_button');
+    button.className = 'gmnoprint large_button';
+    button.title = jQuery.tr.translator()('logout');
+    button.innerHTML = jQuery.tr.translator()('logout');
+    button.onclick = on_logout;
+    //button.tabindex = tab_index++;
+    if (use_jquery_ui_style)
+      jQuery('#logout_button').button({disabled: false,
+                                       icons   : {primary: 'ui-icon-power'},
+                                       // label   : 'logout',
+                                       text    : false
+                                      });
+      // .click(on_logout);
+  }
+  function on_language_changed()
+  {
+    var list_box = document.getElementById('language_listbox');
+    if (list_box.selectedIndex == -1) return;
+
+    var dictionary = {};
+    switch (list_box.options[list_box.selectedIndex].value)
+    {
+      case 'en':
+        jQuery.extend(true, dictionary, dictionary_en);
+        break;
+      case 'de':
+        jQuery.extend(true, dictionary, dictionary_de);
+        break;
+      default:
+        if (!!window.console) console.log('invalid language (was: ' +
+                                          list_box.options[list_box.selectedIndex].value +
+                                          '), returning');
+          alert('invalid language (was: ' +
+                list_box.options[list_box.selectedIndex].value +
+                '), returning');
+        return;
+    }
+    jQuery.tr.dictionary(dictionary);
+    jQuery.tr.language(list_box.options[list_box.selectedIndex].value);
+
+    // localise page/widgets/...
+    document.title = jQuery.tr.translator()('Humana clothes collection GmbH') +
+                                            ' - ' +
+                                            application_name;
+
+    var list_box = document.getElementById('language_listbox');
+    var selected_language = list_box.options[list_box.selectedIndex].value;
+    while (list_box.hasChildNodes()) list_box.removeChild(list_box.firstChild);
+    var new_option = document.createElement('option');
+    new_option.value = 'en';
+    new_option.selected = (new_option.value == selected_language);
+    new_option.appendChild(document.createTextNode(jQuery.tr.translator()('english')));
+    list_box.appendChild(new_option);
+    new_option = document.createElement('option');
+    new_option.value = 'de';
+    new_option.selected = (new_option.value == selected_language);
+    new_option.appendChild(document.createTextNode(jQuery.tr.translator()('german')));
+    list_box.appendChild(new_option);
+
+    var h1 = document.getElementById('greeting');
+    h1.innerHTML = '<b>' +
+                   jQuery.tr.translator()('Welcome to the') +
+                   ' ' +
+                   jQuery.tr.translator()('Humana clothes collection GmbH') +
+                   '</b>';
+
+    var legend = document.getElementById('branch_legend');
+    legend.innerHTML = jQuery.tr.translator()('branch');
+    list_box = document.getElementById('branch_listbox');
+    while (list_box.hasChildNodes()) list_box.removeChild(list_box.firstChild);
+    var new_option = document.createElement('option');
+    new_option.appendChild(document.createTextNode(jQuery.tr.translator()('select...')));
+    new_option.value = '';
+    list_box.appendChild(new_option);
+    new_option = document.createElement('option');
+    new_option.value = 'mh';
+    new_option.appendChild(document.createTextNode(jQuery.tr.translator()('Baden-Wuerttemberg/Mannheim')));
+    list_box.appendChild(new_option);
+    new_option = document.createElement('option');
+    new_option.value = 'bw';
+    new_option.appendChild(document.createTextNode(jQuery.tr.translator()('Baden-Wuerttemberg/Stuttgart')));
+    list_box.appendChild(new_option);
+    new_option = document.createElement('option');
+    new_option.value = 'b';
+    new_option.appendChild(document.createTextNode(jQuery.tr.translator()('Brandenburg/Berlin')));
+    list_box.appendChild(new_option);
+    new_option = document.createElement('option');
+    new_option.value = 'd';
+    new_option.appendChild(document.createTextNode(jQuery.tr.translator()('Saxonia/Dresden')));
+    list_box.appendChild(new_option);
+    new_option = document.createElement('option');
+    new_option.value = 'hh';
+    new_option.appendChild(document.createTextNode(jQuery.tr.translator()('Hamburg')));
+    list_box.appendChild(new_option);
+    new_option = document.createElement('option');
+    new_option.value = 'ks';
+    new_option.appendChild(document.createTextNode(jQuery.tr.translator()('Lower Saxonia/Kassel')));
+    list_box.appendChild(new_option);
+    new_option = document.createElement('option');
+    new_option.value = 'nrw';
+    new_option.appendChild(document.createTextNode(jQuery.tr.translator()('North Rhine-Westphalia/Cologne')));
+    list_box.appendChild(new_option);
+    new_option = document.createElement('option');
+    new_option.value = 'th';
+    new_option.appendChild(document.createTextNode(jQuery.tr.translator()('Thuringia')));
+    list_box.appendChild(new_option);
+    new_option = document.createElement('option');
+    new_option.value = 'wf';
+    new_option.appendChild(document.createTextNode(jQuery.tr.translator()('Westphalia')));
+    list_box.appendChild(new_option);
+
+    legend = document.getElementById('map_legend');
+    legend.innerHTML = jQuery.tr.translator()('map');
+
+    legend = document.getElementById('directions_legend');
+    legend.innerHTML = jQuery.tr.translator()('directions');
+
+    legend = document.getElementById('options_legend');
+    legend.innerHTML = jQuery.tr.translator()('options');
+    var input_checkbox = document.getElementById('community_support_checkbox');
+    input_checkbox.title = jQuery.tr.translator()('load community support');
+    var label = document.getElementById('community_support_checkbox_label');
+    label.title = jQuery.tr.translator()('load community support');
+    input_checkbox = document.getElementById('cluster_markers_checkbox');
+    input_checkbox.title = jQuery.tr.translator()('cluster site markers');
+    label = document.getElementById('cluster_markers_checkbox_label');
+    label.title = jQuery.tr.translator()('cluster site markers');
+    input_checkbox = document.getElementById('reduce_bandwidth_checkbox');
+    input_checkbox.title = jQuery.tr.translator()('reduce bandwidth usage');
+    label = document.getElementById('reduce_bandwidth_checkbox_label');
+    label.title = jQuery.tr.translator()('reduce bandwidth usage');
+
+    legend = document.getElementById('tools_legend');
+    legend.innerHTML = jQuery.tr.translator()('tools');
+    list_box = document.getElementById('tools_listbox');
+    while (list_box.hasChildNodes()) list_box.removeChild(list_box.firstChild);
+    var new_option = document.createElement('option');
+    new_option.appendChild(document.createTextNode(jQuery.tr.translator()('process...')));
+    list_box.appendChild(new_option);
+    new_option = document.createElement('option');
+    new_option.value = 'all';
+    new_option.appendChild(document.createTextNode(jQuery.tr.translator()('all')));
+    list_box.appendChild(new_option);
+    new_option = document.createElement('option');
+    new_option.value = 'containers';
+    new_option.appendChild(document.createTextNode(jQuery.tr.translator()('containers')));
+    list_box.appendChild(new_option);
+    new_option = document.createElement('option');
+    new_option.value = 'images';
+    new_option.appendChild(document.createTextNode(jQuery.tr.translator()('images')));
+    list_box.appendChild(new_option);
+    new_option = document.createElement('option');
+    new_option.value = 'sites';
+    new_option.appendChild(document.createTextNode(jQuery.tr.translator()('sites')));
+    list_box.appendChild(new_option);
+    new_option = document.createElement('option');
+    new_option.value = 'toursets';
+    new_option.appendChild(document.createTextNode(jQuery.tr.translator()('toursets')));
+    list_box.appendChild(new_option);
+
+    input_checkbox = document.getElementById('refresh_only_checkbox');
+    input_checkbox.title = jQuery.tr.translator()('refresh only');
+    label = document.getElementById('refresh_only_checkbox_label');
+    label.title = jQuery.tr.translator()('refresh only');
+
+    var input_button = document.getElementById('submit_button');
+    input_button.title = jQuery.tr.translator()('go');
+    input_button.value = jQuery.tr.translator()('go');
+    if (use_jquery_ui_style)
+    {
+      input_button = document.getElementById('submit_button_alt');
+      input_button.title = jQuery.tr.translator()('go');
+      input_button.value = jQuery.tr.translator()('go');
+
+      // *WORKAROUND*: re-apply icon to submit button (IE workaround)
+      jQuery('#submit_button_alt').button({disabled: jQuery('#submit_button').attr('disabled'),
+                                           icons   : {primary: jQuery('#submit_button').attr('icon')},
+                                           label   : jQuery('#submit_button').val(),
+                                           text    : false//,
+                                          });
+      var button_widget = jQuery('#submit_button_alt').button('widget');
+      jQuery(button_widget).click(function(event){
+        event.preventDefault();
+        //jQuery(this).prev().click();
+        on_submit_clicked();
+      });
+      //     var input_button = document.getElementById('submit_button');
+      //     jQuery('#submit_button').button({disabled: false,
+      //									  text    : false,
+      //									  icons   : {primary: 'ui-icon-bullet'}//,
+      //								      //label   : 'go'});
+      //                                    });
+    }
+
+    var button = document.getElementById('logout_button');
+    button.title = jQuery.tr.translator()('logout');
+    button.innerHTML = jQuery.tr.translator()('logout');
+    if (use_jquery_ui_style)
+      jQuery('#logout_button').button({disabled: false,
+                                       icons   : {primary: 'ui-icon-power'},
+                                       // label   : 'logout',
+                                       text    : false
+                                      });
+      // .click(on_logout);
+  }
+  function check_form()
+  {
+    // sanity check(s)
+    var listbox = document.getElementById('branch_listbox');
+    if ((listbox.selectedIndex == -1) || (listbox.selectedIndex == 0))
+    {
+      jQuery('#branch_listbox').addClass('ui-state-error');
+      return false;
+    }
+    jQuery('#branch_listbox').removeClass('ui-state-error');
+    listbox = document.getElementById('language_listbox');
+    if (listbox.selectedIndex == -1) return false;
+
+    // prepare form querystring
+    var input_box = document.getElementById('hidden_language');
+    input_box.value = listbox.options[listbox.selectedIndex].value;
+
+    return true;
+  }
+  function on_branch_changed()
+  {
+    var listbox = document.getElementById('branch_listbox');
+    if (listbox.selectedIndex == -1) return;
+
+<!-- 	if (use_jquery_ui_style) jQuery('#submit_button').button({disabled: (listbox.selectedIndex == 0)}); -->
+    if (use_jquery_ui_style) jQuery('#submit_button_alt').button({disabled: (listbox.selectedIndex == 0)});
+    else document.getElementById('submit_button').disabled = (listbox.selectedIndex == 0);
+  }
+  function on_submit_clicked()
+  {
+    var form = document.getElementById('form');
+    if (check_form()) form.submit();
+  }
+  function do_task_cb(data, status, xhr)
+  {
+    switch (xhr.status)
+    {
+      case 200:
+        break;
+      default:
+        if (!!window.console) console.log('failed to jQuery.post(do_task.php) (status: "' +
+                                          status + '" (' + xhr.status.toString() + ')' +
+                                          ', message: "' +
+                                          exception.toString() +
+                                          '")');
+        alert('failed to jQuery.post(do_task.php) (status: "' +
+              status + '" (' + xhr.status.toString() + ')' +
+              ', message: "' +
+              exception.toString() +
+              '")');
+        break;
+    }
+  }
+  function on_selected_tool()
+  {
+    var listbox = document.getElementById('tools_listbox');
+    if ((listbox.selectedIndex == -1) || (listbox.selectedIndex == 0)) return;
+
+    jQuery.ajaxSetup({async: (document.getElementById('refresh_only_checkbox').checked == false),
+                      cache: false,
+                      error: ajax_error_cb});
+    jQuery.post(script_path + 'do_task.php',
+                {location    : '',
+                 task        : listbox.options[listbox.selectedIndex].value,
+                 async       : (document.getElementById('refresh_only_checkbox').checked == false),
+                 refresh_only: document.getElementById('refresh_only_checkbox').checked
+                },
+                do_task_cb,
+                'json');
+
+    listbox.selectedIndex = 0;
+  }
+  window.onload = initialize_page;
+  </script>
+ </head>
+ <body>
+  <div id="language" align="right" class="outer">
+   <!-- *WORKAROUND*: the "autocomplete" attribute is a FF-workaround... -->
+   <select id="language_listbox" name="language" size="1" onchange="on_language_changed()" autocomplete="off">
+    <option selected="selected" value="en">english</option>
+    <option value="de">german</option>
+   </select>
+  </div>
+  <fieldset>
+   <table align="center">
+    <tr>
+      <td><img src="../common/images/HKS Logo NEU 2.jpg" alt="" height="125" width="100"></img></td>
+      <td>
+        <div id="frame" align="center" class="outer">
+          <h1 id="greeting" align="center"><b>Welcome to the Humana clothes collection GmbH</b></h1>
+          <div id="subframe_1" align="center" class="frame">
+            <!-- *WORKAROUND*: the "autocomplete" attribute is a FF-workaround... -->
+            <form id="form" method='GET' action='geo.html' onsubmit="return check_form()" autocomplete="off">
+              <input id="hidden_language" type="hidden" name="language" value="en"></input>
+              <fieldset style="display:inline">
+                <legend id="branch_legend">branch</legend>
+                <select id="branch_listbox" name="location" size="1" onchange="on_branch_changed()">
+                  <option selected="selected">select...</option>
+                  <option value="mh">Baden-Wuerttemberg/Mannheim</option>
+                  <option value="bw">Baden-Wuerttemberg/Stuttgart</option>
+                  <option value="b">Brandenburg/Berlin</option>
+                  <option value="d">Saxonia/Dresden</option>
+                  <option value="hh">Hamburg</option>
+                  <option value="ks">Lower Saxonia/Kassel</option>
+                  <option value="nrw">North Rhine-Westphalia/Cologne</option>
+                  <option value="th">Thuringia</option>
+                  <option value="wf">Westphalia</option>
+                </select>
+              </fieldset>
+              <span style="display:block">
+                <!-- <input id="hidden_map" type="hidden" name="map" value="googlev3"></input> -->
+                <fieldset style="display:inline">
+                  <legend id="map_legend">map</legend>
+                  <select id="map_listbox" name="map" size="1" onchange="on_map_changed()">
+                  <!-- *NOTE*: using mapstraction identifiers here -->
+                    <option selected="selected" value="googlev3">Google Maps (v3)</option>
+                    <option value="ovi">Nokia Ovi</option>
+                    <option value="openlayers">OpenLayers</option>
+                  </select>
+                </fieldset>
+                <!-- <input id="hidden_directions" type="hidden" name="directions" value="googlev3"></input> -->
+                <fieldset style="display:none">
+                  <legend id="directions_legend">directions</legend>
+                  <select id="directions_listbox" name="directions" size="1">
+                    <option selected="selected" value="googlev3">Google Maps (v3)</option>
+                    <option value="mapquest">MapQuest</option>
+                    <option value="ovi">Nokia Ovi</option>
+                  </select>
+                </fieldset>
+                <fieldset style="display:inline">
+                  <legend id="options_legend">options</legend>
+                  <div id="options">
+                    <!-- <input id="community_support_checkbox" type="checkbox" name="community_support" title="load community support" value="true" checked="checked"></input> -->
+                    <input id="community_support_checkbox" type="checkbox" name="community_support" title="load community support" value="false"></input>
+                    <input id="cluster_markers_checkbox" type="checkbox" name="cluster_markers" title="support clustering of sites" value="true" checked="checked"></input>
+                    <input id="reduce_bandwidth_checkbox" type="checkbox" name="reduce_bandwidth_usage" title="reduce bandwidth usage" value="false"></input>
+                  </div>
+                  <label id="community_support_checkbox_label" for="community_support_checkbox">load community support</label>
+                  <label id="cluster_markers_checkbox_label" for="cluster_markers_checkbox">support clustering of sites</label>
+                  <label id="reduce_bandwidth_checkbox_label" for="reduce_bandwidth_checkbox">reduce bandwidth usage</label>
+                </fieldset>
+                <!-- *WORKAROUND*: the "icon" attribute is a jQueryUI patch... -->
+                <input id="submit_button" type="submit" title="go" value="go" onsubmit="on_submit_clicked()" disabled="disabled" icon="ui-icon-bullet" style="display:inline" class="large_button">
+              </span>
+            </form>
+          </div>
+          <div id="sub_frame_2" align="center" class="frame">
+            <fieldset style="display:inline">
+              <legend id="tools_legend">tools</legend>
+              <span>
+                <select id="tools_listbox" size="1" onchange="on_selected_tool()">
+                  <option selected="selected">process...</option>
+                  <option value="images">all</option>
+                  <option value="images">containers</option>
+                  <option value="images">images</option>
+                  <option value="sites">sites</option>
+                  <option value="toursets">toursets</option>
+                </select>
+                <input id="refresh_only_checkbox" type="checkbox" name="refresh_only" title="refresh only"></input>
+                <label id="refresh_only_checkbox_label" for="refresh_only_checkbox">refresh only</label>
+              </span>
+            </fieldset>
+          </div>
+        </div>
+     </td>
+     <td><img src="../common/images/Humana Globe NEU 2.jpg" alt="" height="150" width="150"></img></td>
+    </tr>
+   </table>
+  </fieldset>
+  <div id="logout" align="right" class="outer">
+   <button id="logout_button" class="button">logout</button>
+  </div>
+ </body>
+</html>

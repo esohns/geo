@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<gpx version="1.1" creator="Humana Kleidersammlung GmbH - Geo" xmlns="http://www.topografix.com/GPX/1/1">
+ <metadata>
+  <desc>b - 2011 S4_1</desc>
+  <copyright author="">
+   <year>2013</year>
+   <license></license>
+  </copyright>
+  <time>2013-04-10T14:23:10+02:00</time>
+  <bounds minlat="13.63717" minlon="13.0411378" maxlat="52.57724" maxlon="52.51389"/>
+ </metadata>
+ <rte>
+  <name>b - 2011 S4_1</name>
+  <number>36</number>
+  <rtept lat="52.51389" lon="13.63717">
+   <ele>1</ele>
+   <name>warehouse</name>
+  </rtept>
+  <rtept lat="52.56017" lon="13.219852">
+   <ele>2</ele>
+   <name>52818B0626</name>
+  </rtept>
+  <rtept lat="52.55829" lon="13.21762">
+   <ele>3</ele>
+   <name>52408B0487</name>
+  </rtept>
+  <rtept lat="52.5727454" lon="13.1924182">
+   <ele>4</ele>
+   <name>52512B0829</name>
+  </rtept>
+  <rtept lat="52.5749024" lon="13.2118983">
+   <ele>5</ele>
+   <name>52509</name>
+  </rtept>
+  <rtept lat="52.5727454" lon="13.1924182">
+   <ele>6</ele>
+   <name>53087B0080</name>
+  </rtept>
+  <rtept lat="52.5727454" lon="13.1924182">
+   <ele>7</ele>
+   <name>51540B0835</name>
+  </rtept>
+  <rtept lat="52.5556996" lon="13.2074391">
+   <ele>8</ele>
+   <name>51424</name>
+  </rtept>
+  <rtept lat="52.54943" lon="13.20179">
+   <ele>9</ele>
+   <name>51538B0295</name>
+  </rtept>
+  <rtept lat="52.5521911" lon="13.1983896">
+   <ele>10</ele>
+   <name>51545S0175</name>
+  </rtept>
+  <rtept lat="52.5601227" lon="13.1925653">
+   <ele>11</ele>
+   <name>52663B0705</name>
+  </rtept>
+  <rtept lat="52.55941" lon="13.18412">
+   <ele>12</ele>
+   <name>52660B0378</name>
+  </rtept>
+  <rtept lat="52.5608978" lon="13.1864893">
+   <ele>13</ele>
+   <name>52661B0011</name>
+  </rtept>
+  <rtept lat="52.5657546" lon="13.158139">
+   <ele>14</ele>
+   <name>51260B1045</name>
+  </rtept>
+  <rtept lat="52.55465" lon="13.15233">
+   <ele>15</ele>
+   <name>51267B0444</name>
+  </rtept>
+  <rtept lat="52.54866" lon="13.1557">
+   <ele>16</ele>
+   <name>53257B0528</name>
+  </rtept>
+  <rtept lat="52.55035" lon="13.16348">
+   <ele>17</ele>
+   <name>53256S0380</name>
+  </rtept>
+  <rtept lat="52.5657546" lon="13.158139">
+   <ele>18</ele>
+   <name>51284B0872</name>
+  </rtept>
+  <rtept lat="52.55495" lon="13.17139">
+   <ele>19</ele>
+   <name>52459B0652</name>
+  </rtept>
+  <rtept lat="52.55114" lon="13.14867">
+   <ele>20</ele>
+   <name>51282S0201</name>
+  </rtept>
+  <rtept lat="52.5348604" lon="13.1431864">
+   <ele>21</ele>
+   <name>53187S0239</name>
+  </rtept>
+  <rtept lat="52.55857" lon="13.13095">
+   <ele>22</ele>
+   <name>51758S0309</name>
+  </rtept>
+  <rtept lat="52.55679" lon="13.14405">
+   <ele>23</ele>
+   <name>53423</name>
+  </rtept>
+  <rtept lat="52.5696551" lon="13.0751666">
+   <ele>24</ele>
+   <name>53424</name>
+  </rtept>
+  <rtept lat="52.57724" lon="13.12419">
+   <ele>25</ele>
+   <name>53425</name>
+  </rtept>
+  <rtept lat="52.56261" lon="13.12962">
+   <ele>26</ele>
+   <name>51760S0193</name>
+  </rtept>
+  <rtept lat="52.5696551" lon="13.0751666">
+   <ele>27</ele>
+   <name>53408</name>
+  </rtept>
+  <rtept lat="52.57194" lon="13.09325">
+   <ele>28</ele>
+   <name>52356</name>
+  </rtept>
+  <rtept lat="52.5606468" lon="13.0626595">
+   <ele>29</ele>
+   <name>51757K1905</name>
+  </rtept>
+  <rtept lat="52.5606468" lon="13.0626595">
+   <ele>30</ele>
+   <name>52637B0386</name>
+  </rtept>
+  <rtept lat="52.56917" lon="13.05106">
+   <ele>31</ele>
+   <name>52644B0999</name>
+  </rtept>
+  <rtept lat="52.56519" lon="13.04614">
+   <ele>32</ele>
+   <name>52181S0430</name>
+  </rtept>
+  <rtept lat="52.5696551" lon="13.0751666">
+   <ele>33</ele>
+   <name>51764B0344</name>
+  </rtept>
+  <rtept lat="52.5573092" lon="13.0463517">
+   <ele>34</ele>
+   <name>52182</name>
+  </rtept>
+  <rtept lat="52.5544881" lon="13.0411378">
+   <ele>35</ele>
+   <name>52956</name>
+  </rtept>
+  <rtept lat="52.51389" lon="13.63717">
+   <ele>36</ele>
+   <name>warehouse</name>
+  </rtept>
+ </rte>
+</gpx>

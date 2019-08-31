@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<gpx version="1.1" creator="Humana Kleidersammlung GmbH - Geo" xmlns="http://www.topografix.com/GPX/1/1">
+ <metadata>
+  <desc>b - 2011 HT_5</desc>
+  <copyright author="">
+   <year>2013</year>
+   <license></license>
+  </copyright>
+  <time>2013-04-10T14:23:08+02:00</time>
+  <bounds minlat="13.63717" minlon="13.3636" maxlat="52.56929" maxlon="52.51389"/>
+ </metadata>
+ <rte>
+  <name>b - 2011 HT_5</name>
+  <number>3</number>
+  <rtept lat="52.51389" lon="13.63717">
+   <ele>1</ele>
+   <name>warehouse</name>
+  </rtept>
+  <rtept lat="52.56929" lon="13.3636">
+   <ele>2</ele>
+   <name>51302</name>
+  </rtept>
+  <rtept lat="52.51389" lon="13.63717">
+   <ele>3</ele>
+   <name>warehouse</name>
+  </rtept>
+ </rte>
+</gpx>

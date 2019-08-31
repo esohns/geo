@@ -1,0 +1,73 @@
+option[selected="selected"]
+{
+ font-weight: bold;
+}
+legend
+{
+ font-size  : 10pt;
+ font-weight: bold;
+ /* text-align : left; */
+}
+
+.row
+{
+ display: table-row;
+}
+
+.outer
+{
+ margin               : 5px;
+ /* -moz-border-radius   : 5px; */
+ border-radius        : 5px;
+ -webkit-border-radius: 5px;
+}
+
+.frame
+{
+ margin    											: 5px;
+ padding   											: 5px;
+ border    											: 2px solid #ECE9D8;
+ width                : 50%;
+ /* position             : relative; */
+ /*		 float              : center; */
+ /*		 height             : 100px; */
+ /*		 top                : 30%; */
+ /*		 left               : 50%; */
+ /*		 display            : table-cell; */
+ /*		 margin-left        : auto; */
+ /* 		 margin-right      : auto; */
+ /*		 text-align         : center; */
+ /*   verical-align      : middle; */
+ margin-top           : 10%;
+ /* -moz-border-radius   : 5px; */
+ border-radius        : 5px;
+ -webkit-border-radius: 5px;
+}
+
+.fieldset
+{
+ /* -moz-border-radius   : 5px; */
+ border-radius        : 5px;
+ -webkit-border-radius: 5px;
+}
+
+.element
+{
+ display: block;
+}
+
+.ui-button-icon-only
+ {
+ height        : 1em;
+ margin        : 0px 0px !important;
+ padding       : 0px 0px 0px 0px !important;
+ /* line-height   : 0.8 !important; */
+ /* vertical-align: middle; */
+}
+.ui-button-text-only, .ui-button-text
+ {
+ margin     : 1px 1px !important;
+ padding    : 1px 1px 0px 0px !important;
+/* line-height: 0.8 !important;*/
+/* vertical-align: middle;*/
+}

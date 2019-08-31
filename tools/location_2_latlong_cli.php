@@ -1,0 +1,414 @@
+<?php
+error_reporting(E_ALL);
+require_once 'error_handler.php';
+set_error_handler('error_handler');
+
+$is_cli = TRUE;
+$cwd = getcwd();
+if ($cwd === FALSE) die('failed to getcwd(), aborting' . PHP_EOL);
+
+$codepage = 'CP850';
+//$codepage = 'CP437';
+
+// check argument
+$address = '';
+$check_intersections = FALSE;
+$location = '';
+$provider = '';
+$site_id = -1;
+if (($argc < 2) || ($argc > 5))
+ die('usage: ' .
+					basename($argv[0]) .
+					' [-a<address>] [-i] [-l<location>] [-p<provider>arcgis|[google]|mapquest|openstreetmap|yandex>] [-s<SID>]' .
+					PHP_EOL);
+$cmdline_options = getopt('a:il:p:s:');
+if (isset($cmdline_options['a'])) $address = $cmdline_options['a'];
+if (isset($cmdline_options['i'])) $check_intersections = TRUE;
+if (isset($cmdline_options['l'])) $location = $cmdline_options['l'];
+if (isset($cmdline_options['p'])) $provider = $cmdline_options['p'];
+if (isset($cmdline_options['s'])) $site_id = intval($cmdline_options['s']);
+// sanity checks
+if (empty($address) && (empty($location) || ($site_id === -1)))
+ die('usage: ' .
+					basename($argv[0]) .
+					' [-a<address>] [-i] [-l<location>] [-p<provider>arcgis|[google]|mapquest|openstreetmap|yandex>] [-s<SID>]' .
+					PHP_EOL);
+
+$system_is_windows = (strcmp(strtoupper(substr(PHP_OS, 0, 3)), 'WIN') === 0);
+$ini_file = getenv('GEO_INI_FILE');
+if ($ini_file === FALSE) die("%GEO_INI_FILE% environment variable not set, aborting\n");
+if (!file_exists($ini_file)) die('ini file does not exist (was: "' .
+																																	$ini_file .
+																																	'"), aborting' . PHP_EOL);
+define('DATA_DIR', $cwd . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . $location);
+$options = parse_ini_file($ini_file, TRUE);
+if ($options === FALSE) die('failed to parse_ini_file("' .
+																												$ini_file .
+																												'"), aborting' . PHP_EOL);
+$os_section = ((strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') ? 'geo_windows' : 'geo_unix');
+$loc_section = 'geo_db_' . $location;
+
+// sanity check(s)
+if (count($options) == 0) die('failed to parse init file (was: "' .
+																														$ini_file .
+																														'"), aborting' . PHP_EOL);
+// if (empty($provider)) $provider = $options['geo_geocode']['geocode_default_geocode_provider'];
+switch ($provider)
+{
+ case '':
+ case 'arcgis':
+ case 'google':
+ case 'mapquest':
+ case 'openstreetmap':
+	case 'yandex':
+  break;
+ default:
+  die('invalid provider (was: "' .
+						$provider .
+						'"), aborting' . PHP_EOL);
+}
+$sites_file = $options['geo_data']['data_dir'] .
+              DIRECTORY_SEPARATOR .
+													 $options['geo_data_sites']['data_sites_file_name'] .
+														$options['geo_data']['data_json_file_ext'];
+if (empty($address))
+{
+ // *WARNING* is_readable() fails on (mapped) network shares (windows)
+ if (!file_exists($sites_file)) die("sites file does not exist (was: \"$sites_file\"\n");
+ //if (!is_readable($sites_file)) die("sites file not readable (was: \"$sites_file\"), aborting\n");
+ fwrite(STDOUT, "sites file: \"" . $sites_file . "\"\n");
+}
+
+require_once (dirname($cwd) .
+														DIRECTORY_SEPARATOR .
+														$options['geo']['common_dir'] .
+														DIRECTORY_SEPARATOR .
+														$options['geo']['tools_dir'] .
+														DIRECTORY_SEPARATOR .
+														'distance_2_points_km.php');
+require_once (dirname($cwd) .
+														DIRECTORY_SEPARATOR .
+														$options['geo']['common_dir'] .
+              DIRECTORY_SEPARATOR .
+														$options['geo']['tools_dir'] .
+														DIRECTORY_SEPARATOR .
+														'get_median.php');
+require_once ($cwd .
+              DIRECTORY_SEPARATOR .
+														$options['geo']['tools_dir'] .
+														DIRECTORY_SEPARATOR .
+														'location_2_latlong.php');
+
+// init cURL
+$curl_handle = curl_init();
+if ($curl_handle === FALSE)
+	die('failed to curl_init("' .
+					curl_error($curl_handle) .
+					"\"), aborting\n");
+if (!curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, TRUE))
+{
+ curl_close($curl_handle);
+ die('failed to curl_setopt(CURLOPT_RETURNTRANSFER): "' .
+					curl_error($curl_handle) .
+					"\"), aborting\n");
+}
+if (!curl_setopt($curl_handle, CURLOPT_HEADER, FALSE))
+{
+ curl_close($curl_handle);
+ die('failed to curl_setopt(CURLOPT_HEADER): "' .
+					curl_error($curl_handle) .
+					"\"), aborting\n");
+}
+if (!curl_setopt($curl_handle, CURLOPT_SSL_VERIFYPEER, FALSE))
+{
+ curl_close($curl_handle);
+ die('failed to curl_setopt(CURLOPT_SSL_VERIFYPEER): "' .
+					curl_error($curl_handle) .
+					"\"), aborting\n");
+}
+switch ($provider)
+{
+ case 'arcgis':
+ case 'google': break;
+ case '':
+	case 'mapquest':
+  if (!curl_setopt($curl_handle, CURLOPT_REFERER, $options['geo']['default_referer']))
+  {
+   curl_close($curl_handle);
+   die('failed to curl_setopt(CURLOPT_REFERER): "' .
+							curl_error($curl_handle) .
+							"\", aborting\n");
+  }
+  break;
+ case 'openstreetmap':
+	case 'yandex':
+	 break;
+ default:
+	 curl_close($curl_handle);
+  die('invalid provider (was: "' .
+						$provider .
+						'"), aborting' . PHP_EOL);
+}
+
+if (empty($address))
+{
+	$site_file_json = file_get_contents($sites_file, FALSE);
+	if ($site_file_json === FALSE) die('invalid sites file "' .
+																																				$sites_file .
+																																				'", aborting' . PHP_EOL);
+	$site_file_json = json_decode($site_file_json, TRUE);
+	if (is_null($site_file_json)) die('failed to json_decode("' .
+																																			$sites_file .
+																																			'"), aborting' . PHP_EOL);
+	foreach ($site_file_json as $site)
+	 if ($site['SITEID'] === $site_id)
+		{
+			$address = mb_convert_encoding($site['ADDRESS'],
+																																		mb_internal_encoding(),
+																																		$options['geo_data_sites']['data_sites_file_cp']);
+		 break;
+		}
+	if (empty($address))	die('invalid SID (was: ' .
+																										strval($site_id) .
+																										'), aborting' . PHP_EOL);
+
+	fwrite(STDOUT, 'SID: ' .
+																strval($site_id) .
+																' --> "' .
+																mb_convert_encoding($address,
+																                    ($system_is_windows ? $codepage : mb_internal_encoding()),
+																																				mb_internal_encoding()) .
+																'"' . PHP_EOL);
+}
+
+$matches = array();
+if (preg_match('/^\s*' .                                                      // <Start>
+               '(?P<street1>[^\d\(\/,]+)' .                                   // street1
+															'(?:(?=\d)(?P<number1>\d+)[^\(\/,]*)?' .               					   // [number1]
+															'(?:(?=\()\(\s*(?:\S+?(\s+[^\s\)]+?)*)\s*\)\s*)?' .            // [community] ?
+               '(?:(?=\/|,\s*[^\s\d])[\/,]{1}\s*' .                           // [/,] --> <Start street2>
+															'(?P<street2>[^,]+?)' .                                        //          [street2]
+														 // '(?(?=[\d]+)(?P<number2>[\d]+)[-\s\d]*)?' .                    //          [number2]
+															')?' .                                                         // [/,] --> <End street2>
+															',\s*' .                                                       // ','
+															'(?:(?=\d)(?P<zip>\d+)\s*)?' .                                 // [ZIP]
+															'(?P<city>\S+(\s+[^\s\(]+?)*)\s*' .                            // city
+															'(?:(?=\()\(\s*(?P<community>\S+?(\s+[^\s\(]+?)*)\s*\)\s*)?' . // [community]
+															'$/',                                                          // <End>
+															$address,
+															$matches,
+															0,
+															0) !== 1)
+{
+	die('invalid address format: "' .
+					mb_convert_encoding($address,
+																									($system_is_windows ? $codepage : mb_internal_encoding()),
+																									mb_internal_encoding()) .
+					'", aborting' . PHP_EOL);
+}
+$has_intersection = (isset($matches['street2']) && strcmp(trim($matches['street2']), '') !== 0);
+// var_dump($matches);
+
+$results = array();
+$providers = (empty($provider) ? explode(',', $options['geo_geocode']['geocode_geocode_providers'])
+                               : array($provider));
+$region = $options['geo_geocode']['geocode_default_geocode_region'];
+$supports_intersections = FALSE;
+$checking_intersection = FALSE;
+for ($i = 0; $i < count($providers); $i++)
+{
+ fwrite(STDOUT, 'querying "' . $providers[$i] . '"...' . PHP_EOL);
+
+	// *NOTE*: mapquest/openstreetmap/yandex do not handle intersections
+	$street = trim($matches['street1']);
+ switch ($providers[$i])
+ {
+  case 'arcgis':
+ 	case 'google':
+		 $supports_intersections = TRUE;
+			// *NOTE*: prefer definite housenumber over intersections
+			if (isset($matches['number1']) && (strcmp(trim($matches['number1']), '') !== 0))
+				$street .= (' ' . trim($matches['number1']));
+			elseif ($check_intersections && $has_intersection && !$checking_intersection)
+			{
+			 $checking_intersection = TRUE;
+ 			$street .= (' and ' .	trim($matches['street2']));
+			}
+ 		break;
+ 	case 'mapquest':
+  case 'openstreetmap':
+ 	case 'yandex':
+		 $supports_intersections = FALSE;
+		 if (isset($matches['number1']) && (strcmp(trim($matches['number1']), '') !== 0))
+			 $street = (trim($matches['number1']) . ' ' . $street);
+			if ($check_intersections && $has_intersection) fwrite(STDOUT, 'provider [' .
+																																																																	$providers[$i] .
+																																																																	'] cannot handle intersections...' .
+																																																																	PHP_EOL);
+		 break;
+	 default:
+ 		die('invalid provider (was: "' . $providers[$i] . "\"), aborting\n");
+ }
+	switch ($providers[$i])
+	{
+  case 'arcgis':
+ 	case 'google':
+		case 'mapquest':
+		case 'openstreetmap':
+		 $query_string = $street .
+																			',' .
+																			((strcmp(trim($matches['zip']), '') === 0) ? '' : (' ' . trim($matches['zip']))) .
+																			' ' . trim($matches['city']);
+		 break;
+		case 'yandex':
+			$query_string = ((strcmp($region, 'de') === 0) ? 'Germany, ' : '') .
+																			trim($matches['city']) .
+																			', ' .
+																			$street;
+			break;
+		default:
+			die('invalid provider (was: "' . $providers[$i] . "\"), aborting\n");
+	}
+
+	fwrite(STDOUT, 'query string: "' .
+																mb_convert_encoding($query_string,
+																																				($system_is_windows ? $codepage : mb_internal_encoding()),
+																																				$options['geo_db']['db_sites_cp']) .
+																'"...' . PHP_EOL);
+ $result = location_2_latlong($providers[$i],
+																													 $curl_handle,
+																													 mb_convert_encoding($query_string,
+																																																		'UTF-8',
+																																																		mb_internal_encoding()),
+																													 $options['geo']['language'],
+																													 $region);
+ if (($result['code'] !== 200) || empty($result['data']))
+ {
+	 if ($checking_intersection)
+		{
+			fwrite(STDERR, '"' .
+																		mb_convert_encoding($query_string,
+																																						mb_internal_encoding(),
+																																						$options['geo_db']['db_sites_cp']) .
+																		'": [' . $providers[$i] . '] retrying w/o intersection' . PHP_EOL);
+		 $check_intersections = FALSE;
+			$i--;
+			continue;
+		}
+
+  fwrite(STDERR, '[' .
+																	$providers[$i] .
+																	'] failed to geocode "' .
+																	mb_convert_encoding($query_string,
+																																					($system_is_windows ? $codepage : mb_internal_encoding()),
+																																					mb_internal_encoding()) .
+																	'" (' .
+																	strval($result['code']) .
+																	'): "' .
+																	strval($result['status']) .
+																	'", continuing' . PHP_EOL);
+		continue;
+ }
+
+	$results[$providers[$i]] = $result['data'];
+	// fwrite(STDOUT, 'querying "' . $providers[$i] . '"...DONE' . PHP_EOL);
+}
+// fwrite(STDOUT, 'results:' . PHP_EOL . print_r($results, TRUE) . PHP_EOL);
+curl_close($curl_handle);
+
+$data = array();
+foreach ($results as $provider => $result) if (!empty($result)) $data[$provider] = $result;
+if (empty($data))
+{
+	die('"' .
+					mb_convert_encoding($address,
+																									($system_is_windows ? $codepage : mb_internal_encoding()),
+																									mb_internal_encoding()) .
+					'": invalid address, continuing' . PHP_EOL);
+}
+
+$head = reset($data);
+$coordinates = array($head[0], $head[1]);
+if (count($data) > 1)
+{
+ $coordinates = array(0.0, 0.0);
+
+	// test plausibility (i.e. mean distance)
+	$latitudes = array();
+	$longitudes = array();
+	foreach ($data as $provider => $result)
+	{
+		$latitudes[] = $result[0];
+		$longitudes[] = $result[1];
+	}
+	$median_latlon = array(get_median($latitudes), get_median($longitudes));
+	// fwrite(STDOUT, 'median (' .
+																// strval(count($data)) .
+																// '): ' .
+																// print_r($median_latlon, TRUE) . PHP_EOL);
+
+	$mean_distance = 0;
+	$filtered_data = array();
+	foreach ($data as $provider => $result)
+	{
+		$mean_distance = distance_2_points_km($median_latlon, $result);
+		if ($mean_distance > $options['geo_geocode']['geocode_resolution_fuzziness'])
+		{
+			// *NOTE*: prefer default provider...
+			if ((count($data) == 2) &&
+							array_key_exists($options['geo_geocode']['geocode_default_geocode_provider'], $data))
+			{
+				if ($is_cli) fwrite(STDERR, 'preferring "' .
+																																$options['geo_geocode']['geocode_default_geocode_provider'] .
+																																'"' . PHP_EOL);
+
+				$filtered_data['google'] = $data['google'];
+				break;
+			}
+
+			var_dump($data);
+			fwrite(STDERR, '*WARNING*: "' .
+																		mb_convert_encoding($address,
+																																						($system_is_windows ? $codepage : mb_internal_encoding()),
+																																						mb_internal_encoding()) .
+																		'": [' . $provider . '] discarding imprecise (?) result (' .
+																		strval(round($mean_distance, 2)) .
+																		' km off median), continuing' . PHP_EOL);
+			continue;
+		}
+
+		// fwrite(STDOUT, '[' . $provider . '] --> ' .
+		               // print_r($result, TRUE) .
+               		// ' off median: ' .
+																	// strval($mean_distance) .
+																	// ' km(s)' . PHP_EOL);
+		$filtered_data[$provider] = $result;
+	}
+	$data = $filtered_data;
+	if (empty($data))
+	{
+		die('"' .
+						mb_convert_encoding($address,
+																										($system_is_windows ? $codepage : mb_internal_encoding()),
+																										mb_internal_encoding()) .
+						'": invalid address, continuing' . PHP_EOL);
+	}
+
+	// condense values
+	foreach ($data as $provider => $result)
+	{
+		$coordinates[0] += $result[0];
+		$coordinates[1] += $result[1];
+	}
+	$coordinates[0] /= count($data);
+	$coordinates[1] /= count($data);
+}
+
+fwrite(STDOUT, '"' .
+															mb_convert_encoding($address,
+																																			($system_is_windows ? $codepage : mb_internal_encoding()),
+																																			mb_internal_encoding()) .
+															'" --> ' .
+															print_r($coordinates, TRUE) .
+															PHP_EOL);
+?>

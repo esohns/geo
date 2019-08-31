@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Humana clothes collection GmbH - Geo</title>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<!--    content="width=device-width, initial-scale=1.0, user-scalable=no"> -->
+  <meta charset="UTF-8">
+<!-- <meta charset="iso-8859-1"> -->
+<!-- <link rel="stylesheet" type="text/css" href="../common/css/custom-theme/jquery-ui-1.9.2.custom.min.css"> -->
+  <link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery-ui.css"/>
+  <link rel="stylesheet" type="text/css" href="../common/css/geo_common.css" media="all,screen">
+  <link rel="stylesheet" type="text/css" href="../common/css/geo_print.css" media="print">
+		<link rel="stylesheet" type="text/css" href="css/search.css">
+<!--[if IE]>
+  <link rel="shortcut icon" type="image/x-icon" href="../common/images/favicon.ico">
+<![endif]-->
+<!--[if !IE]<!-->
+  <link rel="icon" type="image/x-icon" href="../common/images/favicon.ico">
+<!--<![endif]-->
+<!-- <script type="text/javascript" src="../js/3rd_party/jquery-1.8.3.min.js"></script> -->
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="../js/3rd_party/jquery-ui-1.9.2.custom.min.js"></script> -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+<!-- <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script> -->
+<!-- <script type="text/javascript" src="../js/3rd_party/jquery.ui.datepicker-de.js"></script> -->
+  <script type="text/javascript" src="//verplan.googlecode.com/svn/trunk/com_verplan/admin/includes/js/jquery-ui/js/jquery.ui.datepicker-de.js"></script>
+<!--   <script type="text/javascript" src="//www.google.com/jsapi"></script>
+  <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?libraries=geometry,drawing&sensor=false"></script>
+ --><!--    <script type="text/javascript" src="//www.google.com/jsapi"></script>
+  <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?region=de&sensor=false"></script>
+ --><!-- <script type="text/javascript" src="../js/3rd_party/markerclusterer_packed.js"></script> -->
+<!-- <script type="text/javascript" src="//google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclustererplus/src/markerclusterer_packed.js"></script> -->
+<!-- <script type="text/javascript" src="../js/3rd_party/keydragzoom_packed.js"></script> -->
+<!-- <script type="text/javascript" src="https://google-maps-utility-library-v3.googlecode.com/svn/trunk/keydragzoom/src/keydragzoom_packed.js"></script> -->
+<!-- <script type="text/javascript" src="../js/3rd_party/jquery.tr.min.js"></script> -->
+<!-- *NOTE*: the default implementation seems to broken in IE -->
+  <!-- <script type="text/javascript" src="//raw.github.com/Bloutiouf/jquery.tr/master/jquery.tr.min.js"></script> -->
+  <!-- <script type="text/javascript" src="//raw.github.com/Bloutiouf/jquery.tr/master/jquery.tr.js"></script> -->
+<!--   <script type="text/javascript" src="../js/3rd_party/mxn/source/mxn.js"></script>
+  <script type="text/javascript" src="../js/3rd_party/mxn/source/mxn.core.js"></script>
+  <script type="text/javascript" src="../js/3rd_party/mxn/source/mxn.googlev3.core.js"></script>
+ -->  <!-- <script type="text/javascript" src="../js/3rd_party/mxn/source/mxn.openlayers.core_edit.js"></script> -->
+  <!-- <script type="text/javascript" src="../js/3rd_party/mxn/source/mxn.ovi.core.js"></script> -->
+  <script type="text/javascript" src="../common/src/3rd_party/jquery.tr.js"></script>
+		<script type="text/javascript" src="../common/src/3rd_party/jqbrowser-compressed.js"></script>
+  <script type="text/javascript" src="../common/src/ECMA_compliance.min.js"></script>
+  <script type="text/javascript" src="../common/src/geo_common.min.js"></script>
+  <script type="text/javascript" src="../common/src/geo_dictionary.min.js"></script>
+  <script type="text/html" src="../common/3rd_party/counter.php?page=search"></script>
+		<script type="text/javascript" src="../common/src/geo_loader.min.js"></script>
+		<script type="text/javascript" src="src/search.min.js"></script>
+  <script type="text/javascript">
+   function init_page()
+   {
+    jQuery.noConflict();
+
+    process_querystring();
+    process_pathname();
+
+				load_providers_pre('search');
+			}
+   window.onload = init_page;
+  </script>
+ </head>
+ <body>
+  <div id="attribution_control" class="control attribution_tag">
+   <p id="address"></p>
+   <p id="directions"></p>
+   <p id="map"></p>
+   <p id="overlays"></p>
+  </div>
+  <div id="find_control" class="control">
+   <fieldset>
+    <button id="find_button" class="large_button">find</button>
+    <button id="reset_button" class="large_button" disabled="disabled">reset</button>
+   </fieldset>
+  </div>
+  <span id="search_control" class="control">
+   <fieldset>
+    <input id="address_textbox" type="text" class="textbox"></input>
+    <button id="address_find_button" class="large_button" disabled="disabled">find</button>
+    <button id="address_reset_button" class="large_button" disabled="disabled">reset</button>
+   </fieldset>
+  </span>
+  <div id="tools_control" class="control">
+		 <fieldset class="fieldset_right">
+		  <button id="logout_button" class="large_button">logout</button>
+			</fieldset>
+  </div>
+	 <div id="map_canvas" class="canvas"></div>
+  <div id="dialog_progress" class="dialog_progress" style="display:none">
+   <div id="progress_bar" class="progress_bar"></div>
+  </div>
+  <div id="dialog_find_sites" style="display:none">
+   <fieldset>
+    <table id="dialog_find_site_table" class="table">
+     <tr><td>street:</td><td><input id="input_textbox_str" type="text" class="dialog_textbox"></input></td></tr>
+     <tr><td>community:</td><td><input id="input_textbox_cmy" type="text" class="dialog_textbox"></input></td></tr>
+     <tr><td>city:</td><td><input id="input_textbox_cty" type="text" class="dialog_textbox"></input></td></tr>
+     <tr><td>ZIP code:</td><td><input id="input_textbox_zip" type="text" class="dialog_textbox"></input></td></tr>
+				</table>
+   </fieldset>
+  </div>
+ </body>
+</html>
