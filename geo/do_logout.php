@@ -8,18 +8,18 @@ if ($cwd === FALSE) die('failed to getcwd(), aborting' . PHP_EOL);
 $location = '';
 if (!$is_cli)
 {
- require_once ('FirePHPCore' . DIRECTORY_SEPARATOR . 'FirePHP.class.php');
+// require_once ('FirePHPCore' . DIRECTORY_SEPARATOR . 'FirePHP.class.php');
 
  // init output buffering
  if (!ob_start()) die('failed to ob_start(), aborting' . PHP_EOL);
 
- $firephp = FirePHP::getInstance(TRUE);
- if (is_null($firephp)) die('failed to FirePHP::getInstance(), aborting' . PHP_EOL);
- $firephp->setEnabled(TRUE);
- $firephp->log('started script...');
+// $firephp = FirePHP::getInstance(TRUE);
+// if (is_null($firephp)) die('failed to FirePHP::getInstance(), aborting' . PHP_EOL);
+// $firephp->setEnabled(TRUE);
+// $firephp->log('started script...');
 
  // set default header 
- header(':', TRUE, 500); // == 'Internal Server Error'
+ header('', TRUE, 500); // == 'Internal Server Error'
 
  if (isset($_POST['location'])) $location = $_POST['location'];
 }
@@ -51,14 +51,14 @@ if (!$is_cli)
  if ($json_content === FALSE)
   die('failed to json_encode("' . $_POST . '"): ' . json_last_error() . ', aborting' . PHP_EOL);
  // var_dump($json_content);
- $firephp->log($json_content, 'response');
+// $firephp->log($json_content, 'response');
 
  // set header status
- header(':', TRUE, 200); // OK
+ header('', TRUE, 200); // OK
  // send the content back
  echo("$json_content");
 
- $firephp->log('ending script...');
+// $firephp->log('ending script...');
 
  // fini output buffering
  if (!ob_end_flush()) die('failed to ob_end_flush(), aborting' . PHP_EOL);

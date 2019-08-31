@@ -120,7 +120,7 @@ function on_image_marker_click(eventName, eventSource, eventArgs)
 																											'</div>');
  eventSource.openBubble();
 }
-function initialise_image_markers()
+function initialize_image_markers()
 {
  var query_params = {
 						chst: 'd_map_pin_icon',
@@ -165,12 +165,12 @@ function initialize_images(mode)
                  images_data_cb);
   reset_jquery_ajax_busy_progress();
 
-  if (mode !== 'sites') initialise_image_markers();
+  if (mode !== 'sites') initialize_image_markers();
 }
 
 function toggle_images()
 {
- if (images_other_loaded === false) initialise_images('other');
+ if (images_other_loaded === false) initialize_images('other');
 
  show_images = !show_images;
  if (show_images)

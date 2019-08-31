@@ -7,18 +7,18 @@ if ($cwd === FALSE) die("failed to getcwd(), aborting");
 
 if (!$is_cli)
 {
- require_once ('FirePHPCore' . DIRECTORY_SEPARATOR . 'FirePHP.class.php');
+// require_once ('FirePHPCore' . DIRECTORY_SEPARATOR . 'FirePHP.class.php');
 
  // init output buffering
  if (!ob_start()) die("failed to ob_start(), aborting");
 
- $firephp = FirePHP::getInstance(TRUE);
- if (is_null($firephp)) die("failed to FirePHP::getInstance(), aborting");
- $firephp->setEnabled(FALSE);
- $firephp->log('started script...');
+// $firephp = FirePHP::getInstance(TRUE);
+// if (is_null($firephp)) die("failed to FirePHP::getInstance(), aborting");
+// $firephp->setEnabled(FALSE);
+// $firephp->log('started script...');
 
  // set default header
- header(':', TRUE, 500); // == 'Internal Server Error'
+ header('', TRUE, 500); // == 'Internal Server Error'
 }
 
 $location = '';
@@ -98,13 +98,16 @@ switch ($mode)
 														  'get_median.php');
 		break;
  case 'warehouse':
+//   echo "<script>alert('cwd: \"'.dirname($cwd).'\"')</script>";
+	 error_log("cwd: \"".dirname($cwd)."\"");
 	 require_once (dirname($cwd) .
-                DIRECTORY_SEPARATOR .
-														  $options['geo']['geo_dir'] .
+//                DIRECTORY_SEPARATOR .
+//														  $options['geo']['geo_dir'] .
 		              DIRECTORY_SEPARATOR .
 														  $options['geo']['tools_dir'] .
 														  DIRECTORY_SEPARATOR .
 														  'location_2_latlong.php');
+	 error_log("passed cwd: \"".dirname($cwd)."\"");
   break;
  default:
   die('invalid mode (was: "' .
@@ -354,6 +357,7 @@ switch ($mode)
 			if ($is_cli) var_dump($locations);
 			die('invalid location (was: "' . $location . '"), aborting');
 		}
+//		error_log("warehouse addresses: \"".$address_file_content."\"");
 
 		// init cURL
 		$curl_handle = curl_init();
@@ -401,11 +405,12 @@ switch ($mode)
 								'"), aborting');
 		}
 
+//		error_log("address: \"".$locations[$location]."\"");
 		$result = location_2_latlong($provider,
-																															$curl_handle,
-																															$locations[$location],
-																															$options['geo']['language'],
-																															$options['geo_geocode']['geocode_default_geocode_region']);
+																$curl_handle,
+																$locations[$location],
+																$options['geo']['language'],
+																$options['geo_geocode']['geocode_default_geocode_region']);
 		$code = $result['code'];
 		curl_close($curl_handle);
 	 break;
@@ -420,11 +425,12 @@ echo(json_encode($result, 0));
 
 if (!$is_cli)
 {
- $firephp->log('ending script...');
+// $firephp->log('ending script...');
 
- header(':', TRUE, $code);
+ header('', TRUE, $code);
 
  // fini output buffering
  if (!ob_end_flush()) die("failed to ob_end_flush()(), aborting");
 }
 ?>
+

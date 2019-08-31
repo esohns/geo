@@ -1,8 +1,9 @@
 <?php
+error_reporting(E_ALL);
 
 function location_2_latlong($provider, $curl_handle, $address_in, $language, $region)
 {
- global $is_cli, $firephp, $system_is_windows, $options;
+ global $is_cli, /*$firephp,*/ $system_is_windows, $options;
  // if ($is_cli)
  // {
   // fwrite(STDERR, 'geocoding address "' .
@@ -16,8 +17,9 @@ function location_2_latlong($provider, $curl_handle, $address_in, $language, $re
  // else
  // {
   // $firephp->log($address_in, 'geocoding address');
-  // // header(':', TRUE, 500); // == 'Internal Server Error'
+  // // header('', TRUE, 500); // == 'Internal Server Error'
  // }
+// error_log("resolving address: \"". $address_in."\"");
 
  $result = array('code'   => 500,
                  'status' => '',
@@ -48,7 +50,9 @@ function location_2_latlong($provider, $curl_handle, $address_in, $language, $re
 																																																				mb_internal_encoding(),
 																																																				'UTF-8') .
 																																"\", aborting\n");
-    else $firephp->log($address_in, 'invalid address format');
+    else
+ //$firephp->log($address_in, 'invalid address format')
+;
     return $result;
    }
    // var_dump($matches);
@@ -87,6 +91,7 @@ function location_2_latlong($provider, $curl_handle, $address_in, $language, $re
 																	'components' => ('country:' . $region),
 																	'sensor'     => 'false',
 																	// 'bounds'     => '',
+                                  'key'        => 'AIzaSyDbXyALbSG46MIGot03J2lF3eMokktCAYY',
 																	'language'   => $language,
 																	'region'     => $region);//, // country bias
    $url = ($url_base . http_build_query($data, '', '&'));
@@ -110,7 +115,9 @@ function location_2_latlong($provider, $curl_handle, $address_in, $language, $re
 																																																				mb_internal_encoding(),
 																																																				'UTF-8') .
 																																"\", aborting\n");
-    else $firephp->log($address_in, 'invalid address format');
+    else
+// $firephp->log($address_in, 'invalid address format')
+;
     return $result;
    }
    // var_dump($matches);
@@ -196,7 +203,9 @@ function location_2_latlong($provider, $curl_handle, $address_in, $language, $re
 																																																				mb_internal_encoding(),
 																																																				'UTF-8') .
 																																"\", aborting\n");
-    else $firephp->log($address_in, 'invalid address format');
+    else
+// $firephp->log($address_in, 'invalid address format')
+;
     return $result;
    }
    // var_dump($matches);
@@ -248,7 +257,9 @@ function location_2_latlong($provider, $curl_handle, $address_in, $language, $re
 																																																				mb_internal_encoding(),
 																																																				'UTF-8') .
 																																"\", aborting\n");
-    else $firephp->log($address_in, 'invalid address format');
+    else
+// $firephp->log($address_in, 'invalid address format')
+;
     return $result;
    }
    // var_dump($matches);
@@ -277,6 +288,7 @@ function location_2_latlong($provider, $curl_handle, $address_in, $language, $re
  }
  // if ($is_cli) fwrite(STDERR, "retrieving URL: \"$url\"\n");
  // else $firephp->log($url, 'url');
+ //error_log ("retrieving URL: \"$url\"");
 
  switch ($method)
  {

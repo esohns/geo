@@ -160,11 +160,11 @@ switch ($mode)
 if (!file_exists($fq_filename))
 {
 //   http_response_code(404); // == 'Not Found'
- header(':', TRUE, 404); // == 'Not Found'
+ header('', TRUE, 404); // == 'Not Found'
  die("file does not exist (was: \"$fq_filename\"), aborting");
 }
 //$firephp->log($fq_filename, 'file');
-error_log ("test.log  \"".$fq_filename."\"");
+//error_log ("loading \"".$fq_filename."\"");
 
 $file_content = file_get_contents($fq_filename);
 if ($file_content === FALSE) die('failed to file_get_contents("' . $fq_filename . "\"), aborting\n");

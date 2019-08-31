@@ -831,6 +831,7 @@ function add_tour_option(index, index2) {
 	new_entry.title = tours[index]['TOURS'][index2]['DESCRIPTION'];
 	new_entry.style.backgroundColor = '#' + tours[index]['TOURS'][index2].__color;
 
+
 	if (rgb_brightness(tours[index]['TOURS'][index2].__color) < 127)
 		new_entry.className = 'white_override';
 	new_entry.appendChild(document.createTextNode(tours[index]['TOURS'][index2]['DESCRIPTOR']));
@@ -2177,6 +2178,7 @@ function on_get_toursheet() {
 								'), aborting');
 		return;
 	}
+
 	// *NOTE*: selectedIndex is only the FIRST selected index (if any): this might not be the current one...
 	var index2 = ((listbox.selectedIndex !== -1) ? parseInt(listbox.options[listbox.selectedIndex].value, 10)
 																																														: -1);
@@ -2557,7 +2559,7 @@ function on_selected_task() {
 
 function initialize_toursets() {
   "use strict";
-  if (load_data) initialize_tours();
+  /*if (load_data)*/ initialize_tours();
 
   // populate tourset control, directions, requests and tour markup
   directions = [];
@@ -4735,6 +4737,7 @@ function deselect_site(site_id, hide_site) {
 	for (; site_index < site_markers_array.length; site_index++)
 		if (site_markers_array[site_index].__sites.indexOf(site_id) !== -1)	break;
 	if (site_index === site_markers_array.length) {
+
 		group = status_ex_string;
 		site_markers_array = site_markers_ex;
 		for (site_index = 0; site_index < site_markers_array.length; site_index++)
@@ -5555,6 +5558,7 @@ function on_selected_tour() {
 	var index2 = ((listbox.selectedIndex !== -1) ? parseInt(listbox.options[listbox.selectedIndex].value, 10) : -1);
 
 	var extend_bounds = false,
+
 	    selected      = [];
 	for (var i = 0; i < listbox.options.length; i++)
 		if (listbox.options[i].selected === true)
@@ -7456,13 +7460,13 @@ function initialize() {
   if (load_data === true) initialize_overlays();
 
   // step5: initialize tours
-  if (load_data === true) {
+  /*if (load_data === true) {*/
     if (!initialize_start_end()) {
       if (!!window.console) console.log('failed to initialize, aborting');
       alert(jQuery.tr.translator()('failed to initialize'));
       return;
     }
-  }
+  //}
   initialize_toursets();
   tsp_solver = new BpTspSolver(
     map.getMap(),

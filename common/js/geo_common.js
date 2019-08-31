@@ -358,7 +358,7 @@ var position_options_default = {
   timeout           : 10000,   // <ms>[Infinity]
   maximumAge        : Infinity // <ms>[0..Infinity] 0: don't use cache, Infinity: allow cached value
 };
-var common_path = '/common/';
+var common_path = '/geo/common/';
 var need_logout = true;
 var selectable_options = {
   //appendTo   : 'body',
