@@ -12,8 +12,8 @@ $refresh_only = FALSE;
 if ($is_cli)
 {
  if (($argc < 2) || ($argc > 5)) die('usage: ' .
-																																					basename($argv[0]) .
-																																					' <location> [<task[all|containers|images|sites|toursets]>] [<async[0|1]>] [<refresh_only[0|1]>]');
+                                      basename($argv[0]) .
+                                      ' <location> [<task[all|containers|images|sites|toursets]>] [<async[0|1]>] [<refresh_only[0|1]>]');
  $location = $argv[1];
  if (isset($argv[2]))
  {
@@ -25,18 +25,18 @@ if ($is_cli)
 }
 else
 {
- require_once ('FirePHPCore' . DIRECTORY_SEPARATOR . 'FirePHP.class.php');
+// require_once ('FirePHPCore' . DIRECTORY_SEPARATOR . 'FirePHP.class.php');
 
  // init output buffering
  if (!ob_start()) die('failed to ob_start(), aborting' . PHP_EOL);
 
- $firephp = FirePHP::getInstance(TRUE);
- if (is_null($firephp)) die('failed to FirePHP::getInstance(), aborting' . PHP_EOL);
- $firephp->setEnabled(FALSE);
- $firephp->log('started script...');
+// $firephp = FirePHP::getInstance(TRUE);
+// if (is_null($firephp)) die('failed to FirePHP::getInstance(), aborting' . PHP_EOL);
+// $firephp->setEnabled(FALSE);
+// $firephp->log('started script...');
 
  // set default header 
- header(':', TRUE, 500); // == 'Internal Server Error'
+ header('', TRUE, 500); // == 'Internal Server Error'
 
  if (isset($_POST['location'])) $location = $_POST['location'];
  if (isset($_POST['task'])) $task = $_POST['task'];
@@ -47,28 +47,28 @@ else
 $system_is_windows = (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN');
 $ini_file = dirname($cwd) .
             DIRECTORY_SEPARATOR .
-												'common' .
-												DIRECTORY_SEPARATOR .
+                        'common' .
+                        DIRECTORY_SEPARATOR .
             'geo_php.ini';
 if (!file_exists($ini_file)) die('invalid file (was: "' .
-																																	$ini_file .
-																																	'"), aborting' . PHP_EOL);
+                                  $ini_file .
+                                  '"), aborting' . PHP_EOL);
 define('DATA_DIR', $cwd .
                    DIRECTORY_SEPARATOR .
-																			'data' .
-																			DIRECTORY_SEPARATOR .
-																			$location);
+                  'data' .
+                  DIRECTORY_SEPARATOR .
+                  $location);
 $options = parse_ini_file($ini_file, TRUE);
 if ($options === FALSE) die('failed to parse init file (was: "' .
-																												$ini_file .
-																												'"), aborting' . PHP_EOL);
+                            $ini_file .
+                            '"), aborting' . PHP_EOL);
 $os_section = ((strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') ? 'geo_windows' : 'geo_unix');
 $loc_section = 'geo_db_' . $location;
 
 // sanity check(s)
 if (count($options) == 0) die('failed to parse init file (was: "' .
-																														$ini_file .
-																														'"), aborting' . PHP_EOL);
+                                                            $ini_file .
+                                                            '"), aborting' . PHP_EOL);
 $script_file = '';
 $command_line = '';
 $command_prefix = ($system_is_windows ? ($async ? 'start /b ' : '')
@@ -83,11 +83,11 @@ switch ($task)
 {
  case 'all':
   $script_file = $cwd .
-																	DIRECTORY_SEPARATOR .
+                                  DIRECTORY_SEPARATOR .
                  $options['geo']['tools_dir'] .
                  DIRECTORY_SEPARATOR .
-																	$options['geo']['process_script'] .
-																	$options[$os_section]['script_ext'];
+                                  $options['geo']['process_script'] .
+                                  $options[$os_section]['script_ext'];
   $command_line = $command_prefix . $script_file . $command_postfix;
   if (!empty($location)) $command_line .= (' ' . $location);
   if ($refresh_only) $command_line .= (' ' . strval(1));
@@ -95,11 +95,11 @@ switch ($task)
   break;
  case 'containers':
   $script_file = $cwd .
-																	DIRECTORY_SEPARATOR .
+                                  DIRECTORY_SEPARATOR .
                  $options['geo']['tools_dir'] .
                  DIRECTORY_SEPARATOR .
-																	$options['geo']['process_containers_script'] .
-																	$options[$os_section]['script_ext'];
+                                  $options['geo']['process_containers_script'] .
+                                  $options[$os_section]['script_ext'];
   $command_line = $command_prefix . $script_file;
   if (!empty($location)) $command_line .= " $location";
   if ($refresh_only) $command_line .= " 1";
@@ -107,19 +107,19 @@ switch ($task)
   break;
  case 'counters':
   $script_file = $cwd .
-																	DIRECTORY_SEPARATOR .
+                                  DIRECTORY_SEPARATOR .
                  $options['geo']['tools_dir'] .
                  DIRECTORY_SEPARATOR .
-																	'reset_counters.cmd';
+                                  'reset_counters.cmd';
   $command_line = $command_prefix . $script_file . $command_postfix;
   break;
  case 'images':
   $script_file = $cwd .
-																	DIRECTORY_SEPARATOR .
+                                  DIRECTORY_SEPARATOR .
                  $options['geo']['tools_dir'] .
                  DIRECTORY_SEPARATOR .
-																	$options['geo']['process_images_script'] .
-																	$options[$os_section]['script_ext'];
+                                  $options['geo']['process_images_script'] .
+                                  $options[$os_section]['script_ext'];
   $command_line = $command_prefix . $script_file;
   if (!empty($location)) $command_line .= (' ' . $location);
   if ($refresh_only) $command_line .= (' ' . strval(1));
@@ -127,11 +127,11 @@ switch ($task)
   break;
  case 'sites':
   $script_file = $cwd .
-																	DIRECTORY_SEPARATOR .
+                                  DIRECTORY_SEPARATOR .
                  $options['geo']['tools_dir'] .
                  DIRECTORY_SEPARATOR .
-																	$options['geo']['process_sites_script'] .
-																	$options[$os_section]['script_ext'];
+                                  $options['geo']['process_sites_script'] .
+                                  $options[$os_section]['script_ext'];
   $command_line = $command_prefix . $script_file;
   if (!empty($location)) $command_line .= (' ' . $location);
   if ($refresh_only) $command_line .= (' ' . strval(1));
@@ -139,11 +139,11 @@ switch ($task)
   break;
  case 'toursets':
   $script_file = $cwd .
-																	DIRECTORY_SEPARATOR .
+                                  DIRECTORY_SEPARATOR .
                  $options['geo']['tools_dir'] .
                  DIRECTORY_SEPARATOR .
-																	$options['geo']['process_toursets_script'] .
-																	$options[$os_section]['script_ext'];
+                                  $options['geo']['process_toursets_script'] .
+                                  $options[$os_section]['script_ext'];
   $command_line = $command_prefix . $script_file;
   if (!empty($location)) $command_line .= (' ' . $location);
   if ($refresh_only) $command_line .= (' ' . strval(1));
@@ -151,8 +151,8 @@ switch ($task)
   break;
  default:
   die('invalid task (was: "' .
-						$task .
-						'"), aborting');
+            $task .
+            '"), aborting');
 }
 
 $output = array();
@@ -165,19 +165,23 @@ if ($command_line)
  {
   if (!file_exists($script_file))
    die('invalid file (was: "' .
-							$script_file .
-							'", aborting' . PHP_EOL);
+              $script_file .
+              '", aborting' . PHP_EOL);
  }
  elseif (!is_executable($script_file))
  {
   die('file not executable (was: "' .
-						$script_file .
-						'", aborting' . PHP_EOL);
+            $script_file .
+            '", aborting' . PHP_EOL);
  }
 
- if (!$is_cli) $firephp->log($script_file, 'script');
- if (!$is_cli) $firephp->log($command_line, 'command line');
-	
+ if (!$is_cli)
+ //$firephp->log($script_file, 'script')
+ ;
+ if (!$is_cli)
+ //$firephp->log($command_line, 'command line')
+ ;
+  
  // run command
  set_time_limit(0);
  if ($system_is_windows)
@@ -187,8 +191,8 @@ if ($command_line)
   {
    $fd = popen($command_line, 'r');
    if ($fd === FALSE) die('failed to popen("' .
-																										$command_line .
-																										'"), aborting' . PHP_EOL);
+                                                    $command_line .
+                                                    '"), aborting' . PHP_EOL);
    $pid = strval($fd);
    $return_value = pclose($fd);
   }
@@ -207,15 +211,21 @@ else
 if ($async)
 {
  if (!$is_cli) $_POST['PID'] = $pid;
- if (!$is_cli) $firephp->log($pid, 'PID');
+ if (!$is_cli)
+ //$firephp->log($pid, 'PID')
+ ;
 }
 else
 {
  if (!$is_cli) $_POST['output'] = $output;
  else echo print_r($output, TRUE);
  if (!$is_cli) $_POST['status'] = $return_value;
- if (!$is_cli) $firephp->log($output, 'output');
- if (!$is_cli) $firephp->log($return_value, 'return value');
+ if (!$is_cli)
+ //$firephp->log($output, 'output')
+ ;
+ if (!$is_cli)
+ //$firephp->log($return_value, 'return value')
+ ;
 }
 
 if (!$is_cli)
@@ -224,15 +234,15 @@ if (!$is_cli)
  if ($json_content === FALSE)
   die('failed to json_encode("' . $_POST . '"): ' . json_last_error() . ', aborting' . PHP_EOL);
  // var_dump($json_content);
- $firephp->log($json_content, 'response');
+ //$firephp->log($json_content, 'response');
 
  // set header status
- header(':', TRUE, ($async ? (($return_value === 0) ? 200 : 500) // == 'OK' | 'internal server error'
-                           : 200));                              // == 'OK'
+ header('', TRUE, ($async ? (($return_value === 0) ? 200 : 500) // == 'OK' | 'internal server error'
+                          : 200));                              // == 'OK'
  // send the content back
  echo("$json_content");
 
- $firephp->log('ending script...');
+ //$firephp->log('ending script...');
 
  // fini output buffering
  if (!ob_end_flush()) die('failed to ob_end_flush(), aborting' . PHP_EOL);

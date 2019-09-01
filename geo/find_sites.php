@@ -32,9 +32,9 @@ function sanitise_string($input)
 }
 
 function address_2_area_ids($data,
-														$db_areas,
-														$num_records,
-														&$area_ids)
+                            $db_areas,
+                            $num_records,
+                            &$area_ids)
 {
  global /*$firephp,*/ $is_cli, $options, $db_sites;
 
@@ -51,8 +51,8 @@ function address_2_area_ids($data,
   if (strpos(trim($db_record['AREA']), $data, 0) !== 0) continue;
 //  var_dump($db_record);
   $area_id = intval(mb_convert_encoding(trim($db_record['AREAID']),
-			 						    $options['geo_db']['db_sites_cp'],
-										$options['geo_db']['db_areas_cp']));
+                      $options['geo_db']['db_sites_cp'],
+                    $options['geo_db']['db_areas_cp']));
 
   if (!$is_cli)
 // $firephp->log('area: "' .
@@ -65,20 +65,20 @@ function address_2_area_ids($data,
 ;
   else fprintf(STDERR, 'area: "' .
                        mb_convert_encoding($data,
-											mb_internal_encoding(),
-											$options['geo_db']['db_areas_cp']) .
-											'" --> ' .
-											strval($area_id) .
-											"\n");
+                      mb_internal_encoding(),
+                      $options['geo_db']['db_areas_cp']) .
+                      '" --> ' .
+                      strval($area_id) .
+                      "\n");
 
   $area_ids[] = $area_id;
  }
 }
 function resolve_address($data,
                          $db_sites,
-																									$num_records,
-																									$do_partial_match,
-																									&$fields)
+                         $num_records,
+                         $do_partial_match,
+                         &$fields)
 {
  global /*$firephp,*/ $is_cli, $options, $system_is_windows;
 
@@ -113,9 +113,9 @@ function resolve_address($data,
 ;
   else fprintf(STDERR, 'matched city: "' .
                        mb_convert_encoding($data,
-			 						       mb_internal_encoding(),
-										   $options['geo_db']['db_sites_cp']) .
-					   "\"\n");
+                         mb_internal_encoding(),
+                       $options['geo_db']['db_sites_cp']) .
+             "\"\n");
   $fields[] = $sites_field;
   break;
  }
@@ -152,13 +152,13 @@ function resolve_address($data,
 ;
   else fprintf(STDERR, 'community: "' .
                        mb_convert_encoding($data,
-																																											mb_internal_encoding(),
-																																											$options['geo_db']['db_sites_cp']) .
-																							'" --> "' .
-																							mb_convert_encoding(trim($db_record['CITY']),
-																																											mb_internal_encoding(),
-																																											$options['geo_db']['db_sites_cp']) .
-																							"\"\n");
+                                                                                      mb_internal_encoding(),
+                                                                                      $options['geo_db']['db_sites_cp']) .
+                                              '" --> "' .
+                                              mb_convert_encoding(trim($db_record['CITY']),
+                                                                                      mb_internal_encoding(),
+                                                                                      $options['geo_db']['db_sites_cp']) .
+                                              "\"\n");
   $fields[] = $sites_field;
   break;
  }
@@ -196,13 +196,13 @@ function resolve_address($data,
 ;
   else fprintf(STDERR, 'matched street: "' .
                        mb_convert_encoding($data,
-																																											mb_internal_encoding(),
-																																											$options['geo_db']['db_sites_cp']) .
-																							'" --> "' .
-																							mb_convert_encoding(trim($db_record[$sites_field]),
-																																											mb_internal_encoding(),
-																																											$options['geo_db']['db_sites_cp']) .
-																							"\"\n");
+                                          mb_internal_encoding(),
+                                          $options['geo_db']['db_sites_cp']) .
+                      '" --> "' .
+                      mb_convert_encoding(trim($db_record[$sites_field]),
+                                                              mb_internal_encoding(),
+                                                              $options['geo_db']['db_sites_cp']) .
+                      "\"\n");
   $fields[] = $sites_field;
   break;
  }
@@ -215,24 +215,24 @@ function resolve_address($data,
 //																		$options['geo_db']['db_sites_cp']),
 //								'failed to resolve address')
 ;
-	else fprintf(STDERR, 'failed to resolve address (was: "' .
-								mb_convert_encoding($data,
-																			mb_internal_encoding(),
-																			$options['geo_db']['db_sites_cp']) .
-								"\"), continuing\n");
+  else fprintf(STDERR, 'failed to resolve address (was: "' .
+                mb_convert_encoding($data,
+                                      mb_internal_encoding(),
+                                      $options['geo_db']['db_sites_cp']) .
+                "\"), continuing\n");
  }
 }
 function do_query($field,
                   $data,
-																		$do_string_comparison,
-																		$do_partial_match,
-																		&$results,
-																		$db_sites,
-																		$num_records,
-																		$status_active_string_db,
-																		$status_ex_string_db,
-																		$retrieve_ex_other,
-																		$site_id_is_string)
+                  $do_string_comparison,
+                  $do_partial_match,
+                  &$results,
+                  $db_sites,
+                  $num_records,
+                  $status_active_string_db,
+                  $status_ex_string_db,
+                  $retrieve_ex_other,
+                  $site_id_is_string)
 {
  global $is_cli, /*$firephp,*/ $options;
 
@@ -244,10 +244,10 @@ function do_query($field,
 ;
  else fprintf(STDERR, 'query: ' .
                       ($do_string_comparison ? ('"' . mb_convert_encoding($data,
-     							                                          mb_internal_encoding(),
- 										                                  $options['geo_db']['db_sites_cp']) . '"')
+                                                            mb_internal_encoding(),
+                                                      $options['geo_db']['db_sites_cp']) . '"')
                                              : strval($data)) .
-																						"\n");
+                                            "\n");
 
  $num_matches = 0;
  for ($i = 1; $i <= $num_records; $i++)
@@ -275,17 +275,17 @@ function do_query($field,
   $data_record = array('SITEID' => ($site_id_is_string ? trim($db_record['SITEID']) : $db_record['SITEID']),
 //					  'STATUS' => iconv($options['geo_db']['db_sites_cp'], 'UTF-8', trim($db_record['STATUS'])),
                        'STATUS' => ((strcmp(trim($db_record['STATUS']), $status_active_string_db) === 0) ? mb_convert_encoding($options['geo_data_sites']['data_sites_status_active_desc'], 'UTF-8', 'CP1252')
-					                                                                                     : ((strcmp(trim($db_record['STATUS']), $status_ex_string_db) === 0) ? mb_convert_encoding($options['geo_data_sites']['data_sites_status_ex_desc'], 'UTF-8', 'CP1252')
-																					                                                                                         : mb_convert_encoding(trim($db_record['STATUS']), 'UTF-8', $options['geo_db']['db_sites_cp']))),
+                                                                                                         : ((strcmp(trim($db_record['STATUS']), $status_ex_string_db) === 0) ? mb_convert_encoding($options['geo_data_sites']['data_sites_status_ex_desc'], 'UTF-8', 'CP1252')
+                                                                                                                                                                             : mb_convert_encoding(trim($db_record['STATUS']), 'UTF-8', $options['geo_db']['db_sites_cp']))),
                        'LAT'    => $db_record['LAT'],
-																							'LON'    => $db_record['LON']);
+                       'LON'    => $db_record['LON']);
   $results[$data_record['SITEID']] = $data_record;
   $num_matches++;
  }
 
  if (($num_matches > 0) && $is_cli) fprintf(STDERR, 'found ' .
-																																																				strval($num_matches) .
-																																																				" matches\n");
+                                                    strval($num_matches) .
+                                                    " matches\n");
 }
 
 $location = '';
@@ -304,7 +304,7 @@ if ($is_cli)
   // set address data
   $sanitised_input_utf8 = mb_convert_encoding(sanitise_string(trim($cmdline_options['d'])),
                                               'UTF-8',
-																																														mb_internal_encoding());
+                                                                                            mb_internal_encoding());
   $data['STREET'] = $sanitised_input_utf8;
   $data['COMMUNITY'] = $sanitised_input_utf8;
   $data['CITY'] = $sanitised_input_utf8;
@@ -396,15 +396,15 @@ else
 
 $ini_file = dirname($cwd) .
             DIRECTORY_SEPARATOR .
-												'common' .
-												DIRECTORY_SEPARATOR .
+                        'common' .
+                        DIRECTORY_SEPARATOR .
             'geo_php.ini';
 if (!file_exists($ini_file)) die("invalid file (was: \"$ini_file\"), aborting\n");
 define('DATA_DIR', $cwd .
                    DIRECTORY_SEPARATOR .
-																			'data' .
-																			DIRECTORY_SEPARATOR .
-																			$location);
+                                      'data' .
+                                      DIRECTORY_SEPARATOR .
+                                      $location);
 $options = parse_ini_file($ini_file, TRUE);
 if ($options === FALSE) die("failed to parse init file (was: \"$ini_file\"), aborting\n");
 $os_section = ((strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') ? 'geo_windows' : 'geo_unix');
@@ -424,7 +424,7 @@ switch ($mode)
  case 'address':
   if (($data['CITY'] == '') &&
       ($data['COMMUNITY'] == '') &&
-	  ($data['STREET'] == ''))
+    ($data['STREET'] == ''))
    die('invalid data (was: "' . print_r($data, TRUE) . '), aborting');
   if (!$is_cli)
 // $firephp->log('address query')
@@ -459,21 +459,21 @@ switch ($mode)
   die('invalid mode (was: "' . $mode . '"), aborting');
 }
 $db_sites_file = (isset($options[$loc_section]['db_base_dir']) ? $options[$loc_section]['db_base_dir']
-	                                                           : $options[$os_section]['db_base_dir']) .
+                                                             : $options[$os_section]['db_base_dir']) .
                  DIRECTORY_SEPARATOR .
-		         (isset($options[$loc_section]['db_sub_dir']) ? ($options[$loc_section]['db_sub_dir'] . DIRECTORY_SEPARATOR)
+             (isset($options[$loc_section]['db_sub_dir']) ? ($options[$loc_section]['db_sub_dir'] . DIRECTORY_SEPARATOR)
                                                               : '') .
-		         (isset($options[$loc_section]['db_sites_dbf']) ? $options[$loc_section]['db_sites_dbf']
-		                                                        : $options['geo_db']['db_sites_dbf']);
+             (isset($options[$loc_section]['db_sites_dbf']) ? $options[$loc_section]['db_sites_dbf']
+                                                            : $options['geo_db']['db_sites_dbf']);
 $site_id_is_string = (isset($options[$loc_section]['db_sites_id_is_string']) &&
                       (intval($options[$loc_section]['db_sites_id_is_string']) == 1));
 $db_areas_file = (isset($options[$loc_section]['db_base_dir']) ? $options[$loc_section]['db_base_dir']
-	                                                           : $options[$os_section]['db_base_dir']) .
+                                                             : $options[$os_section]['db_base_dir']) .
                  DIRECTORY_SEPARATOR .
-		         (isset($options[$loc_section]['db_sub_dir']) ? ($options[$loc_section]['db_sub_dir'] . DIRECTORY_SEPARATOR)
+             (isset($options[$loc_section]['db_sub_dir']) ? ($options[$loc_section]['db_sub_dir'] . DIRECTORY_SEPARATOR)
                                                               : '') .
-		         (isset($options[$loc_section]['db_areas_dbf']) ? $options[$loc_section]['db_areas_dbf']
-		                                                        : $options['geo_db']['db_areas_dbf']);
+             (isset($options[$loc_section]['db_areas_dbf']) ? $options[$loc_section]['db_areas_dbf']
+                                                            : $options['geo_db']['db_areas_dbf']);
 $status_active_string_db = mb_convert_encoding($options[$loc_section]['db_sites_status_active_desc'],
                                                $options['geo_db']['db_sites_cp'],
                                                'CP1252');
@@ -514,10 +514,10 @@ if (!empty($data['CITY']))
  //$area_query_string = iconv('UTF-8', $options['geo_db']['db_areas_cp'], $query_string);
  address_2_area_ids(mb_convert_encoding($data['CITY'],
                                         $options['geo_db']['db_areas_cp'],
-										'UTF-8'),
-		            $db_areas,
-				    $num_records,
-					$area_ids);
+                    'UTF-8'),
+                $db_areas,
+            $num_records,
+          $area_ids);
 
  if (!dbase_close($db_areas)) die("failed to dbase_close(), aborting\n");
  if (!$is_cli)
@@ -532,9 +532,9 @@ if (!empty($data['CITY']))
 ;
   else fprintf(STDERR, 'could not resolve area ID (city was: "' .
                        mb_convert_encoding($data['CITY'],
- 					                       mb_internal_encoding(),
-										   'UTF-8') .
-	                   "\"), continuing\n");
+                                 mb_internal_encoding(),
+                       'UTF-8') .
+                     "\"), continuing\n");
  }
 }
 
@@ -579,24 +579,24 @@ switch ($mode)
     if (empty($value)) continue; // '' --> don't care
 
     $do_string_comparison = TRUE;
-	switch ($key)
-	{
-	 case 'SITEID':
-	  $do_string_comparison = $site_id_is_string;
-	  break;
-	 case 'ZIP':
-	  $do_string_comparison = FALSE;
-	  break;
-	 default:
-	  break;
-	}
+  switch ($key)
+  {
+   case 'SITEID':
+    $do_string_comparison = $site_id_is_string;
+    break;
+   case 'ZIP':
+    $do_string_comparison = FALSE;
+    break;
+   default:
+    break;
+  }
     //if (!$is_cli) $firephp->log($do_string_comparison, strval($db_record[$key]) . '-->' . strval($value));
     if ($do_string_comparison)
     {
      if (strcmp(trim($db_record[$key]),
                 mb_convert_encoding($value,
                                     $options['geo_db']['db_sites_cp'],
-							        ($is_cli ? mb_internal_encoding() : 'UTF-8'))) !== 0) continue 2;
+                      ($is_cli ? mb_internal_encoding() : 'UTF-8'))) !== 0) continue 2;
     }
     elseif ($db_record[$key] != $value) continue 2;
    }
@@ -605,16 +605,16 @@ switch ($mode)
    $data_record = array('SITEID' => ($site_id_is_string ? trim($db_record['SITEID']) : $db_record['SITEID']),
 //					  'STATUS' => iconv($options['geo_db']['db_sites_cp'], 'UTF-8', trim($db_record['STATUS'])),
                         'STATUS' => ((strcmp(trim($db_record['STATUS']), $status_active_string_db) === 0) ? mb_convert_encoding($options['geo_data_sites']['data_sites_status_active_desc'], 'UTF-8', 'CP1252')
-					                                                                                      : ((strcmp(trim($db_record['STATUS']), $status_ex_string_db) === 0) ? mb_convert_encoding($options['geo_data_sites']['data_sites_status_ex_desc'], 'UTF-8', 'CP1252')
-																					                                                                                          : mb_convert_encoding(trim($db_record['STATUS']), 'UTF-8', $options['geo_db']['db_sites_cp']))),
+                                                                                                : ((strcmp(trim($db_record['STATUS']), $status_ex_string_db) === 0) ? mb_convert_encoding($options['geo_data_sites']['data_sites_status_ex_desc'], 'UTF-8', 'CP1252')
+                                                                                                                                    : mb_convert_encoding(trim($db_record['STATUS']), 'UTF-8', $options['geo_db']['db_sites_cp']))),
                         'LAT'    => $db_record['LAT'],
-					    'LON'    => $db_record['LON']);
+              'LON'    => $db_record['LON']);
    $results[$data_record['SITEID']] = $data_record;
   }
 
   if ((count($results) > 0) && $is_cli) fprintf(STDERR, 'found ' .
-													    strval(count($results)) .
-													    " matches\n");
+                              strval(count($results)) .
+                              " matches\n");
   break;
  case 'address':
   // step1: retrieve resolved AREAs
@@ -627,25 +627,25 @@ switch ($mode)
 
    do_query('AREAID',
             $area_ids[$i],
-	        FALSE,
-		    FALSE,
-		    $results,
-		    $db_sites,
-		    $num_records,
-		    $status_active_string_db,
-		    $status_ex_string_db,
-		    $retrieve_ex_other,
-		    $site_id_is_string);
+          FALSE,
+        FALSE,
+        $results,
+        $db_sites,
+        $num_records,
+        $status_active_string_db,
+        $status_ex_string_db,
+        $retrieve_ex_other,
+        $site_id_is_string);
   }
 
   // step2: resolve query hierarchy
   resolve_address(mb_convert_encoding($data['CITY'],
                                       $options['geo_db']['db_sites_cp'],
-			                          ($is_cli ? mb_internal_encoding() : 'UTF-8')),
-				  $db_sites,
-				  $num_records,
-				  FALSE,
-				  $site_fields);
+                                ($is_cli ? mb_internal_encoding() : 'UTF-8')),
+          $db_sites,
+          $num_records,
+          FALSE,
+          $site_fields);
 
   // step3: perform query
   for ($i = 0; $i < count($site_fields); $i++)
@@ -658,35 +658,35 @@ switch ($mode)
    do_query($site_fields[$i],
             mb_convert_encoding($data[$site_fields[$i]],
                                 $options['geo_db']['db_sites_cp'],
-							    ($is_cli ? mb_internal_encoding() : 'UTF-8')),
+                  ($is_cli ? mb_internal_encoding() : 'UTF-8')),
             TRUE,
-		    FALSE,
-		    $results,
-		    $db_sites,
-		    $num_records,
-		    $status_active_string_db,
-		    $status_ex_string_db,
-		    $retrieve_ex_other,
-		    $site_id_is_string);
+        FALSE,
+        $results,
+        $db_sites,
+        $num_records,
+        $status_active_string_db,
+        $status_ex_string_db,
+        $retrieve_ex_other,
+        $site_id_is_string);
 
    if (!empty($area_ids))
    {
     // filter duplicates
-	$site_ids = array();
-	$duplicates = array();
-	foreach ($results as $site_id => $site_data)
-	{
-	 if (in_array($site_id, $site_ids, TRUE)) $duplicates[] = $site_id;
-	 else $site_ids[] = $site_id;
-	}
-	for ($j = 0; $j < count($duplicates); $j++) unset($results[$duplicates[$j]]);
-	if (!empty($duplicates))
-	{
+  $site_ids = array();
+  $duplicates = array();
+  foreach ($results as $site_id => $site_data)
+  {
+   if (in_array($site_id, $site_ids, TRUE)) $duplicates[] = $site_id;
+   else $site_ids[] = $site_id;
+  }
+  for ($j = 0; $j < count($duplicates); $j++) unset($results[$duplicates[$j]]);
+  if (!empty($duplicates))
+  {
      if (!$is_cli)
 // $firephp->log('filtered ' . count($duplicates) . ' duplicates...')
 ;
      else fprintf(STDERR, 'filtered ' . count($duplicates) . " duplicates...\n");
-	}
+  }
    }
   }
 
@@ -701,11 +701,11 @@ switch ($mode)
    $site_fields = array();
    resolve_address(mb_convert_encoding($data['CITY'],
                                        $options['geo_db']['db_sites_cp'],
-			                           ($is_cli ? mb_internal_encoding() : 'UTF-8')),
-				   $db_sites,
-				   $num_records,
-				   TRUE,
-				   $site_fields);
+                                 ($is_cli ? mb_internal_encoding() : 'UTF-8')),
+           $db_sites,
+           $num_records,
+           TRUE,
+           $site_fields);
 
    // step4b: perform query
    for ($i = 0; $i < count($site_fields); $i++)
@@ -718,71 +718,71 @@ switch ($mode)
     do_query($site_fields[$i],
              mb_convert_encoding($data[$site_fields[$i]],
                                  $options['geo_db']['db_sites_cp'],
-								 ($is_cli ? mb_internal_encoding() : 'UTF-8')),
-	         TRUE,
-		     TRUE,
-		     $results,
-		     $db_sites,
-		     $num_records,
-		     $status_active_string_db,
-		     $status_ex_string_db,
-		     $retrieve_ex_other,
-		     $site_id_is_string);
+                 ($is_cli ? mb_internal_encoding() : 'UTF-8')),
+           TRUE,
+         TRUE,
+         $results,
+         $db_sites,
+         $num_records,
+         $status_active_string_db,
+         $status_ex_string_db,
+         $retrieve_ex_other,
+         $site_id_is_string);
    }
   }
   break;
  case 'zip':
   do_query('ZIP',
            $data['ZIP'],
-	       FALSE,
-		   FALSE,
-		   $results,
-		   $db_sites,
-		   $num_records,
-		   $status_active_string_db,
-		   $status_ex_string_db,
-		   $retrieve_ex_other,
-		   $site_id_is_string);
+         FALSE,
+       FALSE,
+       $results,
+       $db_sites,
+       $num_records,
+       $status_active_string_db,
+       $status_ex_string_db,
+       $retrieve_ex_other,
+       $site_id_is_string);
   break;
  case 'ags':
   // *TODO*: due to unknown (historic ?) reasons, the database uses a modified AGS...
   do_query('AREAID',
            $data['AGS'] * 10,
-	       FALSE,
-		   FALSE,
-		   $results,
-		   $db_sites,
-		   $num_records,
-		   $status_active_string_db,
-		   $status_ex_string_db,
-		   $retrieve_ex_other,
-		   $site_id_is_string);
+         FALSE,
+       FALSE,
+       $results,
+       $db_sites,
+       $num_records,
+       $status_active_string_db,
+       $status_ex_string_db,
+       $retrieve_ex_other,
+       $site_id_is_string);
   break;
  case 'sid':
   do_query('SITEID',
            $data['SID'],
-	       FALSE,
-		   FALSE,
-		   $results,
-		   $db_sites,
-		   $num_records,
-		   $status_active_string_db,
-		   $status_ex_string_db,
-		   $retrieve_ex_other,
-		   $site_id_is_string);
+         FALSE,
+       FALSE,
+       $results,
+       $db_sites,
+       $num_records,
+       $status_active_string_db,
+       $status_ex_string_db,
+       $retrieve_ex_other,
+       $site_id_is_string);
   break;
  case 'cid':
   do_query('CONTID',
            $data['CID'],
-	       FALSE,
-		   FALSE,
-		   $results,
-		   $db_sites,
-		   $num_records,
-		   $status_active_string_db,
-		   $status_ex_string_db,
-		   $retrieve_ex_other,
-		   $site_id_is_string);
+         FALSE,
+       FALSE,
+       $results,
+       $db_sites,
+       $num_records,
+       $status_active_string_db,
+       $status_ex_string_db,
+       $retrieve_ex_other,
+       $site_id_is_string);
   break;
  default:
   dbase_close($db_sites);
@@ -813,17 +813,17 @@ if ($is_cli)
   // var_dump($results[$i]);
   fprintf(STDOUT, '#' .
                   strval($counter + 1) .
-				  ': ' .
-				  strval($site_id) .
-				  ', ' .
-				  mb_convert_encoding($site_data['STATUS'],
- 				                      ($system_is_windows ? 'CP850' : 'UTF-8'),
-									  'UTF-8') .
-				  ', [' .
-				  strval($site_data['LAT']) .
-				  ',' .
-				  strval($site_data['LON']) .
-				  "]\n");
+          ': ' .
+          strval($site_id) .
+          ', ' .
+          mb_convert_encoding($site_data['STATUS'],
+                              ($system_is_windows ? 'CP850' : 'UTF-8'),
+                    'UTF-8') .
+          ', [' .
+          strval($site_data['LAT']) .
+          ',' .
+          strval($site_data['LON']) .
+          "]\n");
   $counter++;
  }
 }

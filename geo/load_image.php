@@ -40,15 +40,15 @@ else
 
 $ini_file = dirname($cwd) .
             DIRECTORY_SEPARATOR .
-												'common' .
-												DIRECTORY_SEPARATOR .
+                        'common' .
+                        DIRECTORY_SEPARATOR .
             'geo_php.ini';
 if (!file_exists($ini_file)) die("invalid file (was: \"$ini_file\"), aborting\n");
 define('DATA_DIR', $cwd .
                    DIRECTORY_SEPARATOR .
-																			'data' .
-																			DIRECTORY_SEPARATOR .
-																			$location);
+                                      'data' .
+                                      DIRECTORY_SEPARATOR .
+                                      $location);
 $options = parse_ini_file($ini_file, TRUE);
 if ($options === FALSE) die("failed to parse init file (was: \"$ini_file\"), aborting\n");
 $os_section = ((strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') ? 'geo_windows' : 'geo_unix');
@@ -58,12 +58,12 @@ $loc_section = 'geo_db_' . $location;
 if (count($options) == 0) die("failed to parse init file (was: \"$ini_file\"), aborting");
 $site_images_json_file = $options['geo_data']['data_dir'] .
                          DIRECTORY_SEPARATOR .
-																									$options['geo_data_images']['data_images_sites_file_name'] .
-																									$options['geo_data']['data_json_file_ext'];
+                                                  $options['geo_data_images']['data_images_sites_file_name'] .
+                                                  $options['geo_data']['data_json_file_ext'];
 $duplicates_json_file  = $options['geo_data']['data_dir'] .
                          DIRECTORY_SEPARATOR .
-																									$options['geo_data_sites']['data_sites_duplicates_file_name'] .
-																									$options['geo_data']['data_json_file_ext'];
+                                                  $options['geo_data_sites']['data_sites_duplicates_file_name'] .
+                                                  $options['geo_data']['data_json_file_ext'];
 if (!is_readable($site_images_json_file)) die("\"$site_images_json_file\" not readable, aborting");
 if (!is_readable($duplicates_json_file)) die("\"$duplicates_json_file\" not readable, aborting");
 //$firephp->log($site_images_json_file, 'images file');
@@ -84,36 +84,36 @@ switch ($mode)
  case 'site':
   if ($id !== -1)
   {
-		 // step0: find duplicates
-	  $site_ids = array($id);
-		 if (array_key_exists($id, $duplicates_json_content))
- 		 $site_ids = array_merge($site_ids, $duplicates_json_content[$id]);
+     // step0: find duplicates
+    $site_ids = array($id);
+     if (array_key_exists($id, $duplicates_json_content))
+     $site_ids = array_merge($site_ids, $duplicates_json_content[$id]);
 
-			// step1: find available image(s)
-			$images = array();
+      // step1: find available image(s)
+      $images = array();
    for ($i = 0; $i < count($images_json_content); $i++)
-			 if (in_array($images_json_content[$i]['SITEID'], $site_ids))
-				 $images[] = $images_json_content[$i];
+       if (in_array($images_json_content[$i]['SITEID'], $site_ids))
+         $images[] = $images_json_content[$i];
    if (empty($images))
    {
 //				$firephp->log($site_ids, 'site image not available');
     $not_found = TRUE;
-				break;
+        break;
    }
-			$file_name = $options[$os_section]['image_dir'] .
+      $file_name = $options[$os_section]['image_dir'] .
                 DIRECTORY_SEPARATOR .
-																$options['geo']['image_sid_dir'] .
-																DIRECTORY_SEPARATOR .
-																mb_convert_encoding($images[0]['FILE'],
-																																				mb_internal_encoding(),
-																																				$options['geo_data_images']['data_images_file_cp']);
+                                $options['geo']['image_sid_dir'] .
+                                DIRECTORY_SEPARATOR .
+                                mb_convert_encoding($images[0]['FILE'],
+                                                                        mb_internal_encoding(),
+                                                                        $options['geo_data_images']['data_images_file_cp']);
   }
   else $file_name = $cwd .
        DIRECTORY_SEPARATOR .
-					  $options['geo']['data_dir'] .
-					  DIRECTORY_SEPARATOR .
-					  $options['geo_data_sites']['data_sites_default_image_file_name'] .
-					  $options['geo_data']['data_images_file_ext'];
+            $options['geo']['data_dir'] .
+            DIRECTORY_SEPARATOR .
+            $options['geo_data_sites']['data_sites_default_image_file_name'] .
+            $options['geo_data']['data_images_file_ext'];
   break;
  default:
   die("invalid mode (was: \"$mode\"), aborting");
@@ -143,12 +143,12 @@ if (!empty($file_content))
    // generate thumbnail from scratch...
    list($width, $height) = getimagesize($file_name);
    $thumb = imagecreatetruecolor($options['geo_data_images']['data_images_thumbnail_size_x'],
-								 $options['geo_data_images']['data_images_thumbnail_size_x']);
+                 $options['geo_data_images']['data_images_thumbnail_size_x']);
    if ($thumb === FALSE) die('failed to imagecreatetruecolor(' .
                              $options['geo_data_images']['data_images_thumbnail_size_x'] .
-																													',' .
-																													$options['geo_data_images']['data_images_thumbnail_size_y'] .
-																													"), aborting\n");
+                                                          ',' .
+                                                          $options['geo_data_images']['data_images_thumbnail_size_y'] .
+                                                          "), aborting\n");
    $source = imagecreatefromjpeg($file_name);
    if ($source === FALSE)
    {
@@ -157,11 +157,11 @@ if (!empty($file_content))
    }
    if (imagecopyresized($thumb,
                         $source,
-																								0, 0, 0, 0,
-																								$options['geo_data_images']['data_images_thumbnail_size_x'],
-																								$options['geo_data_images']['data_images_thumbnail_size_y'],
-																								$width,
-																								$height) === FALSE)
+                                                0, 0, 0, 0,
+                                                $options['geo_data_images']['data_images_thumbnail_size_x'],
+                                                $options['geo_data_images']['data_images_thumbnail_size_y'],
+                                                $width,
+                                                $height) === FALSE)
    {
     imagedestroy($thumb);
     imagedestroy($source);

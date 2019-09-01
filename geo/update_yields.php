@@ -1,6 +1,6 @@
 <?php
 error_reporting(E_ALL);
-require_once ('FirePHPCore' . DIRECTORY_SEPARATOR . 'FirePHP.class.php');
+//require_once ('FirePHPCore' . DIRECTORY_SEPARATOR . 'FirePHP.class.php');
 
 $cwd = getcwd();
 if ($cwd === FALSE) die("failed to getcwd(), aborting\n");
@@ -8,13 +8,13 @@ if ($cwd === FALSE) die("failed to getcwd(), aborting\n");
 // init output buffering
 if (!ob_start()) die("failed to ob_start(), aborting");
 
-$firephp = FirePHP::getInstance(TRUE);
-if (is_null($firephp)) die("failed to FirePHP::getInstance(), aborting");
-$firephp->setEnabled(FALSE);
-$firephp->log('started script...');
+//$firephp = FirePHP::getInstance(TRUE);
+//if (is_null($firephp)) die("failed to FirePHP::getInstance(), aborting");
+//$firephp->setEnabled(FALSE);
+//$firephp->log('started script...');
 
 // set default header
-header(':', TRUE, 500); // == 'Internal Server Error'
+header('', TRUE, 500); // == 'Internal Server Error'
 
 if (empty($_POST)) die("invalid invocation ($_POST was empty), aborting");
 $location = 'nrw';
@@ -38,15 +38,15 @@ if (isset($_POST['yield_data']))
 
 $ini_file = dirname($cwd) .
             DIRECTORY_SEPARATOR .
-												'common' .
-												DIRECTORY_SEPARATOR .
+                        'common' .
+                        DIRECTORY_SEPARATOR .
             'geo_php.ini';
 if (!file_exists($ini_file)) die("invalid file (was: \"$ini_file\"), aborting\n");
 define('DATA_DIR', $cwd .
                    DIRECTORY_SEPARATOR .
-																			'data' .
-																			DIRECTORY_SEPARATOR .
-																			$location);
+                                      'data' .
+                                      DIRECTORY_SEPARATOR .
+                                      $location);
 $options = parse_ini_file($ini_file, TRUE);
 if ($options === FALSE) die("failed to parse init file (was: \"$ini_file\"), aborting\n");
 $os_section = ((strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') ? 'geo_windows' : 'geo_unix');
@@ -55,21 +55,21 @@ $loc_section = 'geo_db_' . $location;
 // sanity check(s)
 if (count($options) == 0) die("failed to parse init file (was: \"$ini_file\"), aborting");
 $db_sites_file = (isset($options[$loc_section]['db_base_dir']) ? $options[$loc_section]['db_base_dir']
-	                                                           : $options[$os_section]['db_base_dir']) .
+                                                             : $options[$os_section]['db_base_dir']) .
                  DIRECTORY_SEPARATOR .
-		         (isset($options[$loc_section]['db_sub_dir']) ? ($options[$loc_section]['db_sub_dir'] . DIRECTORY_SEPARATOR)
+             (isset($options[$loc_section]['db_sub_dir']) ? ($options[$loc_section]['db_sub_dir'] . DIRECTORY_SEPARATOR)
                                                               : '') .
-  		         (isset($options[$loc_section]['db_sites_dbf']) ? $options[$loc_section]['db_sites_dbf']
-	                                                            : $options['geo_db']['db_sites_dbf']);
+               (isset($options[$loc_section]['db_sites_dbf']) ? $options[$loc_section]['db_sites_dbf']
+                                                              : $options['geo_db']['db_sites_dbf']);
 $site_id_is_string = (isset($options[$loc_section]['db_sites_id_is_string']) &&
                       (intval($options[$loc_section]['db_sites_id_is_string']) == 1));
 $db_weeks_file = (isset($options[$loc_section]['db_base_dir']) ? $options[$loc_section]['db_base_dir']
-	                                                           : $options[$os_section]['db_base_dir']) .
+                                                             : $options[$os_section]['db_base_dir']) .
                  DIRECTORY_SEPARATOR .
-		         (isset($options[$loc_section]['db_sub_dir']) ? ($options[$loc_section]['db_sub_dir'] . DIRECTORY_SEPARATOR)
+             (isset($options[$loc_section]['db_sub_dir']) ? ($options[$loc_section]['db_sub_dir'] . DIRECTORY_SEPARATOR)
                                                               : '') .
-  		         (isset($options[$loc_section]['db_weeks_dbf']) ? $options[$loc_section]['db_weeks_dbf']
-	                                                            : $options['geo_db']['db_weeks_dbf']);
+               (isset($options[$loc_section]['db_weeks_dbf']) ? $options[$loc_section]['db_weeks_dbf']
+                                                              : $options['geo_db']['db_weeks_dbf']);
 $weeks_id_is_string = (isset($options[$loc_section]['db_weeks_id_is_string']) &&
                        (intval($options[$loc_section]['db_weeks_id_is_string']) == 1));
 // *WARNING* is_readable/is_writeable() fails on (mapped) network shares (windows)
@@ -80,28 +80,28 @@ if (!file_exists($db_weeks_file)) die("db file does not exist (was: \"$db_weeks_
 if (($tourset_id === '') ||
     ($tour_id    === '') ||
     ($calendar_week === 0)) die("invalid invocation, aborting");
-$firephp->log($db_sites_file, 'sites database');
-$firephp->log($db_weeks_file, 'weeks database');
+//$firephp->log($db_sites_file, 'sites database');
+//$firephp->log($db_weeks_file, 'weeks database');
 
 // update relevant record(s)
-$firephp->log('updating database record(s)...');
+//$firephp->log('updating database record(s)...');
 
 // init dBase
 // *NOTE*: open DB read-only
 $db_sites = dbase_open($db_sites_file, 0);
 if ($db_sites === FALSE) die("failed to dbase_open(), aborting");
-$firephp->log('opened sites db');
+//$firephp->log('opened sites db');
 $num_sites_records = dbase_numrecords($db_sites);
 if ($num_sites_records === FALSE)
 {
  dbase_close($db_sites);
  die("failed to dbase_numrecords(), aborting");
 }
-$firephp->log($num_sites_records, '#records');
+//$firephp->log($num_sites_records, '#records');
 // *NOTE*: open DB read-write
 $db_weeks = dbase_open($db_weeks_file, 2);
 if ($db_weeks === FALSE) die("failed to dbase_open(), aborting");
-$firephp->log('opened weeks db');
+//$firephp->log('opened weeks db');
 $num_weeks_records = dbase_numrecords($db_weeks);
 if ($num_weeks_records === FALSE)
 {
@@ -109,7 +109,7 @@ if ($num_weeks_records === FALSE)
  dbase_close($db_weeks);
  die("failed to dbase_numrecords(), aborting");
 }
-$firephp->log($num_weeks_records, '#records');
+//$firephp->log($num_weeks_records, '#records');
 $field_info = dbase_get_header_info($db_weeks);
 if ($field_info === FALSE)
 {
@@ -117,7 +117,7 @@ if ($field_info === FALSE)
  dbase_close($db_weeks);
  die("failed to dbase_get_header_info(), aborting");
 }
-$firephp->log($field_info, 'field info');
+//$firephp->log($field_info, 'field info');
 //print_r($field_info);
 
 $site_id = -1;
@@ -127,7 +127,7 @@ $timestamp = strtotime($timestring);
 if ($timestamp === FALSE) die('failed to strtotime(' . $timestring . '), aborting');
 $month = getdate($timestamp)['mon'];
 //$firephp->log($month, 'week ' . $calendar_week);
-$firephp->log($yield_data, 'yield_data');
+//$firephp->log($yield_data, 'yield_data');
 foreach ($yield_data as $key => $value)
 {
  // *TODO*: convert SID --> CIDs here
@@ -143,8 +143,8 @@ foreach ($yield_data as $key => $value)
    // die("failed to dbase_get_record_with_names($i), aborting");
   // }
   // $container_id = mb_convert_encoding($db_record['CONTID'],
-					 			      // 'UTF-8',
-									  // $options['geo_db']['db_sites_cp']);
+                      // 'UTF-8',
+                    // $options['geo_db']['db_sites_cp']);
   // if (($db_record['deleted'] == 1)     ||
       // ($container_id         != $key)) continue;
 
@@ -174,9 +174,9 @@ foreach ($yield_data as $key => $value)
   }
   if (($db_record['deleted'] == 1)        ||
       ($db_record[159]       != $site_id) ||
-	     ($db_record[161]       != $year)) continue;
+       ($db_record[161]       != $year)) continue;
 
-  $firephp->log($i, 'updating record');
+//  $firephp->log($i, 'updating record');
   $found_record = TRUE;
   // Wx_y
   $column_id = 1 + (($calendar_week - 1) * 3);
@@ -208,7 +208,7 @@ foreach ($yield_data as $key => $value)
  }
  if ($found_record == FALSE)
  {
-  $firephp->log('creating a new record');
+//  $firephp->log('creating a new record');
   $db_record = dbase_get_record($db_weeks, 1);
   if ($db_record === FALSE)
   {
@@ -222,27 +222,27 @@ foreach ($yield_data as $key => $value)
   foreach ($db_record as $key_1 => $value_1)
    switch ($field_info[$key_1]['type'])
    {
-	case 'boolean':
-	 $db_record[$key_1] = FALSE;
-	 break;
-	case 'character':
-	 $db_record[$key_1] = '';
-	 break;
-	case 'date':
-	 $db_record[$key_1] = date('Ymd', 0);
-	 break;
+  case 'boolean':
+   $db_record[$key_1] = FALSE;
+   break;
+  case 'character':
+   $db_record[$key_1] = '';
+   break;
+  case 'date':
+   $db_record[$key_1] = date('Ymd', 0);
+   break;
     case 'number':
-	 $db_record[$key_1] = 0;
-	 break;
+   $db_record[$key_1] = 0;
+   break;
     default:
     dbase_close($db_sites);
-	dbase_close($db_weeks);
+  dbase_close($db_weeks);
      die('invalid field type (index: ' .
-	     $key .
-		 ', was: ' .
-		 $field_info[$key_1]['type'] .
-		 "), aborting");
-	 break;
+       $key .
+     ', was: ' .
+     $field_info[$key_1]['type'] .
+     "), aborting");
+   break;
    }
   // Wx_y
   $db_record[1 + (($calendar_week - 1) * 3)] = strval($value / $options['geo_data_sites']['data_sites_yield_modifier']);
@@ -285,13 +285,13 @@ if (dbase_close($db_sites) === FALSE)
  die("failed to dbase_close(), aborting\n");
 }
 if (dbase_close($db_weeks) === FALSE) die("failed to dbase_close(), aborting\n");
-$firephp->log('closed dbs');
-$firephp->log('updating database record(s)...DONE');
+//$firephp->log('closed dbs');
+//$firephp->log('updating database record(s)...DONE');
 
-$firephp->log('ending script...');
+//$firephp->log('ending script...');
 
 // set header
-header(':', TRUE, 200); // == 'OK'
+header('', TRUE, 200); // == 'OK'
 
 // fini output buffering
 if (!ob_end_flush()) die("failed to ob_end_flush()(), aborting");

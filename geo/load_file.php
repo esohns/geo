@@ -28,8 +28,8 @@ if (!$is_cli)
  if (isset($_GET['mode'])) $mode = $_GET['mode'];
  if (isset($_GET['sub_mode'])) $sub_mode = $_GET['sub_mode'];
  if (isset($_GET['file'])) $file = mb_convert_encoding($_GET['file'],
-										               mb_internal_encoding(),
- 													   'UTF-8');
+                                   mb_internal_encoding(),
+                             'UTF-8');
  if (isset($_GET['thumbnail'])) $thumbnail = (strcmp(strtolower($_GET['thumbnail']), 'true') == 0);
 }
 else
@@ -42,15 +42,15 @@ else
 
 $ini_file = dirname($cwd) .
             DIRECTORY_SEPARATOR .
-												'common' .
-												DIRECTORY_SEPARATOR .
+                        'common' .
+                        DIRECTORY_SEPARATOR .
             'geo_php.ini';
 if (!file_exists($ini_file)) die("invalid file (was: \"$ini_file\"), aborting\n");
 define('DATA_DIR', $cwd .
                    DIRECTORY_SEPARATOR .
-		'data' .
-		DIRECTORY_SEPARATOR .
-		$location);
+    'data' .
+    DIRECTORY_SEPARATOR .
+    $location);
 $options = parse_ini_file($ini_file, TRUE);
 if ($options === FALSE) die("failed to parse init file (was: \"$ini_file\"), aborting\n");
 $os_section = ((strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') ? 'geo_windows' : 'geo_unix');
@@ -68,46 +68,46 @@ switch ($mode)
   $fq_filename = $options['geo_data']['data_dir'] .
                  DIRECTORY_SEPARATOR .
                  $options['geo_data_contacts']['data_contacts_file_name'] .
-																	$options['geo_data']['data_json_file_ext'];
+                                  $options['geo_data']['data_json_file_ext'];
   break;
  case 'containers':
   if ($sub_mode == '')
    $fq_filename = $options['geo_data']['data_dir'] .
                   DIRECTORY_SEPARATOR .
-																		$options['geo_data_containers']['data_containers_file_name'] .
-																		$options['geo_data']['data_json_file_ext'];
+                                    $options['geo_data_containers']['data_containers_file_name'] .
+                                    $options['geo_data']['data_json_file_ext'];
   else
    $fq_filename = $options['geo_data']['data_dir'] .
                   DIRECTORY_SEPARATOR .
                   $options['geo_data_containers']['data_containers_file_name'] .
-																		'_' .
-																		// mb_convert_encoding($options['geo_data_sites']['data_sites_status_active_desc'],
-																		mb_convert_encoding($sub_mode,
-																																						mb_internal_encoding(),
-																																						'UTF-8') .
-																		$options['geo_data']['data_json_file_ext'];
+                                    '_' .
+                                    // mb_convert_encoding($options['geo_data_sites']['data_sites_status_active_desc'],
+                                    mb_convert_encoding($sub_mode,
+                                                                            mb_internal_encoding(),
+                                                                            'UTF-8') .
+                                    $options['geo_data']['data_json_file_ext'];
   break;
-	case 'duplicates':
-	 switch ($sub_mode)
-		{
+  case 'duplicates':
+   switch ($sub_mode)
+    {
    case '':
     $fq_filename = $options['geo_data']['data_dir'] .
                    DIRECTORY_SEPARATOR .
-																			$options['geo_data_sites']['data_sites_duplicates_file_name'] .
-																			$options['geo_data']['data_json_file_ext'];
+                                      $options['geo_data_sites']['data_sites_duplicates_file_name'] .
+                                      $options['geo_data']['data_json_file_ext'];
     break;
    default:
     $fq_filename = $options['geo_data']['data_dir'] .
                    DIRECTORY_SEPARATOR .
-		$options['geo_data_sites']['data_sites_duplicates_file_name'] .
-		'_' .
-		mb_convert_encoding($sub_mode,
-		mb_internal_encoding(),
-		'UTF-8') .
-		$options['geo_data']['data_json_file_ext'];
+    $options['geo_data_sites']['data_sites_duplicates_file_name'] .
+    '_' .
+    mb_convert_encoding($sub_mode,
+    mb_internal_encoding(),
+    'UTF-8') .
+    $options['geo_data']['data_json_file_ext'];
     break;
   }
-	 break;
+   break;
  case 'image':
   $fq_filename = $options[$os_section]['image_dir'] .
                  DIRECTORY_SEPARATOR .
@@ -118,12 +118,12 @@ switch ($mode)
    $fq_filename = $options['geo_data']['data_dir'] .
                   DIRECTORY_SEPARATOR .
                   $options['geo_data_images']['data_images_sites_file_name'] .
-																		$options['geo_data']['data_json_file_ext'];
+                                    $options['geo_data']['data_json_file_ext'];
   else
    $fq_filename = $options['geo_data']['data_dir'] .
                   DIRECTORY_SEPARATOR .
                   $options['geo_data_images']['data_images_other_file_name'] .
-																		$options['geo_data']['data_json_file_ext'];
+                                    $options['geo_data']['data_json_file_ext'];
   break;
  case 'sites':
   switch ($sub_mode)
@@ -131,26 +131,26 @@ switch ($mode)
    case '':
     $fq_filename = $options['geo_data']['data_dir'] .
                    DIRECTORY_SEPARATOR .
-																			$options['geo_data_sites']['data_sites_file_name'] .
-																			$options['geo_data']['data_json_file_ext'];
+                                      $options['geo_data_sites']['data_sites_file_name'] .
+                                      $options['geo_data']['data_json_file_ext'];
     break;
    default:
     $fq_filename = $options['geo_data']['data_dir'] .
                    DIRECTORY_SEPARATOR .
                    $options['geo_data_sites']['data_sites_file_name'] .
-																			'_' .
-																			mb_convert_encoding($sub_mode,
-																																							mb_internal_encoding(),
-																																							'UTF-8') .
-																			$options['geo_data']['data_json_file_ext'];
+                                      '_' .
+                                      mb_convert_encoding($sub_mode,
+                                                                              mb_internal_encoding(),
+                                                                              'UTF-8') .
+                                      $options['geo_data']['data_json_file_ext'];
     break;
   }
   break;
  case 'toursets':
   $fq_filename = $options['geo_data']['data_dir'] .
                  DIRECTORY_SEPARATOR .
-																	$options['geo_data_tours']['data_tours_toursets_file_name'] .
-																	$options['geo_data']['data_json_file_ext'];
+                                  $options['geo_data_tours']['data_tours_toursets_file_name'] .
+                                  $options['geo_data']['data_json_file_ext'];
   break;
  default:
   die("invalid mode (was: \"$mode\"), aborting");
