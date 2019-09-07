@@ -9,18 +9,18 @@ if ($cwd === FALSE) die("failed to getcwd(), aborting");
 
 if (!$is_cli)
 {
- require_once ('FirePHPCore' . DIRECTORY_SEPARATOR . 'FirePHP.class.php');
+// require_once ('FirePHPCore' . DIRECTORY_SEPARATOR . 'FirePHP.class.php');
 
  // init output buffering
  if (!ob_start()) trigger_error("failed to ob_start(), aborting", E_USER_ERROR);
 
- $firephp = FirePHP::getInstance(TRUE);
- if (is_null($firephp)) trigger_error("failed to FirePHP::getInstance(), aborting", E_USER_ERROR);
- $firephp->setEnabled(FALSE);
- $firephp->log('started script...');
+// $firephp = FirePHP::getInstance(TRUE);
+// if (is_null($firephp)) trigger_error("failed to FirePHP::getInstance(), aborting", E_USER_ERROR);
+// $firephp->setEnabled(FALSE);
+// $firephp->log('started script...');
 
  // set default header
- header(':', TRUE, 500); // == 'Internal Server Error'
+ header('', TRUE, 500); // == 'Internal Server Error'
 }
 
 $cwd = getcwd();
@@ -54,10 +54,10 @@ $loc_section = 'geo_db_' . $location;
 // sanity check(s)
 if (empty($address_file)) $address_file = ($cwd .
                                            DIRECTORY_SEPARATOR .
-				                           $options['geo']['data_dir'] .
-				                           DIRECTORY_SEPARATOR .
-				                           $options['geo_data']['data_warehouse_location_file_name'] .
-				                           $options['geo_data']['data_csv_file_ext']);
+                                   $options['geo']['data_dir'] .
+                                   DIRECTORY_SEPARATOR .
+                                   $options['geo_data']['data_warehouse_location_file_name'] .
+                                   $options['geo_data']['data_csv_file_ext']);
 $fp = fopen($address_file, 'r', FALSE);
 if ($fp === FALSE) trigger_error("\"$address_file\" not readable, aborting", E_USER_ERROR);
 
@@ -67,11 +67,11 @@ $file_record = fgetcsv($fp, 0, ',');
 while ($file_record !== FALSE)
 {
  $key = mb_convert_encoding($file_record[0],
-							$options['geo_data']['data_warehouse_location_cp'],
-							$options['geo_data']['data_warehouse_location_csv_cp']);
+              $options['geo_data']['data_warehouse_location_cp'],
+              $options['geo_data']['data_warehouse_location_csv_cp']);
  $locations[$key] = mb_convert_encoding($file_record[1],
                                         $options['geo_data']['data_warehouse_location_cp'],
-										$options['geo_data']['data_warehouse_location_csv_cp']);
+                    $options['geo_data']['data_warehouse_location_csv_cp']);
  $file_record = fgetcsv($fp, 0, ',');
 }
 if (fclose($fp) === FALSE) trigger_error("failed to close \"$address_file\", aborting\n", E_USER_ERROR);
@@ -89,7 +89,7 @@ if ($is_cli)
 }
 else
 {
- header(':', TRUE, 200); // == 'OK'
+ header('', TRUE, 200); // == 'OK'
 
  echo("$json_content");
 

@@ -23,14 +23,14 @@ if ($is_cli)
 }
 else
 {
- require_once ('FirePHPCore' . DIRECTORY_SEPARATOR . 'FirePHP.class.php');
+// require_once ('FirePHPCore' . DIRECTORY_SEPARATOR . 'FirePHP.class.php');
 
  // init output buffering
  if (!ob_start()) trigger_error("failed to ob_start(), aborting", E_USER_ERROR);
- $firephp = FirePHP::getInstance(TRUE);
- if (is_null($firephp)) trigger_error("failed to FirePHP::getInstance(), aborting", E_USER_ERROR);
- $firephp->setEnabled(FALSE);
- $firephp->log('started script...');
+// $firephp = FirePHP::getInstance(TRUE);
+// if (is_null($firephp)) trigger_error("failed to FirePHP::getInstance(), aborting", E_USER_ERROR);
+// $firephp->setEnabled(FALSE);
+// $firephp->log('started script...');
 
  if (isset($_GET['location'])) $location = $_GET['location'];
  if (isset($_GET['status'])) $status = $_GET['status'];
@@ -67,28 +67,28 @@ switch ($status)
 }
 if (count($options) == 0) trigger_error("failed to parse init file (was: \"$ini_file\"), aborting", E_USER_ERROR);
 $db_sites_file = (isset($options[$loc_section]['db_base_dir']) ? $options[$loc_section]['db_base_dir']
-																																																															: $options[$os_section]['db_base_dir']) .
+                                                                                                                              : $options[$os_section]['db_base_dir']) .
                  DIRECTORY_SEPARATOR .
-																	(isset($options[$loc_section]['db_sub_dir']) ? ($options[$loc_section]['db_sub_dir'] . DIRECTORY_SEPARATOR)
+                                  (isset($options[$loc_section]['db_sub_dir']) ? ($options[$loc_section]['db_sub_dir'] . DIRECTORY_SEPARATOR)
                                                               : '') .
-																	(isset($options[$loc_section]['db_sites_dbf']) ? $options[$loc_section]['db_sites_dbf']
-																																																																: $options['geo_db']['db_sites_dbf']);
+                                  (isset($options[$loc_section]['db_sites_dbf']) ? $options[$loc_section]['db_sites_dbf']
+                                                                                                                                : $options['geo_db']['db_sites_dbf']);
 $site_id_is_string = (isset($options[$loc_section]['db_sites_id_is_string']) &&
                       (intval($options[$loc_section]['db_sites_id_is_string']) == 1));
 $db_relation_file = (isset($options[$loc_section]['db_base_dir']) ? $options[$loc_section]['db_base_dir']
-																																																																		: $options[$os_section]['db_base_dir']) .
+                                                                                                                                    : $options[$os_section]['db_base_dir']) .
                     DIRECTORY_SEPARATOR .
-																				(isset($options[$loc_section]['db_sub_dir']) ? ($options[$loc_section]['db_sub_dir'] . DIRECTORY_SEPARATOR)
+                                        (isset($options[$loc_section]['db_sub_dir']) ? ($options[$loc_section]['db_sub_dir'] . DIRECTORY_SEPARATOR)
                                                                  : '') .
-																				(isset($options[$loc_section]['db_relation_dbf']) ? $options[$loc_section]['db_relation_dbf']
-																																																																						: $options['geo_db']['db_relation_dbf']);
+                                        (isset($options[$loc_section]['db_relation_dbf']) ? $options[$loc_section]['db_relation_dbf']
+                                                                                                                                            : $options['geo_db']['db_relation_dbf']);
 $db_weeks_file = (isset($options[$loc_section]['db_base_dir']) ? $options[$loc_section]['db_base_dir']
-																																																															: $options[$os_section]['db_base_dir']) .
+                                                                                                                              : $options[$os_section]['db_base_dir']) .
                  DIRECTORY_SEPARATOR .
-																	(isset($options[$loc_section]['db_sub_dir']) ? ($options[$loc_section]['db_sub_dir'] . DIRECTORY_SEPARATOR)
+                                  (isset($options[$loc_section]['db_sub_dir']) ? ($options[$loc_section]['db_sub_dir'] . DIRECTORY_SEPARATOR)
                                                               : '') .
-																	(isset($options[$loc_section]['db_weeks_dbf']) ? $options[$loc_section]['db_weeks_dbf']
-																																																																: $options['geo_db']['db_weeks_dbf']);
+                                  (isset($options[$loc_section]['db_weeks_dbf']) ? $options[$loc_section]['db_weeks_dbf']
+                                                                                                                                : $options['geo_db']['db_weeks_dbf']);
 // *WARNING* is_readable() fails on (mapped) network shares (windows)
 if (!file_exists($db_relation_file)) trigger_error("db relations file does not exist (was: \"$db_relation_file\"), aborting", E_USER_ERROR);
 //if (!is_readable($db_relation_file)) trigger_error("db relations file not readable (was: \"$db_relation_file\"), aborting", E_USER_ERROR);
@@ -96,15 +96,17 @@ if (!file_exists($db_sites_file)) trigger_error("db sites file does not exist (w
 //if (!is_readable($db_sites_file)) trigger_error("db sites file not readable (was: \"$db_sites_file\"), aborting", E_USER_ERROR);
 if (!file_exists($db_weeks_file)) trigger_error("db weeks file does not exist (was: \"$db_weeks_file\"), aborting", E_USER_ERROR);
 //if (!is_readable($db_weeks_file)) trigger_error("db weeks file not readable (was: \"$db_weeks_file\"), aborting", E_USER_ERROR);
-if (!$is_cli) $firephp->log($db_relation_file, 'relations database');
-if (!$is_cli) $firephp->log($db_sites_file, 'sites database');
-if (!$is_cli) $firephp->log($db_weeks_file, 'yields database');
+//if (!$is_cli) $firephp->log($db_relation_file, 'relations database');
+//if (!$is_cli) $firephp->log($db_sites_file, 'sites database');
+//if (!$is_cli) $firephp->log($db_weeks_file, 'yields database');
 
 // init dBase
 // *NOTE*: open DB read-only
 $db_relations = dbase_open($db_relation_file, 0);
 if ($db_relations === FALSE) trigger_error("failed to dbase_open(), aborting", E_USER_ERROR);
-if (!$is_cli) $firephp->log('opened relations db...');
+if (!$is_cli)
+//$firephp->log('opened relations db...')
+;
 else fwrite(STDOUT, "opened relations db...\n");
 $num_relations_records = dbase_numrecords($db_relations);
 if ($num_relations_records === FALSE)
@@ -112,11 +114,15 @@ if ($num_relations_records === FALSE)
  dbase_close($db_relations);
  trigger_error("failed to dbase_numrecords(), aborting", E_USER_ERROR);
 }
-if (!$is_cli) $firephp->log($num_relations_records, '# relations record(s)');
+if (!$is_cli)
+//$firephp->log($num_relations_records, '# relations record(s)')
+;
 else fwrite(STDOUT, '# relations record(s): ' . $num_relations_records . "\n");
 $db_sites = dbase_open($db_sites_file, 0);
 if ($db_sites === FALSE) trigger_error("failed to dbase_open(), aborting", E_USER_ERROR);
-if (!$is_cli) $firephp->log('opened sites db...');
+if (!$is_cli)
+//$firephp->log('opened sites db...')
+;
 else fwrite(STDOUT, "opened sites db...\n");
 $num_site_records = dbase_numrecords($db_sites);
 if ($num_site_records === FALSE)
@@ -125,7 +131,9 @@ if ($num_site_records === FALSE)
  dbase_close($db_sites);
  trigger_error("failed to dbase_numrecords(), aborting", E_USER_ERROR);
 }
-if (!$is_cli) $firephp->log($num_site_records, '# site record(s)');
+if (!$is_cli)
+//$firephp->log($num_site_records, '# site record(s)')
+;
 else fwrite(STDOUT, '# site record(s): ' . $num_site_records . "\n");
 
 // step1: extract site data
@@ -173,40 +181,40 @@ for ($i = 1; $i <= $num_site_records; $i++)
   // if ($is_cli) fwrite(STDOUT, strval($num_active) . ': active site (ID: ' . strval($db_sites_record['SITEID']) . ")\n");
   $num_active++;
  }
-	$zip = trim(strval($db_sites_record['ZIP']));
-	if (!empty($zip)) $zip .= ' ';
-	$community = trim($db_sites_record['COMMUNITY']);
-	if (!empty($community)) $community = (' (' . $community . ')');
-	$address = trim($db_sites_record['STREET']) .
-	           ', ' .
-												$zip .
-	           trim($db_sites_record['CITY']) .
-												$community;
+  $zip = trim(strval($db_sites_record['ZIP']));
+  if (!empty($zip)) $zip .= ' ';
+  $community = trim($db_sites_record['COMMUNITY']);
+  if (!empty($community)) $community = (' (' . $community . ')');
+  $address = trim($db_sites_record['STREET']) .
+             ', ' .
+                        $zip .
+             trim($db_sites_record['CITY']) .
+                        $community;
  $data_record = array('SITEID'       => ($site_id_is_string ? mb_convert_encoding(trim($db_sites_record['SITEID']),
-																																																																																		'UTF-8',
-																																																																																		$options['geo_db']['db_sites_cp'])
+                                                                                                                                                                    'UTF-8',
+                                                                                                                                                                    $options['geo_db']['db_sites_cp'])
                                                             : $db_sites_record['SITEID']),
-																						'CONTID'       => mb_convert_encoding(trim($db_sites_record['CONTID']),
-																																																												'UTF-8',
-																																																												$options['geo_db']['db_sites_cp']),
-																						'GROUP'        => mb_convert_encoding(trim($db_sites_record['GROUP']),
-																																																												'UTF-8',
-																																																												$options['geo_db']['db_sites_cp']),
+                                            'CONTID'       => mb_convert_encoding(trim($db_sites_record['CONTID']),
+                                                                                                                        'UTF-8',
+                                                                                                                        $options['geo_db']['db_sites_cp']),
+                                            'GROUP'        => mb_convert_encoding(trim($db_sites_record['GROUP']),
+                                                                                                                        'UTF-8',
+                                                                                                                        $options['geo_db']['db_sites_cp']),
                       'STATUS'       => ($is_active ? $status_active_string_utf8
-																																																				: ($is_ex ? $status_ex_string_utf8
-																																																														: mb_convert_encoding(trim($db_sites_record['STATUS']),
-																																																																																				'UTF-8',
-																																																																																				$options['geo_db']['db_sites_cp']))),
+                                                                                                        : ($is_ex ? $status_ex_string_utf8
+                                                                                                                            : mb_convert_encoding(trim($db_sites_record['STATUS']),
+                                                                                                                                                                        'UTF-8',
+                                                                                                                                                                        $options['geo_db']['db_sites_cp']))),
                       'ADDRESS'      => mb_convert_encoding($address,
-																																																												'UTF-8',
-																																																												mb_internal_encoding()),
-																						'LAT'          => $db_sites_record['LAT'],
+                                                                                                                        'UTF-8',
+                                                                                                                        mb_internal_encoding()),
+                                            'LAT'          => $db_sites_record['LAT'],
                       'LON'          => $db_sites_record['LON'],
-																						// statistics
-																						'NUM_YEARS'    => 0,
-																						'YIELD'        => 0,
-																						'RANK_#'       => 0,
-																						'RANK_%'       => 0.0);
+                                            // statistics
+                                            'NUM_YEARS'    => 0,
+                                            'YIELD'        => 0,
+                                            'RANK_#'       => 0,
+                                            'RANK_%'       => 0.0);
 
  $j = 1;
  for (; $j <= $num_relations_records; $j++)
@@ -219,9 +227,9 @@ for ($i = 1; $i <= $num_site_records; $i++)
    trigger_error("failed to dbase_get_record_with_names($j), aborting", E_USER_ERROR);
   }
   $site_id = ($site_id_is_string ? mb_convert_encoding(trim($db_relations_record['SITEID']),
-											           'UTF-8',
- 													   $options['geo_db']['db_relation_cp'])
-							     : intval(trim($db_relations_record['SITEID']))); // *TODO*
+                                 'UTF-8',
+                             $options['geo_db']['db_relation_cp'])
+                   : intval(trim($db_relations_record['SITEID']))); // *TODO*
   if (($db_relations_record['deleted'] == 1) ||
       ($site_id                        != $data_record['SITEID'])) continue;
 
@@ -237,17 +245,17 @@ for ($i = 1; $i <= $num_site_records; $i++)
  $data[$data_record['SITEID']] = $data_record;
  // if ($is_cli) fwrite(STDOUT, '#' .
                              // strval($i) .
-							 // ': [SID: ' .
+               // ': [SID: ' .
                              // strval($data_record['SITEID']) .
-							 // "]\t[CTID: " .
-							 // strval($data_record['CONTACTID']) .
-							 // "]\t" .
-							 // $data_record['STATUS'] .
-							 // "\t[" .
-							 // strval($data_record['LAT']) .
-							 // ',' .
-							 // strval($data_record['LON']) .
-						     // "]\n");
+               // "]\t[CTID: " .
+               // strval($data_record['CONTACTID']) .
+               // "]\t" .
+               // $data_record['STATUS'] .
+               // "\t[" .
+               // strval($data_record['LAT']) .
+               // ',' .
+               // strval($data_record['LON']) .
+                 // "]\n");
 
  if ($is_cli && (($i % 100) == 0)) fwrite(STDOUT, '#');
 }
@@ -257,17 +265,25 @@ if (!dbase_close($db_relations))
  dbase_close($db_sites);
  trigger_error("failed to dbase_close(), aborting\n", E_USER_ERROR);
 }
-if (!$is_cli) $firephp->log('closed relations db...');
+if (!$is_cli)
+//$firephp->log('closed relations db...')
+;
 else fwrite(STDOUT, "closed relations db...\n");
 if (!dbase_close($db_sites)) trigger_error("failed to dbase_close(), aborting\n", E_USER_ERROR);
-if (!$is_cli) $firephp->log('closed sites db...');
+if (!$is_cli)
+//$firephp->log('closed sites db...')
+;
 else fwrite(STDOUT, "closed sites db...\n");
-if (!$is_cli) $firephp->log($num_active, '#active sites');
+if (!$is_cli)
+//$firephp->log($num_active, '#active sites')
+;
 else fwrite(STDOUT, '#active sites ' . strval($num_active) . "\n");
 
 if ($statistics)
 {
- if (!$is_cli) $firephp->log('processing yields...');
+ if (!$is_cli)
+ //$firephp->log('processing yields...')
+ ;
  else fwrite(STDOUT, "processing yields...\n");
 
  // step2: extract site statistics
@@ -283,7 +299,9 @@ if ($statistics)
   dbase_close($db_weeks);
   trigger_error("failed to dbase_numrecords(), aborting", E_USER_ERROR);
  }
- if (!$is_cli) $firephp->log('opened weeks db...');
+ if (!$is_cli)
+ //$firephp->log('opened weeks db...')
+ ;
  else fwrite(STDOUT, "opened weeks db...\n");
 
  for ($i = 1; $i < $num_weeks_records; $i++)
@@ -296,16 +314,18 @@ if ($statistics)
   }
   if ($db_weeks_record['deleted'] == 1) continue;
   // $site_id = ($site_id_is_string ? mb_convert_encoding(trim($db_weeks_record[159]),
-				                                       // 'UTF-8',
- 													   // $options['geo_db']['db_weeks_cp'])
-								 // : $db_weeks_record[159]);
+                                               // 'UTF-8',
+                             // $options['geo_db']['db_weeks_cp'])
+                 // : $db_weeks_record[159]);
   $site_id = ($site_id_is_string ? mb_convert_encoding(trim($db_weeks_record['SITEID']),
-																																																							'UTF-8',
-																																																							$options['geo_db']['db_weeks_cp'])
-																																	: intval(trim($db_weeks_record['SITEID']))); // *WARNING*: better leave this as it is...
+                                                                                                              'UTF-8',
+                                                                                                              $options['geo_db']['db_weeks_cp'])
+                                                                  : intval(trim($db_weeks_record['SITEID']))); // *WARNING*: better leave this as it is...
   if (!array_key_exists($site_id, $data))
   {
-   if (!$is_cli) $firephp->log($site_id, 'weeks record ' . strval($i) . ': unknown SID');
+   if (!$is_cli)
+   //$firephp->log($site_id, 'weeks record ' . strval($i) . ': unknown SID')
+   ;
    else fwrite(STDERR, 'weeks db [' . strval($i) . ']: unknown SID (was: "' . strval($site_id) . "\"), continuing\n");
    continue;
   }
@@ -317,7 +337,9 @@ if ($statistics)
   else $data[$site_id]['YIELD'] += intval(trim($db_weeks_record['SUMYEAR']));
  }
  if (!dbase_close($db_weeks)) trigger_error("failed to dbase_close(), aborting\n", E_USER_ERROR);
- if (!$is_cli) $firephp->log('closed weeks db...');
+ if (!$is_cli)
+ //$firephp->log('closed weeks db...')
+ ;
  else fwrite(STDOUT, "closed weeks db...\n");
 
  // step2a: apply factor
@@ -329,7 +351,9 @@ if ($statistics)
  $avg_years = 0.0;
  $avg_years_max = 0.0;
 
- if (!$is_cli) $firephp->log('computing site rankings...');
+ if (!$is_cli)
+ //$firephp->log('computing site rankings...')
+ ;
  else fwrite(STDOUT, "computing site rankings...\n");
  foreach ($data as $site_id => $data_record)
  {
@@ -340,7 +364,9 @@ if ($statistics)
  }
  if ($avg_years_max == 0.0)
  {
-  if (!$is_cli) $firephp->log('could not determine maximum site yield (avg/year)');
+  if (!$is_cli)
+  //$firephp->log('could not determine maximum site yield (avg/year)')
+  ;
   else fwrite(STDERR, "could not determine maximum site yield (avg/year), continuing\n");
  }
  else
@@ -371,14 +397,20 @@ if ($statistics)
 
   $head = reset($data);
   if ($head === FALSE) trigger_error("failed to reset(), aborting\n", E_USER_ERROR);
-  if (!$is_cli) $firephp->log(key($data), 'top yielding site');
+  if (!$is_cli)
+  //$firephp->log(key($data), 'top yielding site')
+  ;
   else fwrite(STDOUT, 'top yielding site: ' . strval(key($data)) . ' @' . strval($avg_years_max) . "\n");
  }
 
- if (!$is_cli) $firephp->log('computing site rankings...DONE');
+ if (!$is_cli)
+ //$firephp->log('computing site rankings...DONE')
+ ;
  else fwrite(STDOUT, "computing site rankings...DONE\n");
 
- if (!$is_cli) $firephp->log('processing yields...DONE');
+ if (!$is_cli)
+ //$firephp->log('processing yields...DONE')
+ ;
  else fwrite(STDOUT, "processing yields...DONE\n");
 }
 else
@@ -397,7 +429,7 @@ if ($json_content === FALSE) trigger_error("failed to json_encode(\"$data\"): " 
 // var_dump($json_content);
 //if (!$is_cli) $firephp->log($json_content, 'content');
 
-if (!$is_cli) $firephp->log('ending script...');
+//if (!$is_cli) $firephp->log('ending script...');
 
 // dump/write the content
 if ($is_cli)

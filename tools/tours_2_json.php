@@ -21,13 +21,13 @@ if ($is_cli)
 }
 else
 {
- require_once ('FirePHPCore' . DIRECTORY_SEPARATOR . 'FirePHP.class.php');
+// require_once ('FirePHPCore' . DIRECTORY_SEPARATOR . 'FirePHP.class.php');
 
  if (!ob_start()) trigger_error("failed to ob_start(), aborting", E_USER_ERROR);
- $firephp = FirePHP::getInstance(TRUE);
- if (is_null($firephp)) trigger_error("failed to FirePHP::getInstance(), aborting", E_USER_ERROR);
- $firephp->setEnabled(FALSE);
- $firephp->log('started script...');
+// $firephp = FirePHP::getInstance(TRUE);
+// if (is_null($firephp)) trigger_error("failed to FirePHP::getInstance(), aborting", E_USER_ERROR);
+// $firephp->setEnabled(FALSE);
+// $firephp->log('started script...');
 
  $location = $_GET['location'];
  $tourset_descriptor = $_GET['tourset'];
@@ -46,16 +46,16 @@ $loc_section = 'geo_db_' . $location;
 // sanity check(s)
 if (count($options) === 0) trigger_error("failed to parse init file (was: \"$ini_file\"), aborting", E_USER_ERROR);
 $db_toursets_file = (isset($options[$loc_section]['db_base_dir']) ? $options[$loc_section]['db_base_dir']
-																																																																		: $options[$os_section]['db_base_dir']) .
+                                                                                                                                    : $options[$os_section]['db_base_dir']) .
                     DIRECTORY_SEPARATOR .
-																				(isset($options[$loc_section]['db_sub_dir']) ? ($options[$loc_section]['db_sub_dir'] . DIRECTORY_SEPARATOR)
+                                        (isset($options[$loc_section]['db_sub_dir']) ? ($options[$loc_section]['db_sub_dir'] . DIRECTORY_SEPARATOR)
                                                                  : '') .
-																				(isset($options[$loc_section]['db_toursets_dbf']) ? $options[$loc_section]['db_toursets_dbf']
-																																																																						: $options['geo_db']['db_toursets_dbf']);
+                                        (isset($options[$loc_section]['db_toursets_dbf']) ? $options[$loc_section]['db_toursets_dbf']
+                                                                                                                                            : $options['geo_db']['db_toursets_dbf']);
 $tourset_ids_json_file = $options['geo_data']['data_dir'] .
-																									DIRECTORY_SEPARATOR .
-																									$options['geo_data_tours']['data_tours_tourset_ids_file_name'] .
-																									$options['geo_data']['data_json_file_ext'];
+                                                  DIRECTORY_SEPARATOR .
+                                                  $options['geo_data_tours']['data_tours_tourset_ids_file_name'] .
+                                                  $options['geo_data']['data_json_file_ext'];
 $workdays_per_week = intval($options['geo_data_tours']['data_tours_workdays_per_week']);
 // *WARNING* is_readable() fails on (mapped) network shares (windows)
 if (!file_exists($db_toursets_file)) trigger_error("db file does not exist (was: \"$db_toursets_file\"), aborting", E_USER_ERROR);
@@ -77,7 +77,9 @@ if ($db === FALSE) trigger_error("failed to dbase_open(), aborting", E_USER_ERRO
  // trigger_error("failed to dbase_get_header_info(), aborting", E_USER_ERROR);
 // }
 // print_r($field_info);
-if (!$is_cli) $firephp->log('opened db...');
+if (!$is_cli)
+//$firephp->log('opened db...')
+;
 else fwrite(STDOUT, "opened db...\n");
 $num_records = dbase_numrecords($db);
 if ($num_records === FALSE)
@@ -85,7 +87,9 @@ if ($num_records === FALSE)
  dbase_close($db);
  trigger_error("failed to dbase_numrecords(), aborting", E_USER_ERROR);
 }
-if (!$is_cli) $firephp->log($num_records, '#records');
+if (!$is_cli)
+//$firephp->log($num_records, '#records')
+;
 //else echo("#records: $num_records\n");
 
 // init tourset_ids
@@ -111,8 +115,8 @@ for ($i = 1; $i <= $num_records; $i++)
  if (strcmp($temp, '') === 0)
  {
   fwrite(STDERR, "*WARNING* [#$i]:[SID#" .
-																	trim($db_record[6]) .
-																	"]: tourset empty, continuing\n");
+                                  trim($db_record[6]) .
+                                  "]: tourset empty, continuing\n");
   continue;
  }
  if (in_array($temp, $tourset_descriptors)) continue;
@@ -121,12 +125,12 @@ for ($i = 1; $i <= $num_records; $i++)
 }
 sort($tourset_descriptors);
 if ((strcmp($tourset_descriptor, '') !== 0) &&
-				!in_array($tourset_descriptor, $tourset_descriptors))
+        !in_array($tourset_descriptor, $tourset_descriptors))
 {
  dbase_close($db);
  trigger_error('invalid tourset descriptor "' .
-															$tourset_descriptor .
-															'", aborting', E_USER_ERROR);
+                              $tourset_descriptor .
+                              '", aborting', E_USER_ERROR);
 }
 //print_r($tourset_descriptors);
 
@@ -134,8 +138,10 @@ $tours = array();
 foreach ($tourset_descriptors as $tourset)
 {
  if ((strcmp($tourset_descriptor, '') !== 0) &&
-				 (strcmp($tourset_descriptor, $tourset) !== 0)) continue;
- if (!$is_cli) $firephp->log($tourset, 'processing tourset');
+         (strcmp($tourset_descriptor, $tourset) !== 0)) continue;
+ if (!$is_cli)
+ //$firephp->log($tourset, 'processing tourset')
+ ;
  else fwrite(STDOUT, 'processing tourset: "' . $tourset . "\"\n");
 
  // step1: extract tour descriptors
@@ -157,18 +163,18 @@ foreach ($tourset_descriptors as $tourset)
 
    $matches = array();
    if (preg_match('/^([[:alpha:]]+[[:digit:]]*) ([[:digit:]]+)$/',
-																		$temp,
-																		$matches,
-																		PREG_OFFSET_CAPTURE,
-																		0) === 1)
+                                    $temp,
+                                    $matches,
+                                    PREG_OFFSET_CAPTURE,
+                                    0) === 1)
    {
     $temp = $matches[1][0];
    }
    elseif (preg_match('/^([[:alpha:]]+)([[:digit:]]+)$/',
-																						$temp,
-																						$matches,
-																						PREG_OFFSET_CAPTURE,
-																						0) === 1)
+                                            $temp,
+                                            $matches,
+                                            PREG_OFFSET_CAPTURE,
+                                            0) === 1)
    {
     $temp = $matches[1][0];
    }
@@ -180,17 +186,17 @@ foreach ($tourset_descriptors as $tourset)
     if (ctype_digit($temp[0]) && (strcmp($temp[$k], ' ') !== 0))
     {
      if ($is_cli) fwrite(STDERR, 'failed to extract route descriptor for ["' .
-																																	$tourset .
-																																	'"]:[SID#' .
+                                                                  $tourset .
+                                                                  '"]:[SID#' .
                                  trim($db_record[6]) .
                                  ', ' .
-																																	$i .
-																																	']: "' .
-																																	$db_record[$i] .
-																																	"\", continuing\n");
+                                                                  $i .
+                                                                  ']: "' .
+                                                                  $db_record[$i] .
+                                                                  "\", continuing\n");
      continue;
     }
-				// *NOTE*: map uppercase descriptors to lowercase
+        // *NOTE*: map uppercase descriptors to lowercase
     $temp = substr(strtolower($temp), 0, $k);
    }
    $tour_descriptor = $temp . '_' . $i;
@@ -198,25 +204,25 @@ foreach ($tourset_descriptors as $tourset)
    {
      if ($index_descriptors[$tour_descriptor] !== $i)
       fwrite(STDERR, '*NOTE* tour descriptor "' .
-																					$temp .
-																					'" (found again in column: ' .
-																					$i .
-																					', SID: ' .
-																					trim($db_record[6]) .
-																					': "' .
-																					$db_record[$i] .
-																					"\")\n");
+                                          $temp .
+                                          '" (found again in column: ' .
+                                          $i .
+                                          ', SID: ' .
+                                          trim($db_record[6]) .
+                                          ': "' .
+                                          $db_record[$i] .
+                                          "\")\n");
    }
    else
     fwrite(STDOUT, 'inserting tour descriptor "' .
                    $temp .
-																			'" (found in column: ' .
-																			$i .
-																			'), SID: ' .
+                                      '" (found in column: ' .
+                                      $i .
+                                      '), SID: ' .
                    trim($db_record[6]) .
                    ': "' .
-																			$db_record[$i] .
-																			"\")\n");
+                                      $db_record[$i] .
+                                      "\")\n");
    $descriptors[$tour_descriptor] = $temp;
    $index_descriptors[$tour_descriptor] = $i;
   }
@@ -258,15 +264,17 @@ foreach ($tourset_descriptors as $tourset)
  $tourset_tours = array();
  foreach ($descriptors as $tour_descriptor => $descriptor)
  {
-  if (!$is_cli) $firephp->log(mb_convert_encoding($tour_descriptor,
-                                                  'UTF-8',
-																																																		$options['geo_db']['db_toursets_cp']),
-																													 'extracting tour');
+  if (!$is_cli)
+  //$firephp->log(mb_convert_encoding($tour_descriptor,
+  //                                                'UTF-8',
+  //                                                                                                  $options['geo_db']['db_toursets_cp']),
+  //                                                         'extracting tour')
+  ;
   else fwrite(STDOUT, "extracting tour: \"" .
-																						mb_convert_encoding($tour_descriptor,
+                                            mb_convert_encoding($tour_descriptor,
                                           mb_internal_encoding(),
-																																										$options['geo_db']['db_toursets_cp']) .
-																					 "\"\n");
+                                                                                    $options['geo_db']['db_toursets_cp']) .
+                                           "\"\n");
 
   $tour = array();
   $sites = array();
@@ -285,19 +293,19 @@ foreach ($tourset_descriptors as $tourset)
    $site_id = intval(preg_replace('/^[^[:digit:]]*/',
                                   '',
                                   mb_convert_encoding(trim($db_record[6]),
-																																																						mb_internal_encoding(),
-																																																						$options['geo_db']['db_toursets_cp'])));
+                                                                                                            mb_internal_encoding(),
+                                                                                                            $options['geo_db']['db_toursets_cp'])));
    if ($site_id === 0)
    {
     if ($is_cli) fwrite(STDERR, "*ERROR*: [#$i][\"" .
-																																mb_convert_encoding($tour_descriptor,
-																																																				mb_internal_encoding(),
-																																																				$options['geo_db']['db_toursets_cp']) .
-																																'"]: failed to convert SID (was: "' .
-																																mb_convert_encoding(trim($db_record[6]),
-																																																				mb_internal_encoding(),
-																																																				$options['geo_db']['db_toursets_cp']) .
-																																"\") to integer, continuing\n");
+                                                                mb_convert_encoding($tour_descriptor,
+                                                                                                        mb_internal_encoding(),
+                                                                                                        $options['geo_db']['db_toursets_cp']) .
+                                                                '"]: failed to convert SID (was: "' .
+                                                                mb_convert_encoding(trim($db_record[6]),
+                                                                                                        mb_internal_encoding(),
+                                                                                                        $options['geo_db']['db_toursets_cp']) .
+                                                                "\") to integer, continuing\n");
     continue;
    }
 
@@ -305,16 +313,16 @@ foreach ($tourset_descriptors as $tourset)
    // if ($temp2 === FALSE)
    // {
     // if ($is_cli) fwrite(STDERR, '["' .
-	                            // $tourset .
-								// '","' .
-								// $tour_descriptor .
-								// '",SID:' .
-								// mb_convert_encoding(trim($db_record[6]), mb_internal_encoding(), $options['geo_db']['db_toursets_cp']) .
-								// ']: invalid tour descriptor (key: "' .
-								// $descriptor .
-								// '", string: "' .
-								// $temp .
-								// "\"), continuing\n");
+                              // $tourset .
+                // '","' .
+                // $tour_descriptor .
+                // '",SID:' .
+                // mb_convert_encoding(trim($db_record[6]), mb_internal_encoding(), $options['geo_db']['db_toursets_cp']) .
+                // ']: invalid tour descriptor (key: "' .
+                // $descriptor .
+                // '", string: "' .
+                // $temp .
+                // "\"), continuing\n");
     // continue;
    // }
    if (strcmp($temp2, '') === 0) $sites[] = $site_id;
@@ -323,16 +331,16 @@ foreach ($tourset_descriptors as $tourset)
     if (array_key_exists($temp2, $sites))
     {
      if ($is_cli) fwrite(STDERR, '*WARNING*: ['.
-																																	mb_convert_encoding($tour_descriptor,
-																																																					mb_internal_encoding(),
-																																																					$options['geo_db']['db_toursets_cp']) .
-																																	'][SID:' .
-																																	mb_convert_encoding(trim($db_record[6]),
-																																																					mb_internal_encoding(),
-																																																					$options['geo_db']['db_toursets_cp']) .
-																																	'] identifier "' .
-																																	$temp .
-																																	"\" occurs more than once, check result !\n");
+                                                                  mb_convert_encoding($tour_descriptor,
+                                                                                                          mb_internal_encoding(),
+                                                                                                          $options['geo_db']['db_toursets_cp']) .
+                                                                  '][SID:' .
+                                                                  mb_convert_encoding(trim($db_record[6]),
+                                                                                                          mb_internal_encoding(),
+                                                                                                          $options['geo_db']['db_toursets_cp']) .
+                                                                  '] identifier "' .
+                                                                  $temp .
+                                                                  "\" occurs more than once, check result !\n");
 
      $index = 0;
      while (array_key_exists($temp2, $sites)) $temp2 = $temp2 . '_' . $index++;
@@ -353,24 +361,26 @@ foreach ($tourset_descriptors as $tourset)
   else
   {
    if ($is_cli) fwrite(STDERR, '*WARNING* unknown tour descriptor ["' .
-																															mb_convert_encoding($tourset,
-																																																			mb_internal_encoding(),
-																																																			$options['geo_db']['db_toursets_cp']) .
-																															',"' .
-																															mb_convert_encoding($tour_descriptor,
-																																																			mb_internal_encoding(),
-																																																			$options['geo_db']['db_toursets_cp']) .
-																															"\"], continuing\n");
+                                                              mb_convert_encoding($tourset,
+                                                                                                      mb_internal_encoding(),
+                                                                                                      $options['geo_db']['db_toursets_cp']) .
+                                                              ',"' .
+                                                              mb_convert_encoding($tour_descriptor,
+                                                                                                      mb_internal_encoding(),
+                                                                                                      $options['geo_db']['db_toursets_cp']) .
+                                                              "\"], continuing\n");
 
    $tour['DESCRIPTOR'] = mb_convert_encoding($tour_descriptor,
                                              'UTF-8',
-																																													$options['geo_db']['db_toursets_cp']);
-			$tour['DESCRIPTION'] = $tour['DESCRIPTOR'];
+                                                                                          $options['geo_db']['db_toursets_cp']);
+      $tour['DESCRIPTION'] = $tour['DESCRIPTOR'];
   }
   $tour['SITES'] = array_values($sites);
   array_push($tourset_tours, $tour);
 //  print_r(array_values($tourset_tours));
-  if (!$is_cli) $firephp->log(array_values($tourset_tours), 'tour');
+  if (!$is_cli)
+  //$firephp->log(array_values($tourset_tours), 'tour')
+  ;
   else fwrite(STDOUT, 'extracting tour "' . $tour_descriptor . "\"...DONE\n");
 //  else var_dump($tourset_tours);
  }
@@ -379,13 +389,13 @@ foreach ($tourset_descriptors as $tourset)
                               $tourset .
                               ']: extracted ' .
                               count($tourset_tours) .
-																														'/' .
-																														count($descriptors) .
-																														" tour(s)...\n");
+                                                            '/' .
+                                                            count($descriptors) .
+                                                            " tour(s)...\n");
 
  $tourset_entry['DESCRIPTOR'] = mb_convert_encoding($tourset,
-																																																				'UTF-8',
-																																																				$options['geo_db']['db_toursets_cp']);
+                                                                                                        'UTF-8',
+                                                                                                        $options['geo_db']['db_toursets_cp']);
 
  $sorted_tourset_tours = array();
  for ($i = 0; $i < count($tourset_tours); $i++)
@@ -406,20 +416,22 @@ foreach ($tourset_descriptors as $tourset)
 }
 
 if (!dbase_close($db)) trigger_error("failed to dbase_close(), aborting\n", E_USER_ERROR);
-if (!$is_cli) $firephp->log('closed db...');
+if (!$is_cli)
+//$firephp->log('closed db...')
+;
 else fwrite(STDOUT, "closed db...\n");
 if (count($tours) !== count($tourset_descriptors))
  if ($is_cli) fwrite(STDOUT, 'extracted ' .
                              count($tours) .
-																													'/' .
-																													count($tourset_descriptors) .
-																													" tourset(s)...\n");
+                                                          '/' .
+                                                          count($tourset_descriptors) .
+                                                          " tourset(s)...\n");
 
 $json_content = json_encode($tours);
 if ($json_content === FALSE) trigger_error("failed to json_encode(\"$tours\"): " . json_last_error() . ", aborting\n", E_USER_ERROR);
 //if (!$is_cli) $firephp->log($json_content, 'content');
 //else var_dump($json_content);
-if (!$is_cli) $firephp->log('ending script...');
+//if (!$is_cli) $firephp->log('ending script...');
 
 // dump/write the content
 if ($is_cli)

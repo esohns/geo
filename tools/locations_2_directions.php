@@ -2,7 +2,7 @@
 
 function locations_2_directions($provider, $curl_handle, $locations_in, $language, $region)
 {
- global $is_cli, $firephp, $system_is_windows, $options;
+ global $is_cli, /*$firephp,*/ $system_is_windows, $options;
 
  // var_dump($locations_in);
  $requests = array();
@@ -11,54 +11,54 @@ function locations_2_directions($provider, $curl_handle, $locations_in, $languag
   case 'google':
    $request_template = array('origin'       => $locations_in[0][0] . ' ' . $locations_in[0][1],
                              'destination'  => $locations_in[count($locations_in) - 1][0] . ' ' . $locations_in[count($locations_in) - 1][1],
-																													'mode'         => 'driving',
-																													'waypoints'    => '',
-																													'alternatives' => 'false',
-																													// 'avoid'        => 'highways|tolls',
+                                                          'mode'         => 'driving',
+                                                          'waypoints'    => '',
+                                                          'alternatives' => 'false',
+                                                          // 'avoid'        => 'highways|tolls',
                              'units'        => 'metric',
-																													'region'       => $region,
-																													'language'     => $language,
-																													'sensor'       => 'false');
+                                                          'region'       => $region,
+                                                          'language'     => $language,
+                                                          'sensor'       => 'false');
    array_shift($locations_in); // remove warehouse location
    array_pop($locations_in);   // remove warehouse location
    break;
   case 'mapquest':
    $request_template = array('locations'              => array(),
                              'options'                => array(
-																													 'unit'                       => 'k',        	        // [<m>|k]
-																													 // 'routeType'            => 'fastest',                 // [<fastest>|shortest|pedestrian|multimodal|bicycle]
-																													 // 'avoidTimedConditions' => 'true',                    // [<false>|true]
-																													 'doReverseGeocode'           => 'false',             // [false|<true>]
-																													 'narrativeType'              => 'none',        	     // [none|<text>|html|microformat]
-																													 // 'enhancedNarrative'   	      => 'false',             // [<false>|true]
-																													 // 'maxLinkId'           	      => 0,         	         // [<0>]
-																													 // 'locale'              	      => 'en_US',      	      // [<'en_US'>], any ISO 639-1 code
-																													 // 'avoids'                     => [],
-																													 // 'avoids'                     => array('Toll Road', 'Unpaved', 'Ferry'), // ['Limited Access',
-																																																						 //  'Toll Road',
-																																																						 //  'Ferry',
-																																																						 //  'Unpaved',
-																																																						 //  'Seasonal Closure',
-																																																						 //  'Country Crossing']
-																													 // 'mustAvoidLinkIds'          	=> array(),
-																													 // 'tryAvoidLinkIds'            => array(),
-																													 'stateBoundaryDisplay'       => 'false',             // [true|false]
-																													 'countryBoundaryDisplay'     => 'false',             // [true|false]
-																													 'sideOfStreetDisplay'        => 'false',             // [true|false]
-																													 'destinationManeuverDisplay' => 'false',             // [true|false]
-																													 'shapeFormat'                => 'raw',       	       // [raw|cmp|cmp6]
-																													 'generalize'                 => 0//,
-																													 // 'drivingStyle'         => 2                          // [1:cautious|<2:normal>|3:aggressive]
-																													 // 'highwayEfficiency'    => 22                         // miles/gallon
+                                                           'unit'                       => 'k',        	        // [<m>|k]
+                                                           // 'routeType'            => 'fastest',                 // [<fastest>|shortest|pedestrian|multimodal|bicycle]
+                                                           // 'avoidTimedConditions' => 'true',                    // [<false>|true]
+                                                           'doReverseGeocode'           => 'false',             // [false|<true>]
+                                                           'narrativeType'              => 'none',        	     // [none|<text>|html|microformat]
+                                                           // 'enhancedNarrative'   	      => 'false',             // [<false>|true]
+                                                           // 'maxLinkId'           	      => 0,         	         // [<0>]
+                                                           // 'locale'              	      => 'en_US',      	      // [<'en_US'>], any ISO 639-1 code
+                                                           // 'avoids'                     => [],
+                                                           // 'avoids'                     => array('Toll Road', 'Unpaved', 'Ferry'), // ['Limited Access',
+                                                                                                             //  'Toll Road',
+                                                                                                             //  'Ferry',
+                                                                                                             //  'Unpaved',
+                                                                                                             //  'Seasonal Closure',
+                                                                                                             //  'Country Crossing']
+                                                           // 'mustAvoidLinkIds'          	=> array(),
+                                                           // 'tryAvoidLinkIds'            => array(),
+                                                           'stateBoundaryDisplay'       => 'false',             // [true|false]
+                                                           'countryBoundaryDisplay'     => 'false',             // [true|false]
+                                                           'sideOfStreetDisplay'        => 'false',             // [true|false]
+                                                           'destinationManeuverDisplay' => 'false',             // [true|false]
+                                                           'shapeFormat'                => 'raw',       	       // [raw|cmp|cmp6]
+                                                           'generalize'                 => 0//,
+                                                           // 'drivingStyle'         => 2                          // [1:cautious|<2:normal>|3:aggressive]
+                                                           // 'highwayEfficiency'    => 22                         // miles/gallon
                              )
    );
    switch ($language)
    {
     case 'de':
-	    $request_template['options']['locale'] = 'de_DE';
-	    break;
-	   default:
-	    break;
+      $request_template['options']['locale'] = 'de_DE';
+      break;
+     default:
+      break;
    }
    break;
   default:
@@ -97,7 +97,7 @@ function locations_2_directions($provider, $curl_handle, $locations_in, $languag
                                                        'lng' => $locations_in[$i][1]));
      continue 2;
     }
-	break;
+  break;
    default:
     if ($is_cli) fwrite(STDERR, 'invalid provider (was: "' . $provider . "\"), aborting\n");
     return array();
@@ -107,7 +107,7 @@ function locations_2_directions($provider, $curl_handle, $locations_in, $languag
   {
    case 'google':
     $request['waypoints'] .= ($locations_in[$i][0] . ' ' . $locations_in[$i][1] . '|');
-	   break;
+     break;
    case 'mapquest':
     $request['locations'][] = array('latLng' => array('lat' => $locations_in[$i][0],
                                                       'lng' => $locations_in[$i][1]));
@@ -159,14 +159,14 @@ function locations_2_directions($provider, $curl_handle, $locations_in, $languag
     break;
    case 'mapquest':
     $route_request_basic = array(
-					'ambiguities' => 'ignore',
-					// 'inFormat'    => 'json',
-					'json'        => json_encode($requests[$i], 0)//,
-					// 'xml'         => '',
-					// 'outFormat'   => 'json',
-					// 'callback'    => null
-	   );
-	   $url = ($url_base . http_build_query($route_request_basic, '', '&'));
+          'ambiguities' => 'ignore',
+          // 'inFormat'    => 'json',
+          'json'        => json_encode($requests[$i], 0)//,
+          // 'xml'         => '',
+          // 'outFormat'   => 'json',
+          // 'callback'    => null
+     );
+     $url = ($url_base . http_build_query($route_request_basic, '', '&'));
     break;
    default:
     if ($is_cli) fwrite(STDERR, 'invalid provider (was: "' . $provider . "\"), aborting\n");
@@ -191,9 +191,9 @@ function locations_2_directions($provider, $curl_handle, $locations_in, $languag
     curl_close($curl_handle);
     if ($is_cli) fwrite(STDERR, 'failed to curl_exec("' .
                                 $url .
-																																'": "' .
-																																curl_error($curl_handle) .
-																																"\", aborting\n");
+                                                                '": "' .
+                                                                curl_error($curl_handle) .
+                                                                "\", aborting\n");
     return array();
    }
    //$url_content = utf8_decode($url_content);
@@ -204,57 +204,61 @@ function locations_2_directions($provider, $curl_handle, $locations_in, $languag
    {
     // var_dump($url_content);
     if ($is_cli) fwrite(STDERR, "failed to json_decode(\"$url_content\"), aborting\n");
-					return array();
+          return array();
    }
    // var_dump($json_content);
 
    switch ($provider)
    {
     case 'google':
-					$code = $json_content['status'];
+          $code = $json_content['status'];
      switch ($code)
      {
-						case 'OK':
-							break 3;
-						case 'OVER_QUERY_LIMIT':
-						case 'UNKNOWN_ERROR':
-							// echo("OVER_QUERY_LIMIT, retrying...\n");
-							usleep($options['geo_geocode']['geocode_retry_interval']);
-						 continue 2;
-						case 'INVALID_REQUEST':
-						case 'MAX_WAYPOINTS_EXCEEDED':
-						case 'NOT_FOUND':
-						case 'REQUEST_DENIED':
-						case 'ZERO_RESULTS':
-						default:
-						 var_dump($json_content);
-						 if ($is_cli) fwrite(STDERR, "invalid server response (was: \"$code\"), aborting\n");
-							else $firephp->log($json_content, 'invalid server response');
-							return array();
-					}
-					break;
-				case 'mapquest':
-					$code = $json_content['info']['statuscode'];
-					switch ($code)
-					{
-						case 0: // SUCCESS
-				   break 3;
-						case 400: // BAD_REQUEST
-						case 403: // BAD_REQUEST_KEY
-						case 500: // UNKNOWN_ERROR
-						case 601: // BAD_LOCATION
-						case 602: // BAD_ROUTE
-						case 603: // BAD_DATASET
-						case 610: // AMBIGUOUS_ROUTE
-						default:
-						 var_dump($json_content);
-							if ($is_cli) fwrite(STDERR, '[' . strval($i) . '/' . strval($num_requests) .
-                            							']: invalid server response (was: "' . strval($code) .
-																																			"\"), aborting\n");
-							else $firephp->log($json_content, 'invalid server response');
-							return array();
-					}
-					break;
+            case 'OK':
+              break 3;
+            case 'OVER_QUERY_LIMIT':
+            case 'UNKNOWN_ERROR':
+              // echo("OVER_QUERY_LIMIT, retrying...\n");
+              usleep($options['geo_geocode']['geocode_retry_interval']);
+             continue 2;
+            case 'INVALID_REQUEST':
+            case 'MAX_WAYPOINTS_EXCEEDED':
+            case 'NOT_FOUND':
+            case 'REQUEST_DENIED':
+            case 'ZERO_RESULTS':
+            default:
+             var_dump($json_content);
+             if ($is_cli) fwrite(STDERR, "invalid server response (was: \"$code\"), aborting\n");
+             else
+             //$firephp->log($json_content, 'invalid server response')
+             ;
+              return array();
+          }
+          break;
+        case 'mapquest':
+          $code = $json_content['info']['statuscode'];
+          switch ($code)
+          {
+            case 0: // SUCCESS
+           break 3;
+            case 400: // BAD_REQUEST
+            case 403: // BAD_REQUEST_KEY
+            case 500: // UNKNOWN_ERROR
+            case 601: // BAD_LOCATION
+            case 602: // BAD_ROUTE
+            case 603: // BAD_DATASET
+            case 610: // AMBIGUOUS_ROUTE
+            default:
+             var_dump($json_content);
+              if ($is_cli) fwrite(STDERR, '[' . strval($i) . '/' . strval($num_requests) .
+                                          ']: invalid server response (was: "' . strval($code) .
+                                                                      "\"), aborting\n");
+              else
+              //$firephp->log($json_content, 'invalid server response')
+              ;
+              return array();
+          }
+          break;
     default:
      if ($is_cli) fwrite(STDERR, 'invalid provider (was: "' . $provider . "\"), aborting\n");
      return array();
