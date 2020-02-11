@@ -832,6 +832,7 @@ function add_tour_option(index, index2) {
 	new_entry.style.backgroundColor = '#' + tours[index]['TOURS'][index2].__color;
 
 
+
 	if (rgb_brightness(tours[index]['TOURS'][index2].__color) < 127)
 		new_entry.className = 'white_override';
 	new_entry.appendChild(document.createTextNode(tours[index]['TOURS'][index2]['DESCRIPTOR']));
@@ -1511,7 +1512,7 @@ function do_edit(index, selected) {
 		//  new_tab_list.style.background = '#' + tours[index]['TOURS'][selected[i]].__color;
 		if (i === 0)	sortable_list_ids = '#' + new_tab_list.id;
 		else	sortable_list_ids += ', #' + new_tab_list.id;
-		if (!load_site_data(tours[index]['TOURS'][selected[i]]['SITES'], true)) {
+/*		if (!load_site_data(tours[index]['TOURS'][selected[i]]['SITES'], true)) {
 			if (!!window.console)	console.log(jQuery.tr.translator()('tour') + ' [' +
 																																					tours[index]['TOURS'][selected[i]]['DESCRIPTOR'] +
 																																					']: ' +
@@ -1521,7 +1522,7 @@ function do_edit(index, selected) {
 									']: ' +
 									jQuery.tr.translator()('failed to load site data'));
 			return;
-		}
+		}*/
 		for (var j = 0; j < tours[index]['TOURS'][selected[i]]['SITES'].length; j++) {
 			new_tab_list_item = document.createElement('li');
 			new_tab_list_item.className = 'ui-state-default';
@@ -1553,7 +1554,7 @@ function do_edit(index, selected) {
 				}
 			}
 			// text_node = document.createTextNode(tours[index]['TOURS'][selected[i]]['SITES'][j].toString());
-			for (site_data_index = 0; site_data_index < site_data.length; site_data_index++)
+/*			for (site_data_index = 0; site_data_index < site_data.length; site_data_index++)
 				if (site_data[site_data_index]['SITEID'] === tours[index]['TOURS'][selected[i]]['SITES'][j])	break;
 			if (site_data_index === site_data.length) {
 				if (!!window.console)	console.log('invalid site (SID was: ' +
@@ -1563,12 +1564,13 @@ function do_edit(index, selected) {
 										tours[index]['TOURS'][selected[i]]['SITES'][j].toString() +
 										'), aborting');
 				return;
-			}
+			}*/
 			site_description = tours[index]['TOURS'][selected[i]]['SITES'][j].toString() +
 																						' [' +
 																						site_array[site_index]['CONTID'] +
 																						']: ' +
-																						site_data[site_data_index]['STREET'];
+site_array[site_index]['ADDRESS'];																						
+/*site_data[site_data_index]['STREET'];*/
 			text_node = document.createTextNode(site_description);
 			new_tab_list_item.appendChild(text_node);
 			new_tab_list.appendChild(new_tab_list_item);
