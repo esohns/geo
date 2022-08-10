@@ -7,27 +7,30 @@ if ($cwd === FALSE) die("failed to getcwd(), aborting");
 
 if (!$is_cli)
 {
- require_once ('FirePHPCore' . DIRECTORY_SEPARATOR . 'FirePHP.class.php');
+// require_once ('FirePHPCore' . DIRECTORY_SEPARATOR . 'FirePHP.class.php');
+ require_once ('FirePHPCore' . DIRECTORY_SEPARATOR . 'fb.php');
 
  // init output buffering
  if (!ob_start()) die("failed to ob_start(), aborting");
 
- $firephp = FirePHP::getInstance(TRUE);
- if (is_null($firephp)) die("failed to FirePHP::getInstance(), aborting");
- $firephp->setEnabled(FALSE);
- $firephp->log('started script...');
+// $firephp = FirePHP::getInstance(TRUE);
+// if (is_null($firephp)) die("failed to FirePHP::getInstance(), aborting");
+// $firephp->setEnabled(FALSE);
+// $firephp->log('started script...');
+FB::setEnabled(true);
+fb('Hello World');
 
  // set default header
  header(':', TRUE, 500); // == 'Internal Server Error'
 }
 
 $location = '';
-$retrieve_ex_other = FALSE;
+$retrieve_other = FALSE;
 $position = NULL;
 if (!$is_cli)
 {
  if (isset($_GET['location'])) $location = $_GET['location'];
- if (isset($_GET['retrieve_ex_other'])) $retrieve_ex_other = (strtoupper($_GET['retrieve_ex_other']) === 'TRUE');
+ if (isset($_GET['retrieve_other'])) $retrieve_other = (strtoupper($_GET['retrieve_other']) === 'TRUE');
  if (isset($_GET['position'])) $position = json_decode($_GET['position'], TRUE);
 }
 
@@ -44,6 +47,8 @@ define('DATA_DIR', dirname($cwd) .
 																			'data' .
 																			DIRECTORY_SEPARATOR .
 																			$location);
+//$firephp->log('parsing init file: \"'. $ini_file . '\"');
+FB::info($ini_file, "init file");
 $options = parse_ini_file($ini_file, TRUE);
 if ($options === FALSE) die("failed to parse init file (was: \"$ini_file\"), aborting\n");
 $os_section = ((strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') ? 'geo_windows' : 'geo_unix');
@@ -193,7 +198,7 @@ $results = json_encode($results, 0);
 
 if (!$is_cli)
 {
- $firephp->log('ending script...');
+ //$firephp->log('ending script...');
 
  // set header
  header(':', TRUE, 200); // 'OK'

@@ -1,53 +1,83 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <style type="text/css">
-      html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
-    </style>
-    <script type="text/javascript" src="../geo/js/3rd_party/jquery-1.8.3.js"></script>
-    <script type="text/javascript" src="../common/js/geo_common.js"></script>
-    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbXyALbSG46MIGot03J2lF3eMokktCAYY"></script> -->
-    <script type="text/javascript">
-      var map;
-      function start4() {
-        url = '../common/src/3rd_party/mxn/source/mxn.geocoder.js';
-        load_script (url, null);
-        
-         map = new mxn.Mapstraction('map-canvas', 'googlev3', false);
-         var latlon = new mxn.LatLonPoint(39.74,-104.98);
-         map.setCenterAndZoom(latlon, 10);
-      }
-      function start3() {
-        url = '../common/src/3rd_party/mxn/source/mxn.googlev3.core.js';
-        load_script (url, start4);
-      }
-      function start2() {
-        url = '../common/src/3rd_party/mxn/source/mxn.core.js';
-        load_script (url, start3);
-      }
-      function start() {
-        url = '../common/src/3rd_party/mxn/source/mxn.js';
-        load_script (url, start2);
-      }
-      function initialize() {
-        jQuery.noConflict();
+<head>
+  <style type="text/css">
+    html, body, #map-canvas {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+  <script type="text/javascript" src="../geo/js/3rd_party/jquery-1.8.3.js"></script>
+  <script type="text/javascript" src="../geo/js/3rd_party/jquery-ui-1.9.2.custom.js"></script>
+  <script type="text/javascript" src="../common/js/geo_common.js"></script>
+  <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbXyALbSG46MIGot03J2lF3eMokktCAYY"></script> -->
+  <script type="text/javascript">
+    var map;
+    function start5() {
+      var dialog_options = {};
+      jQuery.extend(true, dialog_options, dialog_options_entry);
+      dialog_options.title = "please provide site data...";
+      dialog_options.buttons = [{
+        text: "OK",
+        click: function () {
+          jQuery('#dialog_find_sites').dialog('close');
+        }
+      }, {
+        text: "Cancel",
+        click: function () {
+          jQuery('#dialog_find_sites').dialog('close');
+        }
+      }];
+      jQuery('#dialog_find_sites').dialog(dialog_options);
+      jQuery('#dialog_find_sites').keydown(dialog_keydown_cb); // *NOTE*: prevent keypress from bubbling up
+      jQuery('#dialog_find_sites').dialog('open');
+      jQuery("#dialog_find_sites").css("display", "block");
+    }
+    function start4() {
+      url = '../common/src/3rd_party/mxn/source/mxn.geocoder.js';
+      load_script(url, null);
 
-        var url = "https://maps.googleapis.com/maps/api/js?" +
-                  jQuery.param({callback : 'start',
-                                key      : google_maps_api_browser_key,
-                                // language : querystring['language'],
-                                libraries: 'drawing,geometry,visualization',
-                                region   : 'ie',
-                                sensor   : 'false'});
-        load_script (url, null);
+      map = new mxn.Mapstraction('map-canvas', 'googlev3', false);
+      var latlon = new mxn.LatLonPoint(39.74, -104.98);
+      map.setCenterAndZoom(latlon, 10);
 
-        
-        <!-- start (); -->
-      }
-      window.onload = initialize;
-    </script>
-  </head>
+      start5();
+    }
+    function start3() {
+      url = '../common/src/3rd_party/mxn/source/mxn.googlev3.core.js';
+      load_script(url, start4);
+    }
+    function start2() {
+      url = '../common/src/3rd_party/mxn/source/mxn.core.js';
+      load_script(url, start3);
+    }
+    function start() {
+      url = '../common/src/3rd_party/mxn/source/mxn.js';
+      load_script(url, start2);
+    }
+    function initialize() {
+      jQuery.noConflict();
+
+      var url = "https://maps.googleapis.com/maps/api/js?" +
+        jQuery.param({
+          callback: 'start',
+          key: google_maps_api_browser_key,
+          // language : querystring['language'],
+          libraries: 'drawing,geometry,visualization',
+          region: 'ie',
+          sensor: 'false'
+        });
+      load_script(url, null);
+
+
+          // start();
+        }
+    window.onload = initialize;
+  </script>
+</head>
   <body>
-<div id="map-canvas"></div>
+    <div id="map-canvas"></div>
+    <div id="dialog_find_sites"></div>
   </body>
 </html>

@@ -304,6 +304,9 @@ var dialog_options_entry = {
   // title        : '',
   // width        : 300
 };
+//jQuery.ui.dialog.prototype._moveToTop = function (event, silent) {
+//  return true;
+//};
 var site_marker_options_basic = {
  // label     : '',
  // infoBubble: null,
