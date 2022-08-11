@@ -5,7 +5,7 @@
     home_position      = null, temp_position = null,
     geocoder_service   = null, tsp_solver = null,
     directions_service = null,
-    max_num_waypoints, is_cancelled = false;
+    max_num_waypoints, is_cancelled = false, is_shift_pressed = false;
 
 var directions_options_google_basic = {
 	avoidHighways: false,
@@ -300,13 +300,19 @@ function on_add ()
 function on_reset ()
 {
   "use strict";
-  for (var i = 0; i < markers.length; i++)
-    map.removeMarker(markers[i]);
-  markers = [];
-  hide_attribution_info('address', attribution_string);
+	for (var i = 0; i < markers.length; i++)
+		map.removeMarker(markers[i]);
+	markers = [];
+	if (!!polyline)
+		map.removePolyline(polyline);
+	polyline = null;
+
+	hide_attribution_info('address', attribution_string);
 
   if (use_jquery_ui_style)	jQuery('#reset_button').button('option', 'disabled', true);
   else document.getElementById('reset_button').disabled = true;
+	if (use_jquery_ui_style) jQuery('#get_directions_button').button('option', 'disabled', true);
+	else document.getElementById('get_directions_button').disabled = true;
 }
 
 function display_route(result)
@@ -320,7 +326,7 @@ function display_route(result)
 		map.removePolyline(polyline);
 	polyline = null;
 
-	// step2: create site markers
+	// step2: create address markers
 	var order = tsp_solver.getOrder(),
 		labels = tsp_solver.getLabels(),
 		query_params = {
@@ -342,8 +348,7 @@ function display_route(result)
 				break;
 			case 'mapquest':
 				position = new mxn.LatLonPoint(result.routes[0].legs[i].maneuvers[0].startPoint.lat,
-                                       result.routes[0].legs[i].maneuvers[0].startPoint.lng
-				);
+                                       result.routes[0].legs[i].maneuvers[0].startPoint.lng);
 				break;
 			case 'openstreetmap':
 			case 'ovi':
@@ -353,7 +358,14 @@ function display_route(result)
 				alert('invalid directions (was: "' + querystring['directions'] + '"), aborting');
 				return;
 		}
-		add_position (position, true);
+		var url_string_base = chart_url_base + '?';
+		marker = new mxn.Marker(position);
+		var options = {};
+		jQuery.extend(true, options, site_marker_options_basic);
+		options.icon = url_string_base + jQuery.param(query_params);
+		map.addMarkerWithData(marker, options);
+
+		markers.push(marker);
 	} // end FOR
 
 	// step3: process polyline
@@ -672,6 +684,11 @@ function position_error_cb (error) {
 		((message !== '') ? ': "' + message + '"' : ''));
 }
 
+function on_shift_click_on_map(position)
+{
+	add_position (position, true);
+}
+
 function initialize ()
 {
  need_logout = false;
@@ -969,6 +986,23 @@ function initialize ()
 			// alert('unknown map type (was: ' + querystring['map'] + ', continuing');
 			break;
 	}
+
+	window.addEventListener('keydown', event => {
+		if (event.key !== 'Shift') return;
+		event.stopPropagation();
+		is_shift_pressed = true;
+	}, /* useCapture= */ true);
+	window.addEventListener('keyup', event => {
+		if (event.key !== 'Shift') return;
+		event.stopPropagation();
+		is_shift_pressed = false;
+	}, /* useCapture= */ true);
+	map.getMap ().addListener("click", event => {
+		if (is_shift_pressed) {
+			//event.stopPropagation();
+			on_shift_click_on_map(new mxn.LatLonPoint(event.latLng.lat(), event.latLng.lng()));
+    }
+	});
 
   tsp_solver = new BpTspSolver (map.getMap (),
                                 document.getElementById ('directions_panel'),
