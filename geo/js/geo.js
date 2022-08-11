@@ -612,8 +612,8 @@ function on_solve_error_cb (handle, message)
   if (use_jquery_ui_style) jQuery('#get_directions_button').button('option', 'disabled', false);
   else document.getElementById('get_directions_button').disabled = false;
 
-  if (!!window.console) console.log(jQuery.tr.translator()('failed to optimise tour') + ': "' + message + '"');
-  alert(jQuery.tr.translator()('failed to optimise tour') + ': "' + message + '"');
+  if (!!window.console) console.log(jQuery.tr.translator()('failed to get directions') + ': "' + message + '"');
+	alert(jQuery.tr.translator()('failed to get directions') + ': "' + message + '"');
 }
 function on_solve_progress_cb (handle)
 {
