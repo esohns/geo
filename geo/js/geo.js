@@ -424,6 +424,8 @@ function display_route(result)
 	// document.getElementById('tsp_duration').style.display = 'inline';
 	// document.getElementById('tsp_distance').style.display = 'inline';
 	// document.getElementById(tsp_info_id).style.display = 'inline';
+
+	map.autoCenterAndZoom ();
 }
 function on_solve_cb(handle) {
 	"use strict";
