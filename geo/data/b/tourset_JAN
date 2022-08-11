@@ -1,1 +1,0 @@
-usage: tours_2_lists.php <db_file.dbf> <tourset(s)_file.json> [<tourset>] [<skip duplicates>[0|1]

@@ -1,451 +1,90 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  <title>Humana clothes collection GmbH - Geo</title>
+<head>
+  <title>Geo Directions</title>
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-<!--    content="width=device-width, initial-scale=1.0, user-scalable=no"> -->
+  <!--    content="width=device-width, initial-scale=1.0, user-scalable=no"> -->
+
   <meta charset="UTF-8">
-<!-- <meta charset="iso-8859-1"> -->
-  <link rel="stylesheet" type="text/css" href="css/ui-lightness/jquery-ui-1.9.2.custom.css">
-  <!-- <link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery-ui.css"/> -->
-  <!-- <link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/jquery-ui.css"/> -->
+  <!-- <meta charset="iso-8859-1"> -->
+  <link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.css" />
   <link rel="stylesheet" type="text/css" href="../common/css/geo_common.css" media="all,screen">
-  <link rel="stylesheet" type="text/css" href="css/geo.css" media="all,screen">
   <link rel="stylesheet" type="text/css" href="../common/css/geo_print.css" media="print">
-<!--[if IE]>
-  <link rel="shortcut icon" type="image/x-icon" href="../common/images/favicon.ico">
-<![endif]-->
-<!--[if !IE]<!-->
+  <link rel="stylesheet" type="text/css" href="css/search.css">
+
+  <!--[if IE]>
+    <link rel="shortcut icon" type="image/x-icon" href="../common/images/favicon.ico">
+  <![endif]-->
+  <!--[if !IE]<!-->
   <link rel="icon" type="image/x-icon" href="../common/images/favicon.ico">
-<!--<![endif]-->
-  <script type="text/javascript" src="js/3rd_party/jquery-1.8.3.js"></script>
-  <!-- <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
-  <script type="text/javascript" src="js/3rd_party/jquery-ui-1.9.2.custom.js"></script>
-  <!-- <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script> -->
-  <!-- <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script> -->
-  <script type="text/javascript" src="js/3rd_party/jquery.ui.datepicker-de.js"></script>
-  <!-- <script type="text/javascript" src="//verplan.googlecode.com/svn/trunk/com_verplan/admin/includes/js/jquery-ui/js/jquery.ui.datepicker-de.js"></script> -->
-  <!-- <script type="text/javascript" src="//www.google.com/jsapi"></script> -->
-  <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=geometry,drawing,visualization&region=de&sensor=false"></script> -->
-  <!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDbXyALbSG46MIGot03J2lF3eMokktCAYY&libraries=drawing&region=de&sensor=false"></script> -->
-  <!-- <script type="text/javascript" src="js/3rd_party/markerclusterer.js"></script> -->
-  <!-- <script type="text/javascript" src="//google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclustererplus/src/markerclusterer_packed.js"></script> -->
-  <!-- <script type="text/javascript" src="js/3rd_party/keydragzoom.js"></script> -->
-<!-- <script type="text/javascript" src="https://google-maps-utility-library-v3.googlecode.com/svn/trunk/keydragzoom/src/keydragzoom_packed.js"></script> -->
+  <!--<![endif]-->
+  <!-- <script type="text/javascript" src="../js/3rd_party/jquery-1.8.3.min.js"></script> -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- <script type="text/javascript" src="../js/3rd_party/jquery-ui-1.9.2.custom.min.js"></script> -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+
+  <script type="text/javascript" src="//www.google.com/jsapi"></script>
+
   <script type="text/javascript" src="js/3rd_party/tsp.js"></script>
-  <!-- <script type="text/javascript" src="//google-maps-tsp-solver.googlecode.com/svn/trunk/tsp.js"></script> -->
   <script type="text/javascript" src="js/3rd_party/BpTspSolver.js"></script>
-<!-- <script type="text/javascript" src="https://google-maps-tsp-solver.googlecode.com/svn/trunk/BpTspSolver.js"></script> -->
-  <script type="text/javascript" src="js/3rd_party/jszip.js"></script>
-  <!-- <script type="text/javascript" src="//raw.github.com/Stuk/jszip/master/jszip.js"></script> -->
-  <!-- <script type="text/javascript" src="//Stuk.github.com/jszip/jszip.js"></script> -->
-  <script type="text/javascript" src="js/3rd_party/jszip-load.js"></script>
-  <!-- <script type="text/javascript" src="//raw.github.com/Stuk/jszip/master/jszip-load.js"></script> -->
-  <script type="text/javascript" src="js/3rd_party/jszip-inflate.js"></script>
-  <!-- <script type="text/javascript" src="//raw.github.com/Stuk/jszip/master/jszip-inflate.js"></script> -->
-  <script type="text/javascript" src="js/3rd_party/geoxml3.js"></script>
-  <!-- <script type="text/javascript" src="//geoxml3.googlecode.com/svn/branches/polys/geoxml3.js"></script> -->
-<!-- <script type="text/javascript" src="src/3rd_party/jquery.tr.min.js"></script> -->
-<!-- *NOTE*: the default implementation seems to broken in IE -->
-  <!-- <script type="text/javascript" src="//raw.github.com/Bloutiouf/jquery.tr/master/jquery.tr.min.js"></script> -->
-  <!-- <script type="text/javascript" src="//raw.github.com/Bloutiouf/jquery.tr/master/jquery.tr.js"></script> -->
+
+  <script type="text/javascript" src="../common/js/3rd_party/jquery.browser.js"></script>
   <script type="text/javascript" src="../common/js/3rd_party/jquery.tr.js"></script>
-		<!-- <script type="text/javascript" src="../common/src/3rd_party/jqbrowser-compressed.js"></script> -->
-		<script type="text/javascript" src="../common/js/3rd_party/jqbrowser-uncompressed.js"></script>
-<!--[if lt IE 9]>
-  <script type="text/vbscript" src="../common/src/ECMA_compliance.vb"></script>
-<![endif]-->
+  <!--<script type="text/javascript" src="../common/src/3rd_party/jquery.tr.min.js"></script>-->
   <script type="text/javascript" src="../common/js/ECMA_compliance.js"></script>
   <script type="text/javascript" src="../common/js/geo_common.js"></script>
   <script type="text/javascript" src="../common/js/geo_dictionary.js"></script>
-  <script type="text/javascript" src="js/geo_contacts.js"></script>
-  <script type="text/javascript" src="js/geo_sites.js"></script>
-  <script type="text/javascript" src="js/geo_containers.js"></script>
-  <script type="text/javascript" src="js/geo_tours.js"></script>
-  <script type="text/javascript" src="js/geo_overlays.js"></script>
-  <script type="text/javascript" src="js/geo_images.js"></script>
-  <script type="text/javascript" src="js/geo_main.js"></script>
-  <script type="text/html" src="../common/3rd_party/counter.php?page=geo"></script>
-  <script type="text/javascript" src="../common/js/geo_loader.js"></script>
-  <script type="text/javascript">
-  function initialize_page()
-  {
-    jQuery.noConflict();
-
-    process_querystring();
-    process_pathname();
-
-    var input_textbox = document.getElementById('input_textbox_fda');
-    input_textbox.value = date_2_dd_dot_mm_dot_yyyy(null);
-    if (use_jquery_ui_style)
-    {
-      jQuery('#' + 'progress_bar').progressbar(progressbar_default_options);
-      //	 jQuery('#' + 'tabs').tabs(tabs_default_options);
-      //	 jQuery('#' + 'dialog').dialog(dialog_default_options);
-
-      if (!browser_supports_native_datepicker())
-      {
-        jQuery.datepicker.setDefaults(datepicker_default_options);
-        jQuery.datepicker.setDefaults(jQuery.datepicker.regional['']);
-        switch (querystring['language'])
-        {
-          case 'de':
-            jQuery.datepicker.setDefaults(jQuery.datepicker.regional[querystring['language']]);
-            break;
-          case 'en':
-            break;
-          default:
-            if (!!window.console) console.log('invalid language (was: "' + querystring['language'] + ', returning');
-            alert('invalid language (was: "' + querystring['language'] + ', returning');
-            return;
-        }
-
-        jQuery('#input_textbox_fda').datepicker(datepicker_default_options);
-        var datepicker_options = {};
-        jQuery.extend(datepicker_options, datepicker_default_options, true);
-        datepicker_options.onSelect = function(selectedDate, object){
-          jQuery('#input_textbox_pto').datepicker('option', 'minDate', selectedDate)
-        };
-        jQuery('#input_textbox_pfr').datepicker(datepicker_options);
-        datepicker_options = {};
-        jQuery.extend(datepicker_options, datepicker_default_options, true);
-        datepicker_options.defaultDate = '+6m';
-        datepicker_options.onSelect = function(selectedDate, object){
-          jQuery('#input_textbox_pfr').datepicker('option', 'maxDate', selectedDate);
-        };
-        jQuery('#input_textbox_pto').datepicker(datepicker_options);
-
-        datepicker_options = {};
-        jQuery.extend(datepicker_options, datepicker_default_options, true);
-        datepicker_options.onSelect = function(selectedDate, object){
-          document.getElementById('input_textbox_cw').value = date_2_cw(jQuery('#input_textbox_cw').datepicker('getDate'));
-        };
-        jQuery('#input_textbox_cw').datepicker(datepicker_options);
-        jQuery('#input_textbox_rda').datepicker(datepicker_default_options);
-        jQuery('#input_textbox_rep').datepicker(datepicker_default_options);
-        jQuery('#input_textbox_fda5').datepicker(datepicker_default_options);
-
-        datepicker_options = {};
-        jQuery.extend(datepicker_options, datepicker_default_options, true);
-        datepicker_options.onSelect = function(selectedDate, object){
-          jQuery('#input_textbox_pto5').datepicker('option', 'minDate', selectedDate);
-        };
-        jQuery('#input_textbox_pfr5').datepicker(datepicker_options);
-
-        datepicker_options = {};
-        jQuery.extend(datepicker_options, datepicker_default_options, true);
-        datepicker_options.onSelect = function(selectedDate, object){
-          jQuery('#input_textbox_pfr5').datepicker('option', 'maxDate', selectedDate);
-        };
-        jQuery('#input_textbox_pto5').datepicker(datepicker_options);
-      }
-      else
-      {
-        var datepicker_options = {};
-        jQuery.extend(datepicker_options, datepicker_default_options, true);
-        datepicker_options.onSelect = function(selectedDate, object){
-          document.getElementById('input_textbox_cw').value = date_2_cw(jQuery('#input_textbox_cw').datepicker('getDate'));
-        };
-        jQuery('#input_textbox_cw').datepicker(datepicker_options);
-//						if (jQuery.browser.chrome() && (jQuery.browser.version.number() > 20))
-//					 {
-// 					 var textbox = document.getElementById('input_textbox_cw'),
-//						     handler = function(event) {
-// 					      document.getElementById('input_textbox_cw').value = date_2_cw(new Date(document.getElementById('input_textbox_cw').value));
-//						     };
-//					  textbox.oninput = handler;
-//					  //textbox.onchange = handler;
-//					 }
-      }
-    }
-    else
-    {
-      if (jQuery.browser.chrome() && (jQuery.browser.version.number() > 20))
-      {
-        var textbox = document.getElementById('input_textbox_cw'),
-        handler = function(event) {
-          document.getElementById('input_textbox_cw').value = date_2_cw(new Date(document.getElementById('input_textbox_cw').value));
-        };
-        textbox.oninput = handler;
-        //textbox.onchange = handler;
-      }
-    }
-
-    load_providers_pre('geo');
-  }
-  window.onload = initialize_page;
+  <script type="text/html" src="../common/3rd_party/counter.php?page=search">
   </script>
-  </head>
-  <body>
+  <script type="text/javascript" src="../common/js/geo_loader.js"></script>
+  <script type="text/javascript" src="js/geo.js"></script>
+
+  <script type="text/javascript">
+    function init_page() {
+      jQuery.noConflict();
+
+      process_querystring();
+      process_pathname();
+
+      load_providers_pre('search');
+    }
+    window.onload = init_page;
+  </script>
+</head>
+ <body>
   <div id="attribution_control" class="control attribution_tag">
    <p id="address"></p>
    <p id="directions"></p>
    <p id="map"></p>
    <p id="overlays"></p>
   </div>
-  <span id="option_control" class="control">
-    <fieldset id="sites_toggle_options_fieldset" class="fieldset" style="display:inline">
-      <table id="sites_options_table" class="table">
-        <tr>
-          <td><button id="sites_active_toggle_button" class="button">active</button></td>
-          <td><button id="sites_ex_toggle_button" class="button">ex</button></td>
-          <td><button id="sites_other_toggle_button" class="button">other</button></td>
-        </tr>
-        <tr>
-          <td><input id="sites_active_show_checkbox" type="checkbox" class="checkbox"></input></td>
-          <td><input id="sites_ex_show_checkbox" type="checkbox" class="checkbox"></input></td>
-          <td><input id="sites_other_show_checkbox" type="checkbox" class="checkbox"></input></td>
-        </tr>
-      </table>
-    </fieldset>
-    <fieldset class="fieldset" style="display:inline">
-      <table class="table">
-        <tr>
-          <td><button id="sites_heatmap_layer_toggle_button" class="button">distribution</button></td>
-          <td><button id="pop_com_layer_toggle_button" class="button">population</button></td>
-        </tr>
-        <tr>
-          <td><button id="tours_toggle_button" class="button">tours</button></td>
-          <td><button id="overlays_toggle_button" class="button">overlays</button></td>
-          <td><button id="images_toggle_button" class="button">images</button></td>
-        </tr>
-      </table>
-    </fieldset>
-  </span>
-  <div id="task_control" class="control">
+  <div id="find_control" class="control">
     <fieldset>
-      <select id="task_listbox" class="listbox" size="1">
-        <option selected="selected">process...</option>
-        <!-- <option value="all">all</option> -->
-        <option value="images">containers</option>
-        <option value="images">images</option>
-        <option value="sites">sites</option>
-        <option value="toursets">toursets</option>
-      </select>
-      <fieldset>
-        <button id="export_data_button" class="button">data export</button>
-        <button id="get_report_button" class="button">report</button>
-      </fieldset>
+      <button id="add_address_button" class="button">add_address</button>
+      <button id="reset_button" class="button" disabled="disabled">reset</button>
+      <button id="get_directions_button" class="button">get_directions</button>
     </fieldset>
   </div>
-  <div id="site_control" class="control">
-    <fieldset>
-      <input id="find_textbox" type="text" class="textbox"></input>
-      <span id="place_holder_1">
-        <button id="quick_find_button" class="button">find</button>
-        <button id="find_reset_button" class="button">reset</button>
-        <div id="find_items" style="display:inline">
-          <input id="find_SID_radio" type="radio" name="find_items" class="radio"></input>
-          <input id="find_CID_radio" type="radio" name="find_items" class="radio"></input>
-        </div>
-        <label id="find_SID_radio_label" for="find_SID_radio">SID</label><label id="find_CID_radio_label" for="find_CID_radio">CID</label>
-      </span>
-    </fieldset>
-    <fieldset>
-      <fieldset id="site_tools_fieldset">
-        <button id="edit_site_button" class="button">edit</button>
-        <button id="delete_sites_button" class="button">delete</button>
-      </fieldset>
-      <button id="add_container_button" class="button">container</button>
-      <button id="add_contact_button" class="button">contact</button>
-    </fieldset>
-    <fieldset id="selection_tools_fieldset">
-      <button id="find_button" class="button">find</button>
-      <button id="find_closest_button" class="button">find</button>
-      <button id="find_unassigned_button" class="button">find</button>
-      <button id="clear_selection_button" class="button">reset</button>
-    </fieldset>
-  </div>
-  <div id="tour_control" class="control">
-    <fieldset>
-      <select id="toursets_listbox" class="listbox"></select>
-      <select id="tours_listbox" class="listbox" multiple="multiple"></select>
-      <button id="toursets_reset_button" class="button">reset</button>
-    </fieldset>
-    <fieldset>
-      <fieldset>
-        <button id="create_tour_button" class="button">create</button>
-        <button id="edit_tours_button" class="button">edit</button>
-        <button id="delete_tours_button" class="button">delete</button>
-      </fieldset>
-      <button id="tsp_button" class="button">optimise</button>
-      <button id="enter_tourdata_button" class="button">yields</button>
-      <button id="find_unassigned_button2" class="button">find</button>
-    </fieldset>
-    <fieldset>
-      <button id="get_toursheet_button" class="button">toursheet</button>
-      <button id="get_devicefile_button" class="button">devicefile</button>
-    </fieldset>
-  </div>
-  <span id="search_control" class="control">
-    <fieldset>
-      <input id="address_textbox" type="text" class="textbox"></input>
-      <button id="address_find_button" class="button">find</button>
-      <button id="address_reset_button" class="button">reset</button>
-    </fieldset>
-  </span>
   <div id="tools_control" class="control">
-  <fieldset class="fieldset_right">
-    <button id="logout_button" class="button">logout</button>
-  </fieldset>
-  </div>
-  <div id="info_control" class="control">
-    <div id="tour_info" class="info_tag" style="display:none"></div>
+    <fieldset class="fieldset_right">
+      <button id="home_button" class="button">home</button>
+      <button id="logout_button" class="button">logout</button>
+    </fieldset>
   </div>
   <div id="map_canvas" class="canvas"></div>
-  <div id="marker_info" class="gmnoprint info_box" style="display:none"></div>
+  <div id="directions_panel" class="directions_panel"></div>
   <div id="dialog_progress" class="dialog_progress" style="display:none">
     <div id="progress_bar" class="progress_bar"></div>
   </div>
-  <div id="dialog_selection" class="dialog_selection" style="display:none">
-    <input id="input_textbox" type="text" class="dialog_textbox"></input>
-    <select id="input_listbox" class="listbox" style="display:none"></select>
+  <div id="dialog_find_address" style="display:none">
+   <fieldset>
+    <table id="dialog_find_address_table" class="table">
+     <tr><td>street:</td><td><input id="input_textbox_str" type="text" class="dialog_textbox"></input></td></tr>
+     <tr><td>community:</td><td><input id="input_textbox_cmy" type="text" class="dialog_textbox"></input></td></tr>
+     <tr><td>city:</td><td><input id="input_textbox_cty" type="text" class="dialog_textbox"></input></td></tr>
+     <tr><td>ZIP code:</td><td><input id="input_textbox_zip" type="text" class="dialog_textbox"></input></td></tr>
+		</table>
+   </fieldset>
   </div>
-  <div id="dialog" class="dialog_entry" style="display:none">
-    <div id="info_text" class="tag"></div>
-    <fieldset id="duplicates_fieldset" class="duplicates_fieldset" style="display:none">
-      <legend id="duplicates_fieldset_legend" class="legend">options</legend>
-      <input id="duplicates_checkbox" type="checkbox" class="checkbox"></input>
-      <label id="duplicates_checkbox_label" for="duplicates_checkbox">remove duplicates</label>
-    </fieldset>
-    <ol id="selected_listbox_list" class="selectable" style="display:none"></ol>
-    <div id="tabs" class="tabs" style="display:none"></div>
-  </div>
-  <div id="dialog_site_edit" style="display:none">
-    <fieldset>
-      <table id="dialog_site_edit_table" class="table">
-        <tr><td>site (ID):</td><td><input id="input_textbox_sid" type="text" class="dialog_textbox" readonly="readonly"></input></td></tr>
-        <tr><td>street(s):</td><td><input id="input_textbox_str" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>community:</td><td><input id="input_textbox_cmy" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>city:</td><td><input id="input_textbox_cty" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>ZIP code:</td><td><input id="input_textbox_zip" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>lat/lng:</td><td><input id="input_textbox_cod" type="text" class="dialog_textbox" readonly="readonly"></input></td></tr>
-        <tr><td>status:</td><td><input id="input_textbox_sta" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>group:</td><td><input id="input_textbox_grp" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>finder (ID):</td><td><input id="input_textbox_fid" type="text" class="dialog_textbox" readonly="readonly"></input></td></tr>
-        <tr><td>find date:</td><td><input id="input_textbox_fda" type="date" class="dialog_textbox" readonly="readonly"></input></td></tr>
-        <tr><td>contract (ID):</td><td><input id="input_textbox_tid" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>permission (from):</td><td><input id="input_textbox_pfr" type="date" class="dialog_textbox"></input></td></tr>
-        <tr><td>permission (to):</td><td><input id="input_textbox_pto" type="date" class="dialog_textbox"></input></td></tr>
-        <tr><td>comment(s):</td><td><textarea id="input_textbox_cmt" cols="5" class="dialog_textarea"></textarea></td></tr>
-      </table>
-    </fieldset>
-    <fieldset id="site_edit_info_fieldset">
-      <table id="container_info_table" class="table">
-        <tr>
-          <td>container (ID):</td>
-          <td><select id="containers_listbox" class="listbox" multiple="multiple"></select></td>
-          <!-- <td>container (ID):</td><td><input id="input_textbox_cid2" type="text" class="dialog_textbox" readonly="readonly"></input></td> -->
-          <td>contact (ID):</td>
-          <td><input id="input_textbox_ctid2" type="text" class="dialog_textbox" readonly="readonly"></input></td>
-        </tr>
-      </table>
-    </fieldset>
-    <fieldset id="site_edit_tools_fieldset">
-      <legend id="site_edit_tools_legend" class="legend">tools</legend>
-      <fieldset class="fieldset_left">
-        <legend id="site_edit_container_legend" class="legend">container</legend>
-        <button id="container_button" class="button">show</button>
-        <button id="assign_container_button" class="button">assign</button>
-        <button id="remove_container_button" class="button">remove</button>
-      </fieldset>
-      <fieldset class="fieldset_left">
-        <legend id="site_edit_contact_legend" class="legend">contact</legend>
-        <button id="contact_button" class="button">contact</button>
-      </fieldset>
-    </fieldset>
-  </div>
-  <div id="dialog_find_sites" style="display:none">
-    <fieldset>
-      <table id="dialog_find_site_table" class="table">
-        <tr><td>street:</td><td><input id="input_textbox_str3" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>community:</td><td><input id="input_textbox_cmy3" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>city:</td><td><input id="input_textbox_cty3" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>ZIP code:</td><td><input id="input_textbox_zip3" type="text" class="dialog_textbox"></input></td></tr>
-      </table>
-    </fieldset>
-  </div>
-  <div id="dialog_container_edit" style="display:none">
-    <fieldset>
-      <table id="dialog_container_edit_table" class="table">
-        <tr><td>container (ID):</td><td><input id="input_textbox_cid" type="text" class="dialog_textbox" readonly="readonly"></input></td></tr>
-        <tr><td>type:</td><td><input id="input_textbox_typ" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>serial#:</td><td><input id="input_textbox_ser" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>status:</td><td><input id="input_textbox_sta2" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>repaired (last):</td><td><input id="input_textbox_rep" type="date" class="dialog_textbox"></input></td></tr>
-        <tr><td>comment(s):</td><td><textarea id="input_textbox_cmt3" cols="5" class="dialog_textarea"></textarea></td></tr>
-      </table>
-    </fieldset>
-  </div>
-  <div id="dialog_contact_edit" style="display:none">
-    <fieldset>
-      <table id="dialog_contact_edit_table" class="table">
-        <tr><td>contact (ID):</td><td><input id="input_textbox_ctid" type="text" class="dialog_textbox" readonly="readonly"></input></td></tr>
-        <tr><td>name(s) (given):</td><td><input id="input_textbox_fna" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>surname:</td><td><input id="input_textbox_sna" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>company:</td><td><input id="input_textbox_com" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>department:</td><td><input id="input_textbox_dep" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>function:</td><td><input id="input_textbox_fun" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>phone:</td><td><input id="input_textbox_pho" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>mobile:</td><td><input id="input_textbox_mob" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>fax:</td><td><input id="input_textbox_fax" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>eMail:</td><td><input id="input_textbox_ema" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>street:</td><td><input id="input_textbox_str2" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>city:</td><td><input id="input_textbox_cty2" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>ZIP code:</td><td><input id="input_textbox_zip2" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>country:</td><td><input id="input_textbox_ctr" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>group:</td><td><input id="input_textbox_grp2" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>finder (ID):</td><td><input id="input_textbox_fid2" type="text" class="dialog_textbox" readonly="readonly"></input></td></tr>
-        <tr><td>registered:</td><td><input id="input_textbox_rda" type="date" class="dialog_textbox" readonly="readonly"></input></td></tr>
-        <tr><td>comment(s):</td><td><textarea id="input_textbox_cmt2" cols="5" class="dialog_textarea"></textarea></td></tr>
-      </table>
-    </fieldset>
-    <fieldset id="contact_info_fieldset" style="display:none">
-      <table id="contact_info_table" class="table">
-        <tr><td>#sites:</td><td><input id="input_textbox_nsi" type="text" class="dialog_textbox" readonly="readonly"></input></td></tr>
-      </table>
-    </fieldset>
-  </div>
-  <div id="dialog_yield_entry" style="display:none">
-    <fieldset>
-      <table id="dialog_yield_entry_table" class="table">
-        <tr><td>tour:</td><td><input id="input_textbox_tour" type="text" class="dialog_textbox" readonly="readonly" disabled="disabled"></input></td></tr>
-        <tr><td>calendar week:</td><td><input id="input_textbox_cw" type="text" class="dialog_textbox"></input></td></tr>
-        <!-- <tr><td>calendar week:</td><td><input id="input_textbox_cw" type="date" class="dialog_textbox"></input></td></tr> -->
-        <tr><td>unit (kg):</td><td><input id="input_textbox_un" type="text" class="dialog_textbox" readonly="readonly" disabled="disabled"></input></td></tr>
-      </table>
-      <fieldset>
-        <table id="yield_entry_site_table" class="table"></table>
-      </fieldset>
-    </fieldset>
-  </div>
-  <div id="dialog_address_lookup" style="display:none">
-    <fieldset>
-      <table id="dialog_address_lookup_table" class="table">
-        <tr><td>street:</td><td><input id="input_textbox_str4" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>community:</td><td><input id="input_textbox_cmy4" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>city:</td><td><input id="input_textbox_cty4" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>ZIP code:</td><td><input id="input_textbox_zip4" type="text" class="dialog_textbox"></input></td></tr>
-      </table>
-    </fieldset>
-  </div>
-  <div id="dialog_site_find" style="display:none">
-    <fieldset>
-      <table id="dialog_site_find_table" class="table">
-        <tr><td>site (ID):</td><td><input id="input_textbox_sid5" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>street(s):</td><td><input id="input_textbox_str5" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>community:</td><td><input id="input_textbox_cmy5" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>city:</td><td><input id="input_textbox_cty5" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>ZIP code:</td><td><input id="input_textbox_zip5" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>status:</td><td><input id="input_textbox_sta5" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>group:</td><td><input id="input_textbox_grp5" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>finder (ID):</td><td><input id="input_textbox_fid5" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>find date:</td><td><input id="input_textbox_fda5" type="date" class="dialog_textbox"></input></td></tr>
-        <tr><td>contract (ID):</td><td><input id="input_textbox_tid5" type="text" class="dialog_textbox"></input></td></tr>
-        <tr><td>permission (from):</td><td><input id="input_textbox_pfr5" type="date" class="dialog_textbox"></input></td></tr>
-        <tr><td>permission (to):</td><td><input id="input_textbox_pto5" type="date" class="dialog_textbox"></input></td></tr>
-      </table>
-    </fieldset>
-  </div>
-  </body>
+ </body>
 </html>

@@ -1,1 +1,0 @@
-failed to json_decode("C:\Apache24\htdocs\geo\data\th\toursets.json"), aborting
