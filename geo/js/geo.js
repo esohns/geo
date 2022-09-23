@@ -20,9 +20,55 @@ var directions_options_google_basic = {
 	// unitSystem              : google.maps.UnitSystem.METRIC,
 	waypoints: []
 };
+var directions_options_mapquest_basic = {
+	ambiguities: 'ignore' //,
+	// inFormat   : 'json'
+	// json       : '',
+	// xml        : '',
+	// outFormat  : 'json',
+	// callback   : null
+};
+var directions_options_mapquest_json_options_basic = {
+	locations: [],
+	options: {
+		unit: 'k', // [<m>|k]
+		// routeType                 : 'fastest',            // [<fastest>|shortest|pedestrian|multimodal|bicycle]
+		// avoidTimedConditions      : true,                 // [<false>|true]
+		doReverseGeocode: false, // [false|<true>]
+		narrativeType: 'none', // [none|<text>|html|microformat]
+		// enhancedNarrative         : false,                // [<false>|true]
+		// maxLinkId                 : 0,                    // [<0>]
+		// locale                    : 'en_US',              // [<'en_US'>], any ISO 639-1 code
+		// avoids                    : [],
+		// avoids                    : ['Toll Road', 'Unpaved', 'Ferry'], // ['Limited Access',
+		//  'Toll Road',
+		//  'Ferry',
+		//  'Unpaved',
+		//  'Seasonal Closure',
+		//  'Country Crossing']
+		// mustAvoidLinkIds          : [],
+		// tryAvoidLinkIds           : [],
+		stateBoundaryDisplay: false, // [true|false]
+		countryBoundaryDisplay: false, // [true|false]
+		// sideOfStreetDisplay       : false,                // [true|false]
+		destinationManeuverDisplay: false, // [true|false]
+		shapeFormat: 'raw', // [raw|cmp|cmp6]
+		generalize: 0
+		// cyclingRoadFactor         : 1.0                   // [<1.0>]
+		// roadGradeStrategy         : 'DEFAULT_STRATEGY'    // ['DEFAULT_STRATEGY',
+		//  'AVOID_UP_HILL',
+		//  'AVOID_DOWN_HILL',
+		//  'AVOID_ALL_HILLS',
+		//  'FAVOR_UP_HILL',
+		//  'FAVOR_DOWN_HILL',
+		//  'FAVOR_ALL_HILLS']
+		// drivingStyle              : 2                     // [1:cautious|<2:normal>|3:aggressive]
+		// highwayEfficiency         : 21.0                  // miles/gallon
+	}
+};
 
 var tsp_polyline_options_basic = {
-	color: '#FF0000', // red
+	color: '#000000', // black
 	width: 4,
 	opacity: 0.7,
 	closed: false,
@@ -51,7 +97,7 @@ function add_position (position, is_point)
   jQuery.extend (true, options, site_marker_options_basic);
   var query_params = {
     chst: 'd_map_pin_icon',
-    chld: chart_icon_marker + '|0000FF'
+    chld: chart_icon_marker + '|FFFFFF'
   };
   var url_string_base = chart_url_base + '?';
   options.icon = url_string_base + jQuery.param (query_params);
@@ -341,7 +387,8 @@ function display_route(result)
 			query_params.chld = i.toString() + '|' + tsp_color_rgb_string;
 		}
 		switch (querystring['directions']) {
-			case 'arcgis': break;
+			case 'arcgis':
+				break;
 			case 'googlev3':
 				position = new mxn.LatLonPoint(result.routes[0].legs[i].start_location.lat(),
                                        result.routes[0].legs[i].start_location.lng());
@@ -405,12 +452,8 @@ function display_route(result)
 		case 'ovi':
 			break;
 		default:
-			if (!!window.console) console.log('invalid directions service (was: "' +
-				querystring['directions'] +
-				'"), aborting');
-			alert('invalid directions service (was: "' +
-				querystring['directions'] +
-				'"), aborting');
+			if (!!window.console) console.log('invalid directions service (was: "' + querystring['directions'] + '"), aborting');
+			alert('invalid directions service (was: "' + querystring['directions'] + '"), aborting');
 			return;
 	}
 	polyline = new mxn.Polyline(points);
@@ -534,6 +577,7 @@ function on_directions()
 		case 'ovi':
 			route_options = directions_options_ovi;
 			break;
+		case 'openstreetmap': break; // *TODO*
 		default:
 			if (!!window.console) console.log('invalid directions service (was: ' + querystring['directions'] + '), aborting');
 			alert('invalid directions service (was: ' + querystring['directions'] + '), aborting');
@@ -997,12 +1041,24 @@ function initialize ()
 		event.stopPropagation();
 		is_shift_pressed = false;
 	}, /* useCapture= */ true);
-	map.getMap ().addListener("click", event => {
-		if (is_shift_pressed) {
-			//event.stopPropagation();
-			on_shift_click_on_map(new mxn.LatLonPoint(event.latLng.lat(), event.latLng.lng()));
-    }
-	});
+	switch (querystring['map']) {
+		case 'arcgis': break;
+		case 'googlev3':
+			map.getMap().addListener("click", event => {
+				if (is_shift_pressed) {
+					//event.stopPropagation();
+					on_shift_click_on_map(new mxn.LatLonPoint(event.latLng.lat(), event.latLng.lng()));
+				}
+			});
+			break;
+		case 'mapquest': break;
+		case 'ovi': break;
+		case 'openlayers': break; // *TODO*
+		default:
+			if (!!window.console) console.log('invalid maps service (was: "' + querystring['map'] + '"), aborting');
+			alert('invalid maps service (was: "' + querystring['map'] + '"), aborting');
+			return;
+	} // end SWITCH
 
   tsp_solver = new BpTspSolver (map.getMap (),
                                 document.getElementById ('directions_panel'),
@@ -1033,7 +1089,8 @@ function initialize ()
     case 'ovi':
       directions_service = new ovi.mapsapi.routing.Manager();
       break;
-    default:
+		case 'openstreetmap': break; // *TODO*
+		default:
       if (!!window.console) console.log('invalid directions service (was: "' + querystring['directions'] + '"), aborting');
       alert('invalid directions service (was: "' + querystring['directions'] + '"), aborting');
       return;

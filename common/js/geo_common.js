@@ -1085,15 +1085,17 @@ function hide_attribution_info(category, string) {
 // * (browser) feature tests *
 function browser_supports_native_datepicker()
 {
-  return (jQuery.browser.chrome() &&
-         (jQuery.browser.version.number() > 20));
+  var version = parseInt (jQuery.browser.version);
+  return (jQuery.browser.chrome &&
+          (version ? version > 20 : true));
 }
 function browser_supports_json_responsetype()
 {
-  if ((jQuery.browser.firefox() &&
-       (jQuery.browser.version.number() >= 10)) ||
-      (jQuery.browser.opera() &&
-       (jQuery.browser.version.number() >= 12))) return true;
+  var version = parseInt (jQuery.browser.version);
+  return ((jQuery.browser.mozilla &&
+          (version ? version >= 10 : true)) ||
+          (jQuery.browser.opera &&
+           (version ? version >= 12 : true)));
 
   return false;
 }

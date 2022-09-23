@@ -189,7 +189,8 @@ function load_providers_pre(mode)
           load_google_api = true;
         }
         break;
-      case 'mapquest':  break;
+      case 'mapquest': break;
+      case 'openstreetmap': break;
       case 'ovi':
         if (!nokia_maps_loaded)
         {

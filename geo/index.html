@@ -166,12 +166,8 @@
 						jQuery.extend(true, dictionary, dictionary_de);
 						break;
 					default:
-						if (!!window.console) console.log('invalid language (was: ' +
-																																								list_box.options[list_box.selectedIndex].value +
-																																								'), returning');
-						alert('invalid language (was: ' +
-												list_box.options[list_box.selectedIndex].value +
-												'), returning');
+						if (!!window.console) console.log('invalid language (was: ' + list_box.options[list_box.selectedIndex].value + '), returning');
+						alert('invalid language (was: ' + list_box.options[list_box.selectedIndex].value + '), returning');
 						return;
     }
     jQuery.tr.dictionary(dictionary);
@@ -305,14 +301,16 @@
        <h1 id="greeting" align="center"><b>Welcome to Geo Search</b></h1>
        <div id="subframe_1" align="center" class="frame">
 							<!-- *WORKAROUND*: the "autocomplete" attribute is a FF-workaround... -->
-        <form id="form" method='GET' action='search.html' onsubmit="return check_form()" autocomplete="off">
+        <form id="form" method='GET' action='geo.html' onsubmit="return check_form()" autocomplete="off">
 							  <input id="hidden_language" type="hidden" name="language" value="de"></input>
 								<span>
 									<fieldset style="display:inline">
 										<legend id="map_legend">map</legend>
 										<select id="map_listbox" name="map" size="1" onchange="on_map_changed()">
 											<!-- *NOTE*: use mapstraction identifiers here -->
+											<option value="arcgis">ESRI ArcGIS</option>
 											<option selected="selected" value="googlev3">Google Maps (v3)</option>
+											<option value="mapquest">MapQuest</option>
 											<option value="ovi">Nokia Ovi</option>
 											<option value="openlayers">OpenLayers</option>
 										</select>
@@ -321,9 +319,11 @@
 										<legend id="directions_legend">directions</legend>
 										<select id="directions_listbox" name="directions" size="1" onchange="on_directions_changed()">
 											<!-- *NOTE*: use mapstraction identifiers here -->
+											<option value="arcgis">ESRI ArcGIS</option>
 											<option selected="selected" value="googlev3">Google Maps (v3)</option>
+											<option value="mapquest">MapQuest</option>
 											<option value="ovi">Nokia Ovi</option>
-											<option value="openlayers">OpenLayers</option>
+											<option value="openstreetmap">OpenStreetMap</option>
 										</select>
 									</fieldset>
 									<fieldset style="display:inline">
